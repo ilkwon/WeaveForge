@@ -9,8 +9,9 @@ public class WeaveGrid : MonoBehaviour
   [SerializeField] private int gridSize = 100;
   [SerializeField] private int cellSize = 100;
   Texture2D gridTexture;
-  int[,] gridData;
-  int textureSize;
+  private int[,] gridData;
+  private int textureSize;
+  private int _paintValue = 1; // 드래그 방향: 1=칠하기, 0=지우기
   //-------------------------------------------------------------------------    
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
@@ -71,12 +72,17 @@ public class WeaveGrid : MonoBehaviour
   // 클릭시 셀의 상태를 토글하고 색상을 변경.
   Vector2Int _hoverCell = new Vector2Int(-1, -1);  
   void UpdatePaint()
-  {
-    if (!Mouse.current.leftButton.wasPressedThisFrame) return;  // 클릭이 시작된 프레임에서만 처리
+  {    
     if (_hoverCell.x < 0) return;
-    var old = gridData[_hoverCell.y, _hoverCell.x];
-    gridData[_hoverCell.y, _hoverCell.x] = old == 1 ? 0 : 1;
-    Color color = gridData[_hoverCell.y, _hoverCell.x] == 1 ? Color.black : Color.white;
+    
+    if (!Mouse.current.leftButton.isPressed) {
+      var old = gridData[_hoverCell.y, _hoverCell.x];
+      _paintValue = old == 1 ? 0 : 1;
+    }
+    if (!Mouse.current.leftButton.isPressed) return;
+
+    gridData[_hoverCell.y, _hoverCell.x] = _paintValue;
+    Color color = _paintValue == 1 ? Color.black : Color.white;
     FillCell(_hoverCell.x, _hoverCell.y, color);
     
     gridTexture.Apply();
