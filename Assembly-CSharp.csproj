@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Project/Scripts/Core/WeaveGrid.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/WeaveItemUI.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveUI.cs" />

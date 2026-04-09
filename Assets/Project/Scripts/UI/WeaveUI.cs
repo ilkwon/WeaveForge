@@ -7,7 +7,6 @@ public class WeaveUI : MonoBehaviour
 {
   [SerializeField] private WeaveGrid weaveGrid;
   [SerializeField] private WeaveSaveManager saveManager;
-
   [SerializeField] private TMP_InputField nameInputField;
   [SerializeField] private Transform listContent;
   [SerializeField] private GameObject listItemPrefab;
@@ -26,27 +25,30 @@ public class WeaveUI : MonoBehaviour
   }
 
   //-------------------------------------------------------------------------
+  private void OnLoadButton(string weaveName)
+  {
+    WeaveData data = saveManager.Load(weaveName);
+    if (data == null) return;
+    weaveGrid.LoadPattern(data);
+  }
+
   public void RefreshList()
   {
-    return;
-    // 기존 리스트 아이템 제거
     foreach (Transform child in listContent)
       Destroy(child.gameObject);
 
-    // 저장된 패턴 리스트 불러오기
-    List<string> patternNames = saveManager.GetList();
-    foreach (string name in patternNames)
+    List<string> list = saveManager.GetList();
+    for (int i = 0; i < list.Count; i++)
     {
+      WeaveData data = saveManager.Load(list[i]);
       GameObject item = Instantiate(listItemPrefab, listContent);
-      item.GetComponentInChildren<TMP_Text>().text = name;
-      Button button = item.GetComponent<Button>();
-      button.onClick.AddListener(() => OnLoadButton(name));
+      item.GetComponent<WeaveItemUI>().Setup(i + 1, data);
+      string captured = list[i];
+//      item.GetComponent<Button>().onClick.AddListener(() =>
+//      {
+//        OnLoadButton(captured);
+//      });
     }
   }
-
   //-------------------------------------------------------------------------
-  private void OnLoadButton(string patternName)
-  {
-
-  }
 }

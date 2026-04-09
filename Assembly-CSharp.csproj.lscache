@@ -57,7 +57,9 @@ Assets/Project/Scripts/Core/
  WeaveSaveManager.cs
 Assets/Project/Scripts/
  Data/WeaveData.cs
- UI/WeaveUI.cs
+ UI/
+  WeaveItemUI.cs
+  WeaveUI.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
