@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sqlMap namespace="Weave">
+
+    <create id="create_weave_pattern">
+        CREATE TABLE IF NOT EXISTS WeavePattern (
+            Idx         INTEGER PRIMARY KEY AUTOINCREMENT,
+            WeaveName   TEXT NOT NULL,
+            WeaveCode   TEXT,
+            RepeatX     INTEGER NOT NULL,
+            RepeatY     INTEGER NOT NULL,
+            Cells       TEXT NOT NULL,
+            WarpColors  TEXT,
+            WeftColors  TEXT,
+            SavedAt     TEXT NOT NULL
+        );
+    </create>
+
+    <insert id="insert_weave_pattern">
+        INSERT INTO WeavePattern (
+            WeaveName, WeaveCode, RepeatX, RepeatY,
+            Cells, WarpColors, WeftColors, SavedAt
+        ) VALUES (
+            @name, @code, @repeatX, @repeatY,
+            @cells, @warpColors, @weftColors, @savedAt
+        );
+    </insert>
+
+    <select id="select_weave_pattern_list">
+        SELECT Idx, WeaveName, WeaveCode, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx DESC;
+    </select>
+
+    <select id="select_weave_pattern_by_name">
+        SELECT * FROM WeavePattern
+        WHERE WeaveName = @name
+        LIMIT 1;
+    </select>
+
+    <update id="update_weave_pattern_by_name">
+        UPDATE WeavePattern
+        SET WeaveCode  = @code,
+            RepeatX    = @repeatX,
+            RepeatY    = @repeatY,
+            Cells      = @cells,
+            WarpColors = @warpColors,
+            WeftColors = @weftColors,
+            SavedAt    = @savedAt
+        WHERE WeaveName = @name;
+    </update>
+
+    <delete id="delete_weave_pattern_by_name">
+        DELETE FROM WeavePattern
+        WHERE WeaveName = @name;
+    </delete>
+
+</sqlMap>

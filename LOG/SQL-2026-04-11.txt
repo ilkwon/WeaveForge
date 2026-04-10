@@ -1,0 +1,40 @@
+﻿2026-04-11 07:37:48 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS WeavePattern (
+            Idx         INTEGER PRIMARY KEY AUTOINCREMENT,
+            WeaveName   TEXT NOT NULL,
+            WeaveCode   TEXT,
+            RepeatX     INTEGER NOT NULL,
+            RepeatY     INTEGER NOT NULL,
+            Cells       TEXT NOT NULL,
+            WarpColors  TEXT,
+            WeftColors  TEXT,
+            SavedAt     TEXT NOT NULL
+        );]
+
+2026-04-11 07:41:08 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS WeavePattern (
+            Idx         INTEGER PRIMARY KEY AUTOINCREMENT,
+            WeaveName   TEXT NOT NULL,
+            WeaveCode   TEXT,
+            RepeatX     INTEGER NOT NULL,
+            RepeatY     INTEGER NOT NULL,
+            Cells       TEXT NOT NULL,
+            WarpColors  TEXT,
+            WeftColors  TEXT,
+            SavedAt     TEXT NOT NULL
+        );]
+
+2026-04-11 07:41:08 [INFO] : SQL : [
+        INSERT INTO WeavePattern (
+            WeaveName, WeaveCode, RepeatX, RepeatY,
+            Cells, WarpColors, WeftColors, SavedAt
+        ) VALUES (
+            'test_pattern', 'TP-001', 8, 8,
+            '1,0,1,0,1,0,1,0', 'White,Black', 'White,Black', '26-04-11 10:00'
+        );
+    ]
+
+2026-04-11 07:41:08 [INFO] : SQL : [
+        SELECT Idx, WeaveName, WeaveCode, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx DESC;
+    ]
+

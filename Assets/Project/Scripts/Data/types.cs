@@ -1,12 +1,12 @@
 using System;
 using UnityEngine;
-
+//--------------------------------------------------------------------------
 [Serializable]
 public class UsefulColor
 {
   public string colorName;
   public Color color;
-
+  
   public UsefulColor(string name, Color col)
   {
     colorName = name;
@@ -39,4 +39,6 @@ public static class ColorPalette
       if (c.colorName == name) return c.color;
     return Color.white;
   }
+
+  //--------------------------------------------------------------------------
 }

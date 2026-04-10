@@ -10,10 +10,14 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private TMP_InputField nameInputField;
   [SerializeField] private Transform listContent;
   [SerializeField] private GameObject listItemPrefab;
-
+  [SerializeField] private ColorStripUI colorStripWarp;
+  [SerializeField] private ColorStripUI colorStripWeft;
   //-------------------------------------------------------------------------
   private void Start()
   {
+    colorStripWarp.Setup(8);
+    colorStripWeft.Setup(8);
+    
     RefreshList();
   }
 
