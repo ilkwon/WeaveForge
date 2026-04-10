@@ -54,6 +54,7 @@
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveUI.cs" />
+    <Compile Include="Assets/Project/Scripts/Data/types.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

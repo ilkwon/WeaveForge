@@ -55,11 +55,12 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 Assets/Project/Scripts/Core/
  WeaveGrid.cs
  WeaveSaveManager.cs
-Assets/Project/Scripts/
- Data/WeaveData.cs
- UI/
-  WeaveItemUI.cs
-  WeaveUI.cs
+Assets/Project/Scripts/Data/
+ types.cs
+ WeaveData.cs
+Assets/Project/Scripts/UI/
+ WeaveItemUI.cs
+ WeaveUI.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]
