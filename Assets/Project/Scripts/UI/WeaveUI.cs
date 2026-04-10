@@ -12,6 +12,12 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private GameObject listItemPrefab;
 
   //-------------------------------------------------------------------------
+  private void Start()
+  {
+    RefreshList();
+  }
+
+  //-------------------------------------------------------------------------
   public void OnSaveButton()
   {
     string patternName = nameInputField.text.Trim();
@@ -25,13 +31,21 @@ public class WeaveUI : MonoBehaviour
   }
 
   //-------------------------------------------------------------------------
+  public void OnNewButton()
+  {
+    weaveGrid.Clear();
+    nameInputField.text = "";
+  }
+
   private void OnLoadButton(string weaveName)
   {
     WeaveData data = saveManager.Load(weaveName);
     if (data == null) return;
     weaveGrid.LoadPattern(data);
+    nameInputField.text = data.weaveName;
   }
 
+  //-------------------------------------------------------------------------
   public void RefreshList()
   {
     foreach (Transform child in listContent)
@@ -44,10 +58,10 @@ public class WeaveUI : MonoBehaviour
       GameObject item = Instantiate(listItemPrefab, listContent);
       item.GetComponent<WeaveItemUI>().Setup(i + 1, data);
       string captured = list[i];
-//      item.GetComponent<Button>().onClick.AddListener(() =>
-//      {
-//        OnLoadButton(captured);
-//      });
+      item.GetComponent<WeaveItemUI>().buttonSelect.onClick.AddListener(() =>
+      {
+        OnLoadButton(captured);
+      });
     }
   }
   //-------------------------------------------------------------------------

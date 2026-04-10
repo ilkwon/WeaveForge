@@ -19,12 +19,13 @@ public class WeaveSaveManager : MonoBehaviour
   //-------------------------------------------------------------------------
   public void Save(WeaveData data)
   {
-    data.savedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+    data.savedAt = DateTime.Now.ToString("yy-MM-dd HH:mm");
     string json = JsonUtility.ToJson(data, true);
     string path = Path.Combine(SaveDir, data.weaveName + ".json");
     File.WriteAllText(path, json);
     Debug.Log($"Weave pattern '{data.weaveName}' saved at {path}");
   }
+  //-------------------------------------------------------------------------
   public WeaveData Load(string patternName)
   {
     string path = Path.Combine(SaveDir, patternName + ".json");

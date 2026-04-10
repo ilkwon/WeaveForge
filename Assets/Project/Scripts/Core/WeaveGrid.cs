@@ -91,6 +91,16 @@ public class WeaveGrid : MonoBehaviour
         new Vector2(displaySize, displaySize);
   }
   //-------------------------------------------------------------------------
+  public void Clear()
+  {
+    for (int y = 0; y < repeatY; y++)
+      for (int x = 0; x < repeatX; x++)
+        gridData[y, x] = 0;
+
+    DrawInitialGrid();
+    gridTexture.Apply();
+  }
+  //-------------------------------------------------------------------------
   // Update is called once per frame
   void Update()
   {
@@ -98,12 +108,12 @@ public class WeaveGrid : MonoBehaviour
     Vector2 localMousePos;
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
         rt, Mouse.current.position.ReadValue(), null, out localMousePos);
-    
+
     Vector2 half = rt.sizeDelta / 2f;
     // 마우스가 그리드 영역 밖에 있으면 아무것도 하지 않음.
     if (localMousePos.x < -half.x || localMousePos.x > half.x ||
         localMousePos.y < -half.y || localMousePos.y > half.y)
-    {      
+    {
       //ClearCell(_hoverCell.x, _hoverCell.y);
       return;
     }

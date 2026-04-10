@@ -4,16 +4,17 @@ using TMPro;
 
 public class WeaveItemUI : MonoBehaviour
 {
-    [SerializeField] private TMP_Text noText;
-    [SerializeField] private TMP_Text nameText;
-    [SerializeField] private TMP_Text codeText;
-    [SerializeField] private TMP_Text dateText;
-
+    [SerializeField] private TMP_Text labelNo;
+    [SerializeField] private TMP_Text labelName;
+    [SerializeField] private TMP_Text labelCode;
+    [SerializeField] private TMP_Text labelDate;
+    public Button buttonSelect;
     public void Setup(int no, WeaveData data)
     {
-        noText.text   = no.ToString();
-        nameText.text = data.weaveName;
-        codeText.text = data.weaveCode;
-        dateText.text = data.savedAt;
+        labelNo.text   = no.ToString();
+        labelName.text = data.weaveName;
+        labelCode.text = data.weaveCode;
+        labelDate.text = data.savedAt;
+        //buttonSelect.onClick.AddListener(() => WeaveUI.OnLoad(data));
     }
 }
