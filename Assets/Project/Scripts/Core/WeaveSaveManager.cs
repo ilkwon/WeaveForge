@@ -114,7 +114,7 @@ public class WeaveSaveManager : MonoBehaviour
 
     if (result == null || result.Count == 0)
     {
-      Debug.LogError($"[DB] Load 실패 : {patternCode}");
+      //Debug.LogError($"[DB] Load 실패 : {patternCode}");
       return null;
     }
 

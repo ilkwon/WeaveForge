@@ -3,7 +3,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using Color = UnityEngine.Color;
+using System;
 
+[RequireComponent(typeof(RawImage))]
 public class WeaveGrid : MonoBehaviour
 {
   [SerializeField] private int repeatX = 8;
@@ -196,6 +198,29 @@ public class WeaveGrid : MonoBehaviour
     for (int px = startX; px < startX + cellSize - 1; px++)
       for (int py = startY; py < startY + cellSize - 1; py++)
         gridTexture.SetPixel(px, py, color);
+  }
+  //-------------------------------------------------------------------------
+  public void Resize(int w, int h)
+  {
+    repeatX = w;
+    repeatY = h;
+
+    gridData = new int[repeatX, repeatY];
+    textureSize = repeatX * cellSize + 1;
+    gridTexture = new Texture2D(textureSize, textureSize)
+    {
+      filterMode = FilterMode.Point
+    };
+
+    DrawInitialGrid();
+    gridTexture.Apply();    
+    
+    GetComponent<RawImage>().texture = gridTexture;
+    int displaySize = repeatX * cellSize;
+    GetComponent<RawImage>().rectTransform.sizeDelta =
+      new Vector2(displaySize, displaySize);
+
+    _hoverCell = new Vector2Int(-1, -1);
   }
   //-------------------------------------------------------------------------
 

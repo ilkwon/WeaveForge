@@ -3,6 +3,8 @@ using UnityEngine;
 using TMPro;
 using System.CodeDom.Compiler;
 using System;
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
 
 public class WeaveUI : MonoBehaviour
 {
@@ -13,17 +15,36 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private GameObject listItemPrefab;
   [SerializeField] private ColorStripUI colorStripWarp;
   [SerializeField] private ColorStripUI colorStripWeft;
+  [SerializeField] private TMP_InputField texboxUnitWidth;
+  [SerializeField] private TMP_InputField textboxUnitHeight;
   private string currentCode = "";
 
   //-------------------------------------------------------------------------
 
   private void Start()
   {
-    
     colorStripWarp.Setup(8);
     colorStripWeft.Setup(8);
+    
+    texboxUnitWidth.text = "8";
+    textboxUnitHeight.text = "8";
+    
+    // 탭 연결.
+    texboxUnitWidth.onSubmit.AddListener(_ => textboxUnitHeight.Select());
 
     RefreshList();
+  }
+
+  //-------------------------------------------------------------------------
+  private void TabKeyNextCursorUnitSize()
+  {
+      if (Keyboard.current.tabKey.wasPressedThisFrame)
+      {
+        if (texboxUnitWidth.isFocused)
+          textboxUnitHeight.Select();
+        else if (textboxUnitHeight.isFocused)
+          texboxUnitWidth.Select();
+      }
   }
 
   //-------------------------------------------------------------------------
@@ -34,6 +55,14 @@ public class WeaveUI : MonoBehaviour
 
     WeaveData data = new WeaveData();
     weaveGrid.GetData(data);
+
+    int x = int.Parse(texboxUnitWidth.text);
+    int y = int.Parse(textboxUnitHeight.text);
+    
+    // 크기가 바뀐 경우만 Resize
+    if (x != data.repeatX || y != data.repeatY)
+      weaveGrid.Resize(x, y);
+
     data.weaveName = patternName;
     bool isNew = string.IsNullOrEmpty(currentCode);
     if (isNew)
@@ -67,7 +96,10 @@ public class WeaveUI : MonoBehaviour
   //-------------------------------------------------------------------------
   public void OnNewButton()
   {
-    weaveGrid.Clear();
+    int w = int.Parse(texboxUnitWidth.text);
+    int h = int.Parse(textboxUnitHeight.text);
+
+    weaveGrid.Resize(w, h);
     nameInputField.text = "";
     currentCode = "";
   }
@@ -81,6 +113,9 @@ public class WeaveUI : MonoBehaviour
     nameInputField.text = data.weaveName;
 
     currentCode = data.weaveCode;
+
+    texboxUnitWidth.text = data.repeatX.ToString();
+    textboxUnitHeight.text = data.repeatY.ToString();
   }
 
   //-------------------------------------------------------------------------
@@ -109,4 +144,8 @@ public class WeaveUI : MonoBehaviour
     }
   }
   //-------------------------------------------------------------------------
+  private void Update()
+  {
+    TabKeyNextCursorUnitSize();
+  }
 }

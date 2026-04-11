@@ -62,6 +62,7 @@ Assets/Project/Scripts/Core/
  AppInit.cs
  WeaveGrid.cs
  WeaveSaveManager.cs
+ WeaveTextureGenerator.cs
 Assets/Project/Scripts/Data/
  Defines.cs
  types.cs

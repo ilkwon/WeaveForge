@@ -51,6 +51,7 @@
   <ItemGroup>
     <Compile Include="Assets/Project/Scripts/Core/WeaveGrid.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemUI.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/WeaveTextureGenerator.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
     <Compile Include="Assets/Project/Scripts/UI/ColorStripUI.cs" />
     <Compile Include="Assets/Project/Scripts/Common/SQLite.cs" />
