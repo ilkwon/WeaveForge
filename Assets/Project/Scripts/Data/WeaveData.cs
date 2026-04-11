@@ -1,6 +1,13 @@
 using System;
 using UnityEngine;
 
+
+public enum WeaveMode
+{
+    Dobby,
+    Jacquard
+}
+
 [Serializable]
 public class WeaveData
 {
@@ -15,3 +22,4 @@ public class WeaveData
     public float[] weftThickness; // 0.1 ~ 1.0
     public string savedAt;
 }
+

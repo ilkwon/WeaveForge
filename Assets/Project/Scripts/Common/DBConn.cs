@@ -90,7 +90,23 @@ namespace Deconim.DBConn
         Debug.LogError("XML 파일을 읽을 수 없습니다. [" + xmlPath + "]");
       }
     }
-
+    //-------------------------------------------------------------------------    
+    public bool ExistsTable(string tableName)
+    {
+      string query = $"SELECT COUNT(*) FROM sqlite_master WHERE type='table' AND name='{tableName}'";
+      var stmt = SQLite3.Prepare2(localDBConn.Handle, query);
+      bool exists = false;
+      try
+      {
+        if (SQLite3.Step(stmt) == SQLite3.Result.Row)
+          exists = SQLite3.ColumnInt(stmt, 0) > 0;
+      }
+      finally
+      {
+        SQLite3.Finalize(stmt);
+      }
+      return exists;
+    }
     //-------------------------------------------------------------------------
     private int ExcuteLocalDB(string sql)
     {

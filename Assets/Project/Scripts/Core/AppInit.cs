@@ -4,43 +4,47 @@ using System.Collections.Generic;
 
 public class AppInit : MonoBehaviour
 {
-  void Start()
+  void Awake()
   {
     DBConn.Instance.Init(
-        mdbPath: Defines.DB_PATH,
-        xmlPath: Defines.XML_PATH
+      mdbPath: Defines.DB_PATH,
+      xmlPath: Defines.XML_PATH
     );
-
+    var saveManager = WeaveSaveManager.Instance;
+    bool isNew = !DBConn.Instance.ExistsTable("WeavePattern");
     DBConn.Instance.create("create_weave_pattern");
-    Debug.Log("테이블 생성 완료");
-
-    // insert 테스트
-    var param = new Dictionary<string, object>()
+    if (isNew)
     {
-        { "@name",       "test_pattern" },
-        { "@code",       "TP-001" },
-        { "@repeatX",    8 },
-        { "@repeatY",    8 },
-        { "@cells",      "1,0,1,0,1,0,1,0" },
-        { "@warpColors", "White,Black" },
-        { "@weftColors", "White,Black" },
-        { "@savedAt",    "26-04-11 10:00" }
-    };
+      Debug.Log("테이블 생성 완료");
 
-    int ret = DBConn.Instance.insert("insert_weave_pattern", param);
-    Debug.Log("insert result : " + ret);
+      // Save 테스트
+      WeaveData data = new WeaveData();
+      data.weaveName = "test_pattern";
+      data.weaveCode = "DB-260412-001";
+      data.repeatX = 8;
+      data.repeatY = 8;
+      data.cells = new int[8 * 8];
+      for (int i = 0; i < data.cells.Length; i++)
+        data.cells[i] = i % 2;
 
-    // select 테스트
-    DataResult result = DBConn.Instance.select("select_weave_pattern_list", null);
-    if (result != null && result.Count > 0)
-    {
-      Debug.Log("select count : " + result.Count);
-      foreach (var row in result.Data)
-        Debug.Log("row : " + string.Join(" | ", row));
+      data.warpColorNames = new string[] { "White", "Black" };
+      data.weftColorNames = new string[] { "White", "Black" };
+      data.warpThickness = new float[] { 0.5f, 0.5f };
+      data.weftThickness = new float[] { 0.5f, 0.5f };
+
+      // WeaveSaveManager 가져오기
+
+      saveManager.Save(data, true);
+      Debug.Log("Save 완료");
     }
-    else
-    {
-      Debug.Log("select 결과 없음");
-    }
+    // GetList 테스트
+    var list = saveManager.GetList();
+    foreach (var item in list)
+      Debug.Log($"Code : {item["Code"]} | Name : {item["Name"]}");
+
+    // Load 테스트
+    WeaveData loaded = saveManager.Load("DB-260412-001");
+    if (loaded != null)
+      Debug.Log($"Load 완료 : {loaded.weaveName}");
   }
 }

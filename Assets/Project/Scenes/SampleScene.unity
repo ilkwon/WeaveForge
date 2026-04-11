@@ -634,7 +634,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1491669066}
   m_HandleRect: {fileID: 1491669065}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -925,7 +925,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 623963029}
   m_HandleRect: {fileID: 623963028}
   m_Direction: 0
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1319,7 +1319,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: -30}
-  m_SizeDelta: {x: 495.9029, y: -60}
+  m_SizeDelta: {x: 538.32, y: -60}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!114 &997384941
 MonoBehaviour:
@@ -1393,7 +1393,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -0.0004998681, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1060026784
@@ -1676,7 +1676,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaveUI
   weaveGrid: {fileID: 754654515}
-  saveManager: {fileID: 1254682086}
   nameInputField: {fileID: 1248889731}
   listContent: {fileID: 1060026783}
   listItemPrefab: {fileID: 8519974065438261081, guid: d77012f15d0054121b8e812934d939fd, type: 3}
@@ -1741,8 +1740,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "\u200B"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 3ea8a4ac2f6b64dab9cafb004c4440e6, type: 2}
+  m_sharedMaterial: {fileID: 776707986519244461, guid: 3ea8a4ac2f6b64dab9cafb004c4440e6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2418,8 +2417,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Enter text...
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: f5870b640c8a249b6a8668c613aad0a2, type: 2}
+  m_sharedMaterial: {fileID: -7176857005234005485, guid: f5870b640c8a249b6a8668c613aad0a2, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2825,8 +2824,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 247.95, y: -30}
-  m_SizeDelta: {x: -495.9, y: -60}
+  m_AnchoredPosition: {x: 269.15976, y: -30}
+  m_SizeDelta: {x: -538.3196, y: -60}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1971627337
 MonoBehaviour:
@@ -2905,7 +2904,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 30}
-  m_SizeDelta: {x: 0, y: -60.000046}
+  m_SizeDelta: {x: 0, y: -60.0001}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1994482872
 MonoBehaviour:
