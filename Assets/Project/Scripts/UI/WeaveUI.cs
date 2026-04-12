@@ -58,7 +58,7 @@ public class WeaveUI : MonoBehaviour
 
     int x = int.Parse(texboxUnitWidth.text);
     int y = int.Parse(textboxUnitHeight.text);
-    
+
     // 크기가 바뀐 경우만 Resize
     if (x != data.repeatX || y != data.repeatY)
       weaveGrid.Resize(x, y);

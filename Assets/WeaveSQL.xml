@@ -34,7 +34,7 @@
     <select id="select_weave_pattern_list">
         SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
         FROM WeavePattern
-        ORDER BY Idx DESC;
+        ORDER BY Idx ASC;
     </select>
     <select id="select_weave_pattern_by_code">
         SELECT * FROM WeavePattern
