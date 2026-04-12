@@ -17,6 +17,8 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private ColorStripUI colorStripWeft;
   [SerializeField] private TMP_InputField texboxUnitWidth;
   [SerializeField] private TMP_InputField textboxUnitHeight;
+  [SerializeField] private RawImage diffusePreview;
+  [SerializeField] private WeaveTextureGenerator textureGenerator;
   private string currentCode = "";
 
   //-------------------------------------------------------------------------
@@ -124,6 +126,8 @@ public class WeaveUI : MonoBehaviour
 
     colorStripWarp.Setup(data.repeatX, true);
     colorStripWeft.Setup(data.repeatY, false);
+
+    diffusePreview.texture =  WeaveTextureGenerator.GenerateDiffuse(data);
   }
 
   //-------------------------------------------------------------------------
