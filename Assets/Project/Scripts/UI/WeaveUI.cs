@@ -1,8 +1,7 @@
 using UnityEngine;
 
 using TMPro;
-using System.CodeDom.Compiler;
-using System;
+
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 
@@ -17,8 +16,11 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private ColorStripUI colorStripWeft;
   [SerializeField] private TMP_InputField texboxUnitWidth;
   [SerializeField] private TMP_InputField textboxUnitHeight;
-  [SerializeField] private RawImage diffusePreview;
   [SerializeField] private WeaveTextureGenerator textureGenerator;
+  [SerializeField] private RawImage diffusePreview;
+  [SerializeField] private RawImage heightPreview;
+  [SerializeField] private RawImage normalPreview;
+  
   private string currentCode = "";
 
   //-------------------------------------------------------------------------
@@ -27,10 +29,10 @@ public class WeaveUI : MonoBehaviour
   {
     colorStripWarp.Setup(8, true);
     colorStripWeft.Setup(8, false);
-    
+
     texboxUnitWidth.text = "8";
     textboxUnitHeight.text = "8";
-    
+
     // 탭 연결.
     texboxUnitWidth.onSubmit.AddListener(_ => textboxUnitHeight.Select());
 
@@ -40,13 +42,13 @@ public class WeaveUI : MonoBehaviour
   //-------------------------------------------------------------------------
   private void TabKeyNextCursorUnitSize()
   {
-      if (Keyboard.current.tabKey.wasPressedThisFrame)
-      {
-        if (texboxUnitWidth.isFocused)
-          textboxUnitHeight.Select();
-        else if (textboxUnitHeight.isFocused)
-          texboxUnitWidth.Select();
-      }
+    if (Keyboard.current.tabKey.wasPressedThisFrame)
+    {
+      if (texboxUnitWidth.isFocused)
+        textboxUnitHeight.Select();
+      else if (textboxUnitHeight.isFocused)
+        texboxUnitWidth.Select();
+    }
   }
 
   //-------------------------------------------------------------------------
@@ -60,7 +62,7 @@ public class WeaveUI : MonoBehaviour
 
     int x = int.Parse(texboxUnitWidth.text);
     int y = int.Parse(textboxUnitHeight.text);
-    
+
 
     // 크기가 바뀐 경우만 Resize
     if (x != data.repeatX || y != data.repeatY)
@@ -70,7 +72,7 @@ public class WeaveUI : MonoBehaviour
     bool isNew = string.IsNullOrEmpty(currentCode);
     if (isNew)
       currentCode = GenerateCode(data);
-    
+
     Debug.Log($"currentCode : {currentCode}");
     Debug.Log($"data.weaveCode : {data.weaveCode}");
 
@@ -101,7 +103,7 @@ public class WeaveUI : MonoBehaviour
   {
     int w = int.Parse(texboxUnitWidth.text);
     int h = int.Parse(textboxUnitHeight.text);
-    
+
     weaveGrid.Resize(w, h);
 
     colorStripWarp.Setup(w, true);  // 경사 세로줄 w 방향
@@ -127,7 +129,8 @@ public class WeaveUI : MonoBehaviour
     colorStripWarp.Setup(data.repeatX, true);
     colorStripWeft.Setup(data.repeatY, false);
 
-    diffusePreview.texture =  WeaveTextureGenerator.GenerateDiffuse(data);
+    diffusePreview.texture = WeaveTextureGenerator.GenerateDiffuse(data);
+    heightPreview.texture = WeaveTextureGenerator.GenerateHeigh(data);
   }
 
   //-------------------------------------------------------------------------
