@@ -15,9 +15,8 @@
             WeaveMode     TEXT    NOT NULL,
             SavedAt       TEXT    NOT NULL
         );
-    </create>
-
-    <insert id="insert_weave_pattern">
+</create>
+<insert id="insert_weave_pattern">
         INSERT INTO WeavePattern (
             Name, Code, RepeatX, RepeatY,
             Cells, WarpColors, WeftColors,
@@ -29,18 +28,17 @@
             @warpThickness, @weftThickness,
             @weaveMode, @savedAt
         );
-    </insert>
-        
-    <select id="select_weave_pattern_list">
+</insert>        
+<select id="select_weave_pattern_list">
         SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
         FROM WeavePattern
         ORDER BY Idx ASC;
-    </select>
-    <select id="select_weave_pattern_by_code">
+</select>
+<select id="select_weave_pattern_by_code">
         SELECT * FROM WeavePattern
         WHERE Code = @code LIMIT 1;
-    </select>    
-    <insert id="insert_weave_pattern">
+</select>    
+<insert id="insert_weave_pattern">
         INSERT INTO WeavePattern (
             Name, Code, RepeatX, RepeatY,
             Cells, WarpColors, WeftColors,
@@ -52,8 +50,8 @@
             @warpThickness, @weftThickness,
             @weaveMode, @savedAt
         );
-    </insert>
-    <insert id="upsert_weave_pattern">
+</insert>
+<insert id="upsert_weave_pattern">
     INSERT INTO WeavePattern (
         Name, Code, RepeatX, RepeatY,
         Cells, WarpColors, WeftColors,
@@ -76,8 +74,8 @@
         WeftThickness = @weftThickness,
         WeaveMode     = @weaveMode,
         SavedAt       = @savedAt;
-    </insert>
-    <update id="update_weave_pattern_by_code">
+</insert>
+<update id="update_weave_pattern_by_code">
         UPDATE WeavePattern
         SET Name          = @name,
             RepeatX       = @repeatX,
@@ -90,9 +88,27 @@
             WeaveMode     = @weaveMode,
             SavedAt       = @savedAt
         WHERE Code = @code;
-    </update>
-    <delete id="delete_weave_pattern_by_code">
+</update>
+<delete id="delete_weave_pattern_by_code">
     DELETE FROM WeavePattern
     WHERE Code = @code;
-    </delete>
+</delete>
+
+<create id="create_colors_table">
+    CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );
+</create>
+<insert id="upsert_colors">
+    INSERT INTO Colors (Key, Value)
+    VALUES (@key, @value)
+    ON CONFLICT(Key) DO UPDATE SET
+        Value = @value;
+</insert>
+<select id="select_colors_by_key">
+    SELECT Value FROM Colors
+    WHERE Key = @key;
+</select>
 </sqlMap>

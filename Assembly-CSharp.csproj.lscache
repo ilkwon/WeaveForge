@@ -60,6 +60,7 @@ Assets/Project/Scripts/Common/
  SQLite.cs
 Assets/Project/Scripts/Core/
  AppInit.cs
+ ColorSettings.cs
  WeaveGrid.cs
  WeaveSaveManager.cs
  WeaveTextureGenerator.cs

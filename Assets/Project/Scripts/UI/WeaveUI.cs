@@ -23,8 +23,8 @@ public class WeaveUI : MonoBehaviour
 
   private void Start()
   {
-    colorStripWarp.Setup(8);
-    colorStripWeft.Setup(8);
+    colorStripWarp.Setup(8, true);
+    colorStripWeft.Setup(8, false);
     
     texboxUnitWidth.text = "8";
     textboxUnitHeight.text = "8";
@@ -58,6 +58,7 @@ public class WeaveUI : MonoBehaviour
 
     int x = int.Parse(texboxUnitWidth.text);
     int y = int.Parse(textboxUnitHeight.text);
+    
 
     // 크기가 바뀐 경우만 Resize
     if (x != data.repeatX || y != data.repeatY)
@@ -98,8 +99,12 @@ public class WeaveUI : MonoBehaviour
   {
     int w = int.Parse(texboxUnitWidth.text);
     int h = int.Parse(textboxUnitHeight.text);
-
+    
     weaveGrid.Resize(w, h);
+
+    colorStripWarp.Setup(w, true);  // 경사 세로줄 w 방향
+    colorStripWeft.Setup(h, false);  // 위사 가로줄 h 방향
+
     nameInputField.text = "";
     currentCode = "";
   }
@@ -116,6 +121,9 @@ public class WeaveUI : MonoBehaviour
 
     texboxUnitWidth.text = data.repeatX.ToString();
     textboxUnitHeight.text = data.repeatY.ToString();
+
+    colorStripWarp.Setup(data.repeatX, true);
+    colorStripWeft.Setup(data.repeatY, false);
   }
 
   //-------------------------------------------------------------------------

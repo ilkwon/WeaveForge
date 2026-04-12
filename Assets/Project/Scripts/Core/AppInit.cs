@@ -13,9 +13,10 @@ public class AppInit : MonoBehaviour
     );
     var saveManager = WeaveSaveManager.Instance;
     bool isNew = !DBConn.Instance.ExistsTable("WeavePattern");
-    DBConn.Instance.create("create_weave_pattern");
-    if (isNew)
+    DBConn.Instance.create("create_colors_table");
+    if (isNew)    
     {
+      DBConn.Instance.create("create_weave_pattern");
       Debug.Log("테이블 생성 완료");
 
       //MakeTestData();
@@ -31,7 +32,7 @@ public class AppInit : MonoBehaviour
     if (loaded != null)
       Debug.Log($"Load 완료 : {loaded.weaveName}");
   }
-
+  //---------------------------------------------------------------
   private void MakeTestData()
   {
     // Save 테스트
