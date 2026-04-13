@@ -129,8 +129,12 @@ public class WeaveUI : MonoBehaviour
     colorStripWarp.Setup(data.repeatX, true);
     colorStripWeft.Setup(data.repeatY, false);
 
-    diffusePreview.texture = WeaveTextureGenerator.GenerateDiffuse(data);
-    heightPreview.texture = WeaveTextureGenerator.GenerateHeigh(data);
+    var diffuse = WeaveTextureGenerator.GenerateDiffuse(data);;
+    var height = WeaveTextureGenerator.GenerateHeigh(data);
+    var normal = WeaveTextureGenerator.GenerateNormal(height);
+    diffusePreview.texture = diffuse;
+    heightPreview.texture = height;
+    normalPreview.texture = normal;
   }
 
   //-------------------------------------------------------------------------
