@@ -2,13 +2,8 @@ using System.Security.Cryptography;
 using UnityEngine;
 
 public class WeaveTextureGenerator : MonoBehaviour
-{
-  // Start is called once before the first execution of Update after the MonoBehaviour is created
-  void Start()
-  {
-
-  }
-
+{  
+  //---------------------------------------------------------------------------
   public static Texture2D GenerateDiffuse(WeaveData data)
   {
     var texSize = data.repeatX * data.repeatY;
@@ -117,6 +112,7 @@ public class WeaveTextureGenerator : MonoBehaviour
         float g = (normal.y+1f )/2;
         float b = (normal.z+1f )/2;
         Color c = new (r,g,b);
+        
         dest.SetPixel(x, y, c);        
       }
     }

@@ -4,6 +4,7 @@ using TMPro;
 
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
+using System;
 
 public class WeaveUI : MonoBehaviour
 {
@@ -20,7 +21,8 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private RawImage diffusePreview;
   [SerializeField] private RawImage heightPreview;
   [SerializeField] private RawImage normalPreview;
-  
+  [SerializeField] private Renderer sphereRenderer;
+  [SerializeField] private Slider repeatSize;
   private string currentCode = "";
 
   //-------------------------------------------------------------------------
@@ -114,6 +116,7 @@ public class WeaveUI : MonoBehaviour
   }
 
   //-------------------------------------------------------------------------
+  private WeaveData currentData;
   private void OnLoadButton(string weaveName)
   {
     WeaveData data = WeaveSaveManager.Instance.Load(weaveName);
@@ -135,7 +138,22 @@ public class WeaveUI : MonoBehaviour
     diffusePreview.texture = diffuse;
     heightPreview.texture = height;
     normalPreview.texture = normal;
+    currentData = data;
+    SetupTextureSphere(sphereRenderer, data, diffuse, normal);
   }
+  
+  //-------------------------------------------------------------------------
+  private void SetupTextureSphere(Renderer sphereRenderer, WeaveData data, Texture2D diffuse, Texture2D normal)
+  {
+    TabKeyNextCursorUnitSize();
+
+    sphereRenderer.material.mainTexture = diffuse;    
+    float factor = repeatSize.value;
+    sphereRenderer.material.mainTextureScale = new Vector2(data.repeatX*factor, data.repeatY*factor);
+    sphereRenderer.material.SetTexture("_BumpMap", normal);
+    sphereRenderer.material.EnableKeyword("_NORMALMAP");
+  }
+  
 
   //-------------------------------------------------------------------------
   public void RefreshList()
@@ -166,5 +184,12 @@ public class WeaveUI : MonoBehaviour
   private void Update()
   {
     TabKeyNextCursorUnitSize();
+
+      if (currentData != null)
+      {
+        float factor = repeatSize.value;
+        sphereRenderer.material.mainTextureScale = 
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+      }
   }
 }
