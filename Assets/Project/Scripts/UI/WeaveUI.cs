@@ -20,8 +20,11 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private WeaveTextureGenerator textureGenerator;
   [SerializeField] private RawImage diffusePreview;
   [SerializeField] private RawImage heightPreview;
+  [SerializeField] private RawImage heightUpscalePreview;
   [SerializeField] private RawImage normalPreview;
+  [SerializeField] private RawImage normalUpscalePreview;
   [SerializeField] private Renderer sphereRenderer;
+  [SerializeField] private Renderer sphereRendererUpsclae;
   [SerializeField] private Slider repeatSize;
   private string currentCode = "";
 
@@ -138,15 +141,21 @@ public class WeaveUI : MonoBehaviour
     diffusePreview.texture = diffuse;
     heightPreview.texture = height;
     normalPreview.texture = normal;
+    
+    Texture2D heightUpscale = WeaveTextureGenerator.GenerateHeightUpscale(data);
+    Texture2D normalUpscale = WeaveTextureGenerator.GenerateNormal(heightUpscale);
+
+    heightUpscalePreview.texture = heightUpscale;
+    normalUpscalePreview.texture = normalUpscale;
+
     currentData = data;
     SetupTextureSphere(sphereRenderer, data, diffuse, normal);
+    SetupTextureSphere(sphereRendererUpsclae, data, diffuse, normalUpscale);
   }
   
   //-------------------------------------------------------------------------
   private void SetupTextureSphere(Renderer sphereRenderer, WeaveData data, Texture2D diffuse, Texture2D normal)
-  {
-    TabKeyNextCursorUnitSize();
-
+  {    
     sphereRenderer.material.mainTexture = diffuse;    
     float factor = repeatSize.value;
     sphereRenderer.material.mainTextureScale = new Vector2(data.repeatX*factor, data.repeatY*factor);
@@ -189,6 +198,11 @@ public class WeaveUI : MonoBehaviour
       {
         float factor = repeatSize.value;
         sphereRenderer.material.mainTextureScale = 
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        
+        // 업스케일 스피어 타일링도 같이 업데이트 필요
+        sphereRendererUpsclae.material.mainTextureScale =
           new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
       }
   }

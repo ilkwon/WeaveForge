@@ -1,3 +1,4 @@
+using System;
 using System.Security.Cryptography;
 using UnityEngine;
 
@@ -58,6 +59,53 @@ public class WeaveTextureGenerator : MonoBehaviour
     dest.Apply();
     return dest;
   }
+  public static Texture2D GenerateHeightUpscale(WeaveData data)
+  { 
+    int cellSize = 16;
+    int width = data.repeatX * cellSize;
+    int height = data.repeatY * cellSize;
+    Texture2D dest = new(width, height)
+    {
+      filterMode = FilterMode.Point,
+    };
+
+
+    for (int cy = 0; cy < data.repeatY; cy++) {
+      for (int cx = 0; cx < data.repeatX; cx++)
+      {
+        int cell = data.cells[cy * data.repeatX + cx];
+        
+        for (int py=0; py < cellSize; py++) {
+          for (int px=0; px < cellSize; px++)
+          {
+            // 정규화 : cos에 쓰기위해 0부터 1사이값으로 변환
+            // cellSize를 0 ~ 15 -> 0 ~ 1
+
+            // 중앙을 0.5 로 맞추려면
+            // px 범위를 0~cellSize 가 아니라
+            // 0~1 을 셀 중앙 기준으로 매핑
+            float u = ((float)px + .5f) / cellSize;
+            float v = ((float)py + .5f) / cellSize;
+            /// float curvX = (1 - Mathf.Cos(u * Mathf.PI)) /2;
+            /// float curvY = (1 - Mathf.Cos(v * Mathf.PI)) /2;
+            float curvX = Mathf.Sin(u*Mathf.PI);
+            float curvY = Mathf.Sin(v*Mathf.PI);
+            
+            float heightVal = cell == 1 ? curvX : 1-curvY;
+
+            int texX = cx * cellSize + px;
+            int texY = height - 1 - (cy*cellSize + py);          
+            Color c = new (heightVal, heightVal, heightVal);
+            dest.SetPixel(texX, texY, c);
+          }
+        }
+      }
+    }
+
+    dest.Apply();
+    return dest;
+  }
+
   //---------------------------------------------------------------------------
     // 가로 방향 (gx)  |  세로 방향 (gy)
     // -1  0  +1       |  -1  -2  -1
@@ -120,4 +168,6 @@ public class WeaveTextureGenerator : MonoBehaviour
     dest.Apply();
     return dest;
   }
+
+
 }
