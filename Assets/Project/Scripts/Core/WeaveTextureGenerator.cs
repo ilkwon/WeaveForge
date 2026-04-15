@@ -1,6 +1,3 @@
-using System;
-using System.Security.Cryptography;
-using Sirenix.Reflection.Editor;
 using UnityEngine;
 
 public class WeaveTextureGenerator : MonoBehaviour
@@ -8,7 +5,6 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateDiffuse(WeaveData data)
   {
-    var texSize = data.repeatX * data.repeatY;
     Texture2D dest = new(data.repeatX, data.repeatY)
     {
       filterMode = FilterMode.Point,
@@ -16,6 +12,7 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     var width = data.repeatX;
     var height = data.repeatY;
+    Color32[] pixels = new Color32[width * height];
     string[] warpColors = ColorSettings.LoadWarpColors(width);
     string[] weftColors = ColorSettings.LoadWeftColors(height);
     for (int y = 0; y < height; y++)
@@ -27,17 +24,17 @@ public class WeaveTextureGenerator : MonoBehaviour
         ? ColorPalette.GetColor(warpColors[x])
         : ColorPalette.GetColor(weftColors[y]);
         int texY = height - 1 - y;
-        dest.SetPixel(x, texY, color);
+
+        pixels[texY * width + x] = color;
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
   //---------------------------------------------------------------------------
   public static Texture2D GenerateHeigh(WeaveData data)
   {
-    var texSize = data.repeatX * data.repeatY;
     Texture2D dest = new(data.repeatX, data.repeatY)
     {
       filterMode = FilterMode.Point,
@@ -45,21 +42,25 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     var width = data.repeatX;
     var height = data.repeatY;
+    Color32[] pixels = new Color32[width * height];
+
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
       {
-        int cell = data.cells[y * data.repeatX + x];
+        int cell = data.cells[y * width + x];
         float val = cell == 1 ? 1.0f : 0.0f;
         Color color = new(val, val, val);
         int texY = height - 1 - y;
-        dest.SetPixel(x, texY, color);
+
+        pixels[texY * width + x] = color;
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
+  //--------------------------------------------------------------
   public static Texture2D GenerateHeightUpscale(WeaveData data)
   {
     int cellSize = 16;
@@ -70,6 +71,7 @@ public class WeaveTextureGenerator : MonoBehaviour
       filterMode = FilterMode.Point,
     };
 
+    Color32[] pixels = new Color32[width * height];
 
     for (int cy = 0; cy < data.repeatY; cy++)
     {
@@ -99,12 +101,13 @@ public class WeaveTextureGenerator : MonoBehaviour
             int texX = cx * cellSize + px;
             int texY = height - 1 - (cy * cellSize + py);
             Color c = new(heightVal, heightVal, heightVal);
-            dest.SetPixel(texX, texY, c);
+            pixels[texY * width + texX] = c;
+
           }
         }
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
@@ -116,7 +119,6 @@ public class WeaveTextureGenerator : MonoBehaviour
   // -1  0  +1       |  +1  +2  +1
   public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 3f)
   {
-    var texSize = srcHeightMap.width * srcHeightMap.height;
     Texture2D dest = new(srcHeightMap.width, srcHeightMap.height)
     {
       filterMode = FilterMode.Point,
@@ -124,13 +126,15 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     var width = srcHeightMap.width;
     var height = srcHeightMap.height;
+    Color32[] pixels = new Color32[width * height];
+    Color32[] srcPixels = srcHeightMap.GetPixels32();
 
     for (var y = 0; y < height; y++)
     {
       for (var x = 0; x < width; x++)
       {
         // p 값을 기준으로 -1, +1 해도 바운더리를 벗어나지 않게
-        
+
         /* 제거..
           Seam 현상
           → 대각선 방향으로 희미한 격자선 보임
@@ -148,19 +152,20 @@ public class WeaveTextureGenerator : MonoBehaviour
         int x1 = (x + 1) % width;
         int y0 = (y - 1 + height) % height;
         int y1 = (y + 1) % height;
-        
+
         // rgb 모두 값이 같아서 r 하나만.
-        float tl = srcHeightMap.GetPixel(x0, y1).r;
-        float tm = srcHeightMap.GetPixel(x, y1).r;
-        float tr = srcHeightMap.GetPixel(x1, y1).r;
 
-        float ml = srcHeightMap.GetPixel(x0, y).r;
-        float mm = srcHeightMap.GetPixel(x, y).r;
-        float mr = srcHeightMap.GetPixel(x1, y).r;
+        float tl = srcPixels[y1 * width + x0].r / 255f;
+        float tm = srcPixels[y1 * width + x].r / 255f;
+        float tr = srcPixels[y1 * width + x1].r / 255f;
 
-        float bl = srcHeightMap.GetPixel(x0, y0).r;
-        float bm = srcHeightMap.GetPixel(x, y0).r;
-        float br = srcHeightMap.GetPixel(x1, y0).r;
+        float ml = srcPixels[y * width + x0].r / 255f;
+        float mm = srcPixels[y * width + x].r / 255f;
+        float mr = srcPixels[y * width + x1].r / 255f;
+
+        float bl = srcPixels[y0 * width + x0].r / 255f;
+        float bm = srcPixels[y0 * width + x].r / 255f;
+        float br = srcPixels[y0 * width + x1].r / 255f;
         // sobel filter
         float gx = (-1 * tl) + (0 * tm) + (1 * tr)
                  + (-2 * ml) + (0 * mm) + (2 * mr)
@@ -178,11 +183,11 @@ public class WeaveTextureGenerator : MonoBehaviour
         float g = (normal.y + 1f) / 2;
         float b = (normal.z + 1f) / 2;
         Color c = new(r, g, b);
-
-        dest.SetPixel(x, y, c);
+        pixels[y * width + x] = c;
+        //dest.SetPixel(x, y, c);
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
@@ -199,19 +204,23 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     var width = src.width;
     var height = src.height;
+    Color32[] pixels = new Color32[width * height];
+    Color32[] srcPixels = src.GetPixels32();
     var min = minRoughness;
     var max = maxRoughness;
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
       {
-        var h = src.GetPixel(x, y).r;
+        //var h = src.GetPixel(x, y).r;
+        var h = srcPixels[y * width + x].r / 255f;  // 0~1 정규화
         float r = (1 - h) * (max - min) + min;
         Color roughness = new(r, r, r);
-        dest.SetPixel(x, y, roughness);
+        pixels[y * width + x] = roughness;
+
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
@@ -226,12 +235,13 @@ public class WeaveTextureGenerator : MonoBehaviour
     {
       filterMode = FilterMode.Point,
     };
+
+    Color32[] pixels = new Color32[width * height];
     // 각 셀 순회.
     for (int cy = 0; cy < data.repeatY; cy++)
     {
       for (int cx = 0; cx < data.repeatX; cx++)
       {
-
         int cell = data.cells[cy * data.repeatX + cx];
         for (int py = 0; py < cellSize; py++)
         {
@@ -246,149 +256,15 @@ public class WeaveTextureGenerator : MonoBehaviour
             var h = Mathf.Lerp(val, press, pressStrength);
             int texX = cx * cellSize + px;
             int texY = height - 1 - (cy * cellSize + py);
-            dest.SetPixel(texX, texY, new Color(h, h, h));
+
+            pixels[texY * width + texX] = new Color(h, h, h);
           }
         }
       }
     }
-
+    dest.SetPixels32(pixels);
     dest.Apply();
     return dest;
   }
 
-  public static Texture2D GenerateHeightUpscalePressEx(WeaveData data,
-    int cellSize = 16, float pressStrength = 0.5f, float power = 0.8f)
-  {
-    int width = data.repeatX * cellSize;
-    int height = data.repeatY * cellSize;
-    var dest = new Texture2D(width, height) { filterMode = FilterMode.Bilinear };
-
-    for (int cy = 0; cy < data.repeatY; cy++)
-    {
-      for (int cx = 0; cx < data.repeatX; cx++)
-      {
-        // 현재 셀의 상단 실 종류 (1: Warp/수직, 0: Weft/수평)
-        int topThread = data.cells[cy * data.repeatX + cx];
-
-        for (int py = 0; py < cellSize; py++)
-        {
-          for (int px = 0; px < cellSize; px++)
-          {
-            float u = (px + 0.5f) / cellSize; // 가로축 (0~1)
-            float v = (py + 0.5f) / cellSize; // 세로축 (0~1)
-
-            float h = 0;
-
-            if (topThread == 1) // Warp(수직실)가 위에 있을 때
-            {
-              // 1. 단면 곡률 (가로 방향으로 볼록)
-              float crossSection = Mathf.Sin(u * Mathf.PI);
-              crossSection = Mathf.Pow(crossSection, power);
-
-              // 2. 종단 곡률 (세로 방향으로 오르내림)
-              // 교차점(0.5)에서 가장 높고 가장자리에선 낮아짐
-              float path = Mathf.Lerp(0.5f, 1.0f, Mathf.Sin(v * Mathf.PI));
-
-              h = crossSection * path;
-
-              // 3. Press 효과: 높이가 일정 수준 이상일 때 납작하게 누름
-              float threshold = 1.0f - (pressStrength * 0.5f);
-              if (h > threshold)
-              {
-                h = Mathf.Lerp(h, threshold, pressStrength);
-              }
-            }
-            else // Weft(수평실)가 위에 있을 때
-            {
-              // 1. 단면 곡률 (세로 방향으로 볼록)
-              float crossSection = Mathf.Sin(v * Mathf.PI);
-              crossSection = Mathf.Pow(crossSection, power);
-
-              // 2. 종단 곡률 (가로 방향으로 오르내림)
-              float path = Mathf.Lerp(0.5f, 1.0f, Mathf.Sin(u * Mathf.PI));
-
-              h = crossSection * path;
-
-              // 3. Press 효과
-              float threshold = 1.0f - (pressStrength * 0.5f);
-              if (h > threshold)
-              {
-                h = Mathf.Lerp(h, threshold, pressStrength);
-              }
-            }
-
-            int texX = cx * cellSize + px;
-            int texY = height - 1 - (cy * cellSize + py);
-            dest.SetPixel(texX, texY, new Color(h, h, h));
-          }
-        }
-      }
-    }
-    dest.Apply();
-    return dest;
-  }
-
-  public static Texture2D GenerateHeightUpscalePressPro(WeaveData data,
-    int cellSize = 16, float pressStrength = 0.3f)
-  {
-    int width = data.repeatX * cellSize;
-    int height = data.repeatY * cellSize;
-
-    var dest = new Texture2D(width, height)
-    {
-      // 포인트 필터보다 바이리니어 필터가 높이맵 생성 후 노말 변환 시 훨씬 부드럽습니다.
-      filterMode = FilterMode.Bilinear, 
-    };
-
-    // 각 셀 순회
-    for (int cy = 0; cy < data.repeatY; cy++)
-    {
-      for (int cx = 0; cx < data.repeatX; cx++)
-      {
-        int cell = data.cells[cy * data.repeatX + cx]; // 1: Warp(수직실 위), 0: Weft(수평실 위)
-
-        for (int py = 0; py < cellSize; py++)
-        {
-          for (int px = 0; px < cellSize; px++)
-          {
-            float u = (px + 0.5f) / cellSize;
-            float v = (py + 0.5f) / cellSize;
-            float h = 0f;
-
-            if (cell == 1) // Warp (수직실이 위)
-            {
-              // 1. 단면과 경로 계산
-              float crossSection = Mathf.Sin(u * Mathf.PI); // 가로로 볼록
-              float path = Mathf.Lerp(0.3f, 1.0f, Mathf.Sin(v * Mathf.PI)); // 아래에서 위로 올라오는 흐름
-              h = crossSection * path;
-            }
-            else // Weft (수평실이 위)
-            {
-              // 1. 단면과 경로 계산
-              float crossSection = Mathf.Sin(v * Mathf.PI); // 세로로 볼록
-              float path = Mathf.Lerp(0.3f, 1.0f, Mathf.Sin(u * Mathf.PI)); // 좌우 흐름
-              h = crossSection * path;
-            }
-
-            // 2. Press(눌림) 처리: 특정 높이 이상을 평평하게 깎아냄
-            // pressStrength가 0이면 원래 형태, 1에 가까울수록 윗부분이 심하게 납작해짐
-            float threshold = 1.0f - (pressStrength * 0.4f); // 깎이기 시작하는 높이 기준점
-            if (h > threshold)
-            {
-               // 초과한 높이를 pressStrength에 따라 줄여서 납작하게 만듦
-               float excess = h - threshold;
-               h = threshold + (excess * (1.0f - pressStrength));
-            }
-
-            int texX = cx * cellSize + px;
-            int texY = height - 1 - (cy * cellSize + py);    
-            dest.SetPixel(texX, texY, new Color(h, h, h));
-          }
-        }
-      }
-    }
-    
-    dest.Apply();
-    return dest;
-  }
 }
