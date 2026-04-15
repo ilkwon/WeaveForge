@@ -129,7 +129,7 @@ public class WeaveTextureGenerator : MonoBehaviour
   // → flip 부작용으로 Sobel gy 방향 반전
   // → nx = gx, ny = gy 로 보정
   // → 추후 cells[] 를 Bottom-Left 기준으로 전환 시 자연스럽게 해결
-  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 8f)
+  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 0.3f)
   {
     Texture2D dest = new(srcHeightMap.width, srcHeightMap.height)
     {
@@ -227,9 +227,13 @@ public class WeaveTextureGenerator : MonoBehaviour
         //var h = src.GetPixel(x, y).r;
         var h = srcPixels[y * width + x].r / 255f;  // 0~1 정규화
         float r = (1 - h) * (max - min) + min;
-        Color roughness = new(r, r, r);
-        pixels[y * width + x] = roughness;
-
+        //Color roughness = new(r, r, r);
+        pixels[y * width + x] = new Color32(
+          (byte)(r* 255),       // R
+          (byte)(r* 255),       // G
+          (byte)(r* 255),       // B
+          255   // 알파 고정.
+        );
       }
     }
     dest.SetPixels32(pixels);
@@ -238,5 +242,43 @@ public class WeaveTextureGenerator : MonoBehaviour
   }
   
   //---------------------------------------------------------------------------
-  
+  public static Texture2D GenerateMetallicGloss(Texture2D heightMap, float minRoughness = 0.4f, float maxRoughness = 0.8f)
+  {
+     var src = heightMap;
+    Texture2D dest = new(src.width, src.height)
+    {
+      filterMode = FilterMode.Point,
+    };
+
+    var width = src.width;
+    var height = src.height;
+    Color32[] pixels = new Color32[width * height];
+    Color32[] srcPixels = src.GetPixels32();
+    var min = minRoughness;
+    var max = maxRoughness;
+    for (int y = 0; y < height; y++)
+    {
+      for (int x = 0; x < width; x++)
+      {        
+        // 높이가 높은 곳(실 위) → 러프니스 낮음 → Smoothness 높음 → 더 매끄럽게 반짝임.  실위가 반짝거림.
+        // 실 위 (볼록한 부분):
+        //   Height 높음 → Roughness 낮음 → Smoothness 높음 → 매끄럽고 반짝임
+        // 
+        // 실 사이 (교차점, 눌린 부분):
+        //   Height 낮음 → Roughness 높음 → Smoothness 낮음 → 거칠고 무광
+        var h = srcPixels[y * width + x].r / 255f;  // 0~1 정규화
+        float r = (1 - h) * (max - min) + min;  // 러프니스
+                      
+        pixels[y * width + x] = new Color32(
+          0,                           // R = Metallic 없음
+          0,                           // G
+          0,                           // B
+          (byte)((1f - r) * 255)       // A = Smoothness = 1 - 러프니스
+        );
+      }
+    }
+    dest.SetPixels32(pixels);
+    dest.Apply();
+    return dest;
+  }
 }

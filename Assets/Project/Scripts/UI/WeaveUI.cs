@@ -46,10 +46,11 @@ public class WeaveUI : MonoBehaviour
 
     // 탭 연결.
     texboxUnitWidth.onSubmit.AddListener(_ => textboxUnitHeight.Select());
-    repeatSize.onValueChanged.AddListener(OnStrengthChanged);
+    //repeatSize.onValueChanged.AddListener(OnStrengthChanged);
     RefreshList();
   }
-
+  
+  //-------------------------------------------------------------------------
   private void OnStrengthChanged(float strength)
   {
       if (currentData == null) return;
@@ -137,7 +138,7 @@ public class WeaveUI : MonoBehaviour
 
   //-------------------------------------------------------------------------
   private WeaveData currentData;
-  float factorStrength = 1f;
+  
   private void OnLoadButton(string weaveName)
   {
     WeaveData data = WeaveSaveManager.Instance.Load(weaveName);
@@ -161,35 +162,38 @@ public class WeaveUI : MonoBehaviour
     normalPreview.texture = normal;
     
     Texture2D heightUpscale = WeaveTextureGenerator.GenerateHeightUpscale(data);
-    Texture2D normalUpscale = WeaveTextureGenerator.GenerateNormal(heightUpscale, factorStrength);
+    Texture2D normalUpscale = WeaveTextureGenerator.GenerateNormal(heightUpscale);
 
     heightUpscalePreview.texture = heightUpscale;
     normalUpscalePreview.texture = normalUpscale;
 
     Texture2D roughness = WeaveTextureGenerator.GenerateRoughness(height);
-    Texture2D roughnessUpscale = WeaveTextureGenerator.GenerateRoughness(heightUpscale);
 
+    
+    Texture2D roughnessUpscale = WeaveTextureGenerator.GenerateRoughness(heightUpscale);
+    Texture2D metallicGloss = WeaveTextureGenerator.GenerateMetallicGloss(height);
+    Texture2D metallicGlossUpscale = WeaveTextureGenerator.GenerateMetallicGloss(heightUpscale);
+    
     roughnessPreview.texture = roughness;
     roughnessUpscalePreview.texture = roughnessUpscale;
 
     
     currentData = data;
     //SetupTextureSphere(sphereRenderer, data, diffuse, normal);
-    SetupTexture(sphereRenderer, data, diffuse, normal, roughness);
-    SetupTexture(sphereRendererUpsclae, data, diffuse, normalUpscale, roughnessUpscale);
-    SetupTexture(planeRenderer, data, diffuse, normalUpscale, roughnessUpscale);
+    SetupTexture(sphereRenderer, data, diffuse, normal, metallicGloss);
+    SetupTexture(sphereRendererUpsclae, data, diffuse, normalUpscale, metallicGlossUpscale);
+    SetupTexture(planeRenderer, data, diffuse, normalUpscale, metallicGlossUpscale);
   }
   
   //-------------------------------------------------------------------------
-  private void SetupTexture(Renderer render, WeaveData data, Texture2D diffuse, Texture2D normal, Texture2D roughness)
-  { 
-       
+  private void SetupTexture(Renderer render, WeaveData data, Texture2D diffuse, Texture2D normal, Texture2D metallicGloss)
+  {       
     render.material.mainTexture = diffuse;    
     float factor = repeatSize.value;
     render.material.mainTextureScale = new Vector2(data.repeatX*factor, data.repeatY*factor);
     render.material.SetTexture("_BumpMap", normal);    
-    render.material.SetTexture("_MetallicGlossMap", roughness);
-    render.material.EnableKeyword("_NORMALMAP");
+    render.material.SetTexture("_MetallicGlossMap", metallicGloss);
+    render.material.EnableKeyword("_NORMALMAP");    
   }
   
 
@@ -225,18 +229,16 @@ public class WeaveUI : MonoBehaviour
 
       if (currentData != null)
       {
-        float factor = repeatSize.value;
-        factorStrength = factor;
-        //sphereRenderer.material.mainTextureScale = 
-        //  new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
-//
-//
-        //// 업스케일 스피어 타일링도 같이 업데이트 필요
-        //sphereRendererUpsclae.material.mainTextureScale =
-        //  new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
-//
-        //planeRenderer.material.mainTextureScale =
-        //  new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+        float factor = repeatSize.value;        
+        sphereRenderer.material.mainTextureScale = 
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        // 업스케일 스피어 타일링도 같이 업데이트 필요
+        sphereRendererUpsclae.material.mainTextureScale =
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        planeRenderer.material.mainTextureScale =
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
       }
   }
 }
