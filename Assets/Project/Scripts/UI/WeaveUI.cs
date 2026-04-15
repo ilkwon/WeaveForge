@@ -23,6 +23,10 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private RawImage heightUpscalePreview;
   [SerializeField] private RawImage normalPreview;
   [SerializeField] private RawImage normalUpscalePreview;
+  [SerializeField] private RawImage roughnessPreview;
+  [SerializeField] private RawImage roughnessUpscalePreview;
+
+
   [SerializeField] private Renderer sphereRenderer;
   [SerializeField] private Renderer sphereRendererUpsclae;
   [SerializeField] private Slider repeatSize;
@@ -148,6 +152,12 @@ public class WeaveUI : MonoBehaviour
     heightUpscalePreview.texture = heightUpscale;
     normalUpscalePreview.texture = normalUpscale;
 
+    Texture2D roughness = WeaveTextureGenerator.GenerateRoughness(height);
+    Texture2D roughnessUpscale = WeaveTextureGenerator.GenerateRoughness(heightUpscale);
+
+    roughnessPreview.texture = roughness;
+    roughnessUpscalePreview.texture = roughnessUpscale;
+
     currentData = data;
     SetupTextureSphere(sphereRenderer, data, diffuse, normal);
     SetupTextureSphere(sphereRendererUpsclae, data, diffuse, normalUpscale);
@@ -200,7 +210,7 @@ public class WeaveUI : MonoBehaviour
         sphereRenderer.material.mainTextureScale = 
           new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
 
-        
+
         // 업스케일 스피어 타일링도 같이 업데이트 필요
         sphereRendererUpsclae.material.mainTextureScale =
           new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);

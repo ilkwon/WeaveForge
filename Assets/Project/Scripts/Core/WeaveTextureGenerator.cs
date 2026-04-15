@@ -111,7 +111,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     // -1  0  +1       |  -1  -2  -1
     // -2  0  +2       |   0   0   0
     // -1  0  +1       |  +1  +2  +1
-  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 2f)
+  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 3f)
   {
     var texSize = srcHeightMap.width * srcHeightMap.height;
     Texture2D dest = new(srcHeightMap.width, srcHeightMap.height)
@@ -169,5 +169,33 @@ public class WeaveTextureGenerator : MonoBehaviour
     return dest;
   }
 
+  //---------------------------------------------------------------------------
+  public static Texture2D GenerateRoughness(Texture2D heightMap,
+    float minRoughness = 0.4f, float maxRoughness = 0.8f)
+  {
+    var src = heightMap;
+    Texture2D dest = new(src.width, src.height)
+    {
+      filterMode = FilterMode.Point,
+    };
 
+    var width = src.width;
+    var height = src.height;
+    var min = minRoughness;
+    var max = maxRoughness;
+    for (int y=0; y<height; y++)
+    {
+      for (int x=0; x<width; x++)
+      { 
+        var h = src.GetPixel(x,y).r;
+        float r = (1-h) * (max - min) + min;
+        Color roughness = new(r,r,r);
+        dest.SetPixel(x,y, roughness);
+      }
+    }
+    
+    dest.Apply();
+    return dest;
+  }
+  //---------------------------------------------------------------------------
 }
