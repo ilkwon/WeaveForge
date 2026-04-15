@@ -26,7 +26,9 @@ public class WeaveUI : MonoBehaviour
   [SerializeField] private RawImage roughnessPreview;
   [SerializeField] private RawImage roughnessUpscalePreview;
 
-
+  [SerializeField] private RawImage heightUpscalePressPreview;
+  [SerializeField] private RawImage normalUpscalePressPreview;
+  [SerializeField] private Renderer planeRenderer;
   [SerializeField] private Renderer sphereRenderer;
   [SerializeField] private Renderer sphereRendererUpsclae;
   [SerializeField] private Slider repeatSize;
@@ -158,13 +160,21 @@ public class WeaveUI : MonoBehaviour
     roughnessPreview.texture = roughness;
     roughnessUpscalePreview.texture = roughnessUpscale;
 
+    var heightPress = WeaveTextureGenerator.GenerateHeightUpscalePress(data);
+    var normalPress = WeaveTextureGenerator.GenerateNormal(heightPress);
+
+    heightUpscalePressPreview.texture = heightPress;
+    normalUpscalePressPreview.texture = normalPress;
+
     currentData = data;
-    SetupTextureSphere(sphereRenderer, data, diffuse, normal);
-    SetupTextureSphere(sphereRendererUpsclae, data, diffuse, normalUpscale);
+    //SetupTextureSphere(sphereRenderer, data, diffuse, normal);
+    SetupTexture(sphereRenderer, data, diffuse, normalPress);
+    SetupTexture(sphereRendererUpsclae, data, diffuse, normalUpscale);
+    SetupTexture(planeRenderer, data, diffuse, normalPress);
   }
   
   //-------------------------------------------------------------------------
-  private void SetupTextureSphere(Renderer sphereRenderer, WeaveData data, Texture2D diffuse, Texture2D normal)
+  private void SetupTexture(Renderer sphereRenderer, WeaveData data, Texture2D diffuse, Texture2D normal)
   {    
     sphereRenderer.material.mainTexture = diffuse;    
     float factor = repeatSize.value;
@@ -213,6 +223,9 @@ public class WeaveUI : MonoBehaviour
 
         // 업스케일 스피어 타일링도 같이 업데이트 필요
         sphereRendererUpsclae.material.mainTextureScale =
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        planeRenderer.material.mainTextureScale =
           new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
       }
   }
