@@ -160,17 +160,12 @@ public class WeaveUI : MonoBehaviour
     roughnessPreview.texture = roughness;
     roughnessUpscalePreview.texture = roughnessUpscale;
 
-    var heightPress = WeaveTextureGenerator.GenerateHeightUpscalePress(data);
-    var normalPress = WeaveTextureGenerator.GenerateNormal(heightPress);
-
-    heightUpscalePressPreview.texture = heightPress;
-    normalUpscalePressPreview.texture = normalPress;
-
+    
     currentData = data;
     //SetupTextureSphere(sphereRenderer, data, diffuse, normal);
-    SetupTexture(sphereRenderer, data, diffuse, normalPress);
+    SetupTexture(sphereRenderer, data, diffuse, normal);
     SetupTexture(sphereRendererUpsclae, data, diffuse, normalUpscale);
-    SetupTexture(planeRenderer, data, diffuse, normalPress);
+    SetupTexture(planeRenderer, data, diffuse, normalUpscale);
   }
   
   //-------------------------------------------------------------------------

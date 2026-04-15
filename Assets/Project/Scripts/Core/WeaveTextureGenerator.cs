@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WeaveTextureGenerator : MonoBehaviour
@@ -93,14 +94,15 @@ public class WeaveTextureGenerator : MonoBehaviour
             float v = ((float)py + .5f) / cellSize;
             /// float curvX = (1 - Mathf.Cos(u * Mathf.PI)) /2;
             /// float curvY = (1 - Mathf.Cos(v * Mathf.PI)) /2;
-            float curvX = Mathf.Sin(u * Mathf.PI);
-            float curvY = Mathf.Sin(v * Mathf.PI);
-
-            float heightVal = cell == 1 ? curvX : 1 - curvY;
+            float sinU = Mathf.Sin(u * Mathf.PI);
+            float sinV = Mathf.Sin(v * Mathf.PI);
+            // cell == 1 (경사가 위일때)
+            // cell == 0 (위사가 위일때)
+            float h = cell == 1 ? sinU : sinV;
 
             int texX = cx * cellSize + px;
             int texY = height - 1 - (cy * cellSize + py);
-            Color c = new(heightVal, heightVal, heightVal);
+            Color c = new(h, h, h);
             pixels[texY * width + texX] = c;
 
           }
@@ -224,47 +226,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     dest.Apply();
     return dest;
   }
+  
   //---------------------------------------------------------------------------
-  public static Texture2D GenerateHeightUpscalePress(WeaveData data,
-    int cellSize = 32, float pressStrength = 0.3f)
-  {
-    int width = data.repeatX * cellSize;
-    int height = data.repeatY * cellSize;
-
-    var dest = new Texture2D(width, height)
-    {
-      filterMode = FilterMode.Point,
-    };
-
-    Color32[] pixels = new Color32[width * height];
-    // 각 셀 순회.
-    for (int cy = 0; cy < data.repeatY; cy++)
-    {
-      for (int cx = 0; cx < data.repeatX; cx++)
-      {
-        int cell = data.cells[cy * data.repeatX + cx];
-        for (int py = 0; py < cellSize; py++)
-        {
-          for (int px = 0; px < cellSize; px++)
-          {
-            float u = (px + 0.5f) / cellSize;
-            float v = (py + 0.5f) / cellSize;
-            var hw = Mathf.Sin(u * Mathf.PI); // height Warp
-            var hf = Mathf.Sin(v * Mathf.PI); // height Weft
-            var press = Mathf.Min(hw, hf);
-            var val = cell == 1 ? hw : 1 - hf;
-            var h = Mathf.Lerp(val, press, pressStrength);
-            int texX = cx * cellSize + px;
-            int texY = height - 1 - (cy * cellSize + py);
-
-            pixels[texY * width + texX] = new Color(h, h, h);
-          }
-        }
-      }
-    }
-    dest.SetPixels32(pixels);
-    dest.Apply();
-    return dest;
-  }
-
+  
 }
