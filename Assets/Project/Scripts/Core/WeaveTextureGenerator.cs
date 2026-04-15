@@ -119,7 +119,17 @@ public class WeaveTextureGenerator : MonoBehaviour
   // -1  0  +1       |  -1  -2  -1
   // -2  0  +2       |   0   0   0
   // -1  0  +1       |  +1  +2  +1
-  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 3f)
+
+  // [좌표계 주의]
+  // cells[] 배열: Y=0 이 위 → 사람이 보는 조직도 방향 (Top-Left 원점)
+  // 실제 직기:    Y=0 이 아래 → 천이 아래서 위로 짜여나옴 (Bottom-Left 원점)
+  // WIF 산업표준: Y=0 이 아래 (Bottom-Left 원점)
+  // Unity 텍스처: Y=0 이 아래 (Bottom-Left 원점)
+  // → texY = height - 1 - y 로 Y flip 적용
+  // → flip 부작용으로 Sobel gy 방향 반전
+  // → nx = gx, ny = gy 로 보정
+  // → 추후 cells[] 를 Bottom-Left 기준으로 전환 시 자연스럽게 해결
+  public static Texture2D GenerateNormal(Texture2D srcHeightMap, float strength = 8f)
   {
     Texture2D dest = new(srcHeightMap.width, srcHeightMap.height)
     {
@@ -177,7 +187,7 @@ public class WeaveTextureGenerator : MonoBehaviour
                  + (1 * bl) + (2 * bm) + (1 * br);
 
         float nx = -gx;
-        float ny = -gy;
+        float ny = gy;
         float nz = 1.0f / strength;
 
         Vector3 normal = new Vector3(nx, ny, nz).normalized;
