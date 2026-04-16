@@ -1,0 +1,133 @@
+﻿2026-04-16 10:13:56 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-16 10:13:56 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-16 10:13:56 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-16 10:13:57 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:13:57 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:13:57 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-16 10:14:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-16 10:14:00 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:00 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:00 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:00 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-16 10:14:03 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:03 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:03 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:03 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:04 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-16 10:14:04 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:04 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:04 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:04 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:06 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-16 10:14:06 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:06 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+
+2026-04-16 10:14:06 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WarpColors';
+]
+
+2026-04-16 10:14:06 [INFO] : SQL : [
+    SELECT Value FROM Colors
+    WHERE Key = 'WeftColors';
+]
+

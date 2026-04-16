@@ -1,0 +1,244 @@
+using UnityEngine;
+
+using TMPro;
+
+using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using System;
+
+public class WeaveUI : MonoBehaviour
+{
+  [SerializeField] private WeaveGrid weaveGrid;
+
+  [SerializeField] private TMP_InputField nameInputField;
+  [SerializeField] private Transform listContent;
+  [SerializeField] private GameObject listItemPrefab;
+  [SerializeField] private ColorStripUI colorStripWarp;
+  [SerializeField] private ColorStripUI colorStripWeft;
+  [SerializeField] private TMP_InputField texboxUnitWidth;
+  [SerializeField] private TMP_InputField textboxUnitHeight;
+  [SerializeField] private WeaveTextureGenerator textureGenerator;
+  [SerializeField] private RawImage diffusePreview;
+  [SerializeField] private RawImage heightPreview;
+  [SerializeField] private RawImage heightUpscalePreview;
+  [SerializeField] private RawImage normalPreview;
+  [SerializeField] private RawImage normalUpscalePreview;
+  [SerializeField] private RawImage roughnessPreview;
+  [SerializeField] private RawImage roughnessUpscalePreview;
+
+  [SerializeField] private RawImage heightUpscalePressPreview;
+  [SerializeField] private RawImage normalUpscalePressPreview;
+  [SerializeField] private Renderer planeRenderer;
+  [SerializeField] private Renderer sphereRenderer;
+  [SerializeField] private Renderer sphereRendererUpsclae;
+  [SerializeField] private Slider repeatSize;
+  private string currentCode = "";
+
+  //-------------------------------------------------------------------------
+
+  private void Start()
+  {
+    colorStripWarp.Setup(8, true);
+    colorStripWeft.Setup(8, false);
+
+    texboxUnitWidth.text = "8";
+    textboxUnitHeight.text = "8";
+
+    // 탭 연결.
+    texboxUnitWidth.onSubmit.AddListener(_ => textboxUnitHeight.Select());
+    //repeatSize.onValueChanged.AddListener(OnStrengthChanged);
+    RefreshList();
+  }
+  
+  //-------------------------------------------------------------------------
+  private void OnStrengthChanged(float strength)
+  {
+      if (currentData == null) return;
+      
+      Texture2D heightUpscale = WeaveTextureGenerator.GenerateHeightUpscale(currentData);
+      Texture2D normalUpscale = WeaveTextureGenerator.GenerateNormal(heightUpscale, strength);
+      
+      normalUpscalePreview.texture = normalUpscale;
+      planeRenderer.material.SetTexture("_BumpMap", normalUpscale);
+  }
+
+  //-------------------------------------------------------------------------
+  private void TabKeyNextCursorUnitSize()
+  {
+    if (Keyboard.current.tabKey.wasPressedThisFrame)
+    {
+      if (texboxUnitWidth.isFocused)
+        textboxUnitHeight.Select();
+      else if (textboxUnitHeight.isFocused)
+        texboxUnitWidth.Select();
+    }
+  }
+
+  //-------------------------------------------------------------------------
+  public void OnSaveButton()
+  {
+    string patternName = nameInputField.text.Trim();
+    if (string.IsNullOrEmpty(patternName)) return;
+
+    WeaveData data = new WeaveData();
+    weaveGrid.GetData(data);
+
+    int x = int.Parse(texboxUnitWidth.text);
+    int y = int.Parse(textboxUnitHeight.text);
+
+
+    // 크기가 바뀐 경우만 Resize
+    if (x != data.repeatX || y != data.repeatY)
+      weaveGrid.Resize(x, y);
+
+    data.weaveName = patternName;
+    bool isNew = string.IsNullOrEmpty(currentCode);
+    if (isNew)
+      currentCode = GenerateCode(data);
+
+    Debug.Log($"currentCode : {currentCode}");
+    Debug.Log($"data.weaveCode : {data.weaveCode}");
+
+    data.weaveCode = currentCode;
+    WeaveSaveManager.Instance.Save(data, isNew);
+    RefreshList();
+  }
+  //-------------------------------------------------------------------------
+  private string GenerateCode(WeaveData data)
+  {
+    string type = (data.repeatX > 64 || data.repeatY > 64) ? "JQ" : "DB";
+    string date = System.DateTime.Now.ToString("yyMMdd");
+
+    var list = WeaveSaveManager.Instance.GetList();
+    int count = 0;
+    foreach (var item in list)
+    {
+      if (item["Code"].StartsWith(type + "-" + date))
+        count++;
+    }
+    string code = $"{type}-{date}-{(count + 1):D3}";
+    Debug.Log($"GenerateCode : {code}");
+    return code;
+  }
+
+  //-------------------------------------------------------------------------
+  public void OnNewButton()
+  {
+    int w = int.Parse(texboxUnitWidth.text);
+    int h = int.Parse(textboxUnitHeight.text);
+
+    weaveGrid.Resize(w, h);
+
+    colorStripWarp.Setup(w, true);  // 경사 세로줄 w 방향
+    colorStripWeft.Setup(h, false);  // 위사 가로줄 h 방향
+
+    nameInputField.text = "";
+    currentCode = "";
+  }
+
+  //-------------------------------------------------------------------------
+  private WeaveData currentData;
+  
+  private void OnLoadButton(string weaveName)
+  {
+    WeaveData data = WeaveSaveManager.Instance.Load(weaveName);
+    if (data == null) return;
+    weaveGrid.LoadPattern(data);
+    nameInputField.text = data.weaveName;
+
+    currentCode = data.weaveCode;
+
+    texboxUnitWidth.text = data.repeatX.ToString();
+    textboxUnitHeight.text = data.repeatY.ToString();
+
+    colorStripWarp.Setup(data.repeatX, true);
+    colorStripWeft.Setup(data.repeatY, false);
+
+    var diffuse = WeaveTextureGenerator.GenerateDiffuse(data);;
+    var height = WeaveTextureGenerator.GenerateHeigh(data);
+    var normal = WeaveTextureGenerator.GenerateNormal(height);
+    diffusePreview.texture = diffuse;
+    heightPreview.texture = height;
+    normalPreview.texture = normal;
+    
+    Texture2D heightUpscale = WeaveTextureGenerator.GenerateHeightUpscale(data);
+    Texture2D normalUpscale = WeaveTextureGenerator.GenerateNormal(heightUpscale);
+
+    heightUpscalePreview.texture = heightUpscale;
+    normalUpscalePreview.texture = normalUpscale;
+
+    Texture2D roughness = WeaveTextureGenerator.GenerateRoughness(height);
+
+    
+    Texture2D roughnessUpscale = WeaveTextureGenerator.GenerateRoughness(heightUpscale);
+    Texture2D metallicGloss = WeaveTextureGenerator.GenerateMetallicGloss(height);
+    Texture2D metallicGlossUpscale = WeaveTextureGenerator.GenerateMetallicGloss(heightUpscale);
+    
+    roughnessPreview.texture = roughness;
+    roughnessUpscalePreview.texture = roughnessUpscale;
+
+    
+    currentData = data;
+    //SetupTextureSphere(sphereRenderer, data, diffuse, normal);
+    SetupTexture(sphereRenderer, data, diffuse, normal, metallicGloss);
+    SetupTexture(sphereRendererUpsclae, data, diffuse, normalUpscale, metallicGlossUpscale);
+    SetupTexture(planeRenderer, data, diffuse, normalUpscale, metallicGlossUpscale);
+  }
+  
+  //-------------------------------------------------------------------------
+  private void SetupTexture(Renderer render, WeaveData data, Texture2D diffuse, Texture2D normal, Texture2D metallicGloss)
+  {       
+    render.material.mainTexture = diffuse;    
+    float factor = repeatSize.value;
+    render.material.mainTextureScale = new Vector2(data.repeatX*factor, data.repeatY*factor);
+    render.material.SetTexture("_BumpMap", normal);    
+    render.material.SetTexture("_MetallicGlossMap", metallicGloss);
+    render.material.EnableKeyword("_NORMALMAP");    
+  }
+  
+
+  //-------------------------------------------------------------------------
+  public void RefreshList()
+  {
+    foreach (Transform child in listContent)
+      Destroy(child.gameObject);
+
+    var list = WeaveSaveManager.Instance.GetList();
+    for (int i = 0; i < list.Count; i++)
+    {
+      string code = list[i]["Code"];
+      string name = list[i]["Name"];
+      string saveAt = list[i]["SavedAt"];
+      WeaveData data = new WeaveData();
+      data.weaveName = name;
+      data.weaveCode = code;
+      data.savedAt = saveAt;
+      GameObject item = Instantiate(listItemPrefab, listContent);
+      item.GetComponent<WeaveItemUI>().Setup(i + 1, data);
+      string captured = code;
+      item.GetComponent<WeaveItemUI>().buttonSelect.onClick.AddListener(() =>
+      {
+        OnLoadButton(captured);
+      });
+    }
+  }
+  //-------------------------------------------------------------------------
+  private void Update()
+  {
+    TabKeyNextCursorUnitSize();
+
+      if (currentData != null)
+      {
+        float factor = repeatSize.value;        
+        sphereRenderer.material.mainTextureScale = 
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        // 업스케일 스피어 타일링도 같이 업데이트 필요
+        sphereRendererUpsclae.material.mainTextureScale =
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+
+        planeRenderer.material.mainTextureScale =
+          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+      }
+  }
+}
