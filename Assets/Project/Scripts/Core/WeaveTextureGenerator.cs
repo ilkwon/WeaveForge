@@ -206,7 +206,7 @@ public class WeaveTextureGenerator : MonoBehaviour
 
   //---------------------------------------------------------------------------
   public static Texture2D GenerateRoughness(Texture2D heightMap,
-    float minRoughness = 0.4f, float maxRoughness = 0.8f)
+    float minRoughness = 0.2f, float maxRoughness = 0.9f)
   {
     var src = heightMap;
     Texture2D dest = new(src.width, src.height)

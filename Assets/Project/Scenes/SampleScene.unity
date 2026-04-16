@@ -448,7 +448,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!135 &107909188
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -1402,10 +1402,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1540904283}
   m_HandleRect: {fileID: 683767879}
   m_Direction: 0
-  m_MinValue: 1
-  m_MaxValue: 100
+  m_MinValue: 0
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0.22
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2618,7 +2618,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &856817464
 Transform:
   m_ObjectHideFlags: 0
