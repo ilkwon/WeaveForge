@@ -8,9 +8,9 @@ using System;
 [RequireComponent(typeof(RawImage))]
 public class WeaveGrid : MonoBehaviour
 {
-  [SerializeField] private int repeatX = 8;
-  [SerializeField] private int repeatY = 8;
-  [SerializeField] private int cellSize = 50;
+  [SerializeField] private int colCount = 8;
+  [SerializeField] private int rowCount = 8;
+  [SerializeField] private int cellSize = 40;
   [SerializeField] private WeaveGrid weaveGrid;
   
   private int[,] gridData;
@@ -22,35 +22,35 @@ public class WeaveGrid : MonoBehaviour
   // Start is called once before the first execution of Update after the MonoBehaviour is created
   void Start()
   {
-    gridData = new int[RepeatY, RepeatX];
-    _drawer = new CellDrawer(RepeatX, RepeatY, CellSize);
+    gridData = new int[RowCount, ColCount];
+    _drawer = new CellDrawer(ColCount, RowCount, CellSize);
     _drawer.CreateTexture();
 
     GetComponent<RawImage>().texture = _drawer.Texture;
     GetComponent<RawImage>().rectTransform.sizeDelta =
-        new Vector2(RepeatX * CellSize, RepeatY * CellSize);
+        new Vector2(ColCount * CellSize, RowCount * CellSize);
   }
 
   //-------------------------------------------------------------------------
 
   public void LoadPattern(WeaveData data)
   {
-    RepeatX = data.repeatX;
-    RepeatY = data.repeatY;
-    gridData = new int[RepeatY, RepeatX];
+    ColCount = data.coiCount;
+    RowCount = data.rowCount;
+    gridData = new int[RowCount, ColCount];
 
-    for (int y = 0; y < RepeatY; y++)
-      for (int x = 0; x < RepeatX; x++)
-        gridData[y, x] = data.cells[y * RepeatX + x];
+    for (int y = 0; y < RowCount; y++)
+      for (int x = 0; x < ColCount; x++)
+        gridData[y, x] = data.cells[y * ColCount + x];
 
-    for (int y = 0; y < RepeatY; y++)
-      for (int x = 0; x < RepeatX; x++)
+    for (int y = 0; y < RowCount; y++)
+      for (int x = 0; x < ColCount; x++)
         if (gridData[y, x] == 1)
           _drawer.FillCell(x, y, Color.black);
 
     _drawer.Apply();
     GetComponent<RawImage>().texture = _drawer.Texture;
-    int displaySize = RepeatX * CellSize;
+    int displaySize = ColCount * CellSize;
     GetComponent<RawImage>().rectTransform.sizeDelta =
         new Vector2(displaySize, displaySize);
   }
@@ -80,19 +80,19 @@ public class WeaveGrid : MonoBehaviour
   //-------------------------------------------------------------------------
   public void GetData(WeaveData data)
   {
-    data.repeatX = RepeatX;
-    data.repeatY = RepeatY;
-    data.cells = new int[RepeatX * RepeatY];
-    for (int y = 0; y < RepeatY; y++)
-      for (int x = 0; x < RepeatX; x++)
-        data.cells[y * RepeatX + x] = gridData[y, x];
+    data.coiCount = ColCount;
+    data.rowCount = RowCount;
+    data.cells = new int[ColCount * RowCount];
+    for (int y = 0; y < RowCount; y++)
+      for (int x = 0; x < ColCount; x++)
+        data.cells[y * ColCount + x] = gridData[y, x];
   }
   //-------------------------------------------------------------------------
   // 클릭시 셀의 상태를 토글하고 색상을 변경.
   Vector2Int _hoverCell = new Vector2Int(-1, -1);
 
-  public int RepeatX { get => repeatX; set => repeatX = value; }
-  public int RepeatY { get => repeatY; set => repeatY = value; }
+  public int ColCount { get => colCount; set => colCount = value; }
+  public int RowCount { get => rowCount; set => rowCount = value; }
   public int CellSize { get => cellSize; set => cellSize = value; }
 
   void UpdatePaint()
@@ -125,7 +125,7 @@ public class WeaveGrid : MonoBehaviour
 
     int cx = (int)(adjustedX / CellSize);
     int cy = (int)(adjustedY / CellSize);
-    if (cx < 0 || cx >= RepeatX || cy < 0 || cy >= RepeatY) return;
+    if (cx < 0 || cx >= ColCount || cy < 0 || cy >= RowCount) return;
 
     Vector2Int curr = new Vector2Int(cx, cy);
     if (_hoverCell != curr)
@@ -152,16 +152,16 @@ public class WeaveGrid : MonoBehaviour
   //-------------------------------------------------------------------------
   public void Resize(int w, int h)
   {
-    RepeatX = w;
-    RepeatY = h;
+    ColCount = w;
+    RowCount = h;
 
-    gridData = new int[RepeatX, RepeatY];
+    gridData = new int[ColCount, RowCount];
  
-    _drawer = new CellDrawer(RepeatX, RepeatY, CellSize);
+    _drawer = new CellDrawer(ColCount, RowCount, CellSize);
     _drawer.CreateTexture();
     
     GetComponent<RawImage>().texture = _drawer.Texture;
-    int displaySize = RepeatX * CellSize;
+    int displaySize = ColCount * CellSize;
     GetComponent<RawImage>().rectTransform.sizeDelta =
       new Vector2(displaySize, displaySize);
 

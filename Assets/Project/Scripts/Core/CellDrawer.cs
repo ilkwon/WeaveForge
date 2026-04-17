@@ -79,8 +79,15 @@ public class CellDrawer
   }
 
   public void ClearCell(int col, int row, Color32 color)
-{
+  {
     if (col < 0 || row < 0) return;
     FillCell(col, row, color);
-}
+  }
+
+  public void SetPixel(int x, int y, Color32 color)
+  {
+    int width = Texture.width;
+        //if (x < 0 || x >= width || y < 0 || y >= Texture.height) return;
+    _pixelBuffer[y * width + x] = color;
+  }
 }

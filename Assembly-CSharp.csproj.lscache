@@ -62,6 +62,7 @@ Assets/Project/Scripts/Core/
  AppInit.cs
  CellDrawer.cs
  ColorSettings.cs
+ FontRenderer.cs
  WeaveGrid.cs
  WeaveLayoutManager.cs
  WeaveSaveManager.cs
@@ -72,10 +73,12 @@ Assets/Project/Scripts/Data/
  WeaveData.cs
 Assets/Project/Scripts/UI/
  ColorStripUI.cs
+ DropDownView.cs
  PalettePopupUI.cs
  WarpStripView.cs
  WeaveItemUI.cs
  WeaveUI.cs
+ WeftStripView.cs
 Assets/TutorialInfo/Scripts/Readme.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 

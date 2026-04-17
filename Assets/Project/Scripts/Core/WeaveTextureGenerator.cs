@@ -6,13 +6,13 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateDiffuse(WeaveData data)
   {
-    Texture2D dest = new(data.repeatX, data.repeatY)
+    Texture2D dest = new(data.coiCount, data.rowCount)
     {
       filterMode = FilterMode.Point,
     };
 
-    var width = data.repeatX;
-    var height = data.repeatY;
+    var width = data.coiCount;
+    var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
     string[] warpColors = ColorSettings.LoadWarpColors(width);
     string[] weftColors = ColorSettings.LoadWeftColors(height);
@@ -36,13 +36,13 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateHeigh(WeaveData data)
   {
-    Texture2D dest = new(data.repeatX, data.repeatY)
+    Texture2D dest = new(data.coiCount, data.rowCount)
     {
       filterMode = FilterMode.Point,
     };
 
-    var width = data.repeatX;
-    var height = data.repeatY;
+    var width = data.coiCount;
+    var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
 
     for (int y = 0; y < height; y++)
@@ -65,8 +65,8 @@ public class WeaveTextureGenerator : MonoBehaviour
   public static Texture2D GenerateHeightUpscale(WeaveData data)
   {
     int cellSize = 16;
-    int width = data.repeatX * cellSize;
-    int height = data.repeatY * cellSize;
+    int width = data.coiCount * cellSize;
+    int height = data.rowCount * cellSize;
     Texture2D dest = new(width, height)
     {
       filterMode = FilterMode.Point,
@@ -74,11 +74,11 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     Color32[] pixels = new Color32[width * height];
 
-    for (int cy = 0; cy < data.repeatY; cy++)
+    for (int cy = 0; cy < data.rowCount; cy++)
     {
-      for (int cx = 0; cx < data.repeatX; cx++)
+      for (int cx = 0; cx < data.coiCount; cx++)
       {
-        int cell = data.cells[cy * data.repeatX + cx];
+        int cell = data.cells[cy * data.coiCount + cx];
 
         for (int py = 0; py < cellSize; py++)
         {

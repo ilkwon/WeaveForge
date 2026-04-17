@@ -88,7 +88,7 @@ public class WeaveUI : MonoBehaviour
 
 
     // 크기가 바뀐 경우만 Resize
-    if (x != data.repeatX || y != data.repeatY)
+    if (x != data.coiCount || y != data.rowCount)
       weaveGrid.Resize(x, y);
 
     data.weaveName = patternName;
@@ -106,7 +106,7 @@ public class WeaveUI : MonoBehaviour
   //-------------------------------------------------------------------------
   private string GenerateCode(WeaveData data)
   {
-    string type = (data.repeatX > 64 || data.repeatY > 64) ? "JQ" : "DB";
+    string type = (data.coiCount > 64 || data.rowCount > 64) ? "JQ" : "DB";
     string date = System.DateTime.Now.ToString("yyMMdd");
 
     var list = WeaveSaveManager.Instance.GetList();
@@ -148,11 +148,11 @@ public class WeaveUI : MonoBehaviour
 
     currentCode = data.weaveCode;
 
-    texboxUnitWidth.text = data.repeatX.ToString();
-    textboxUnitHeight.text = data.repeatY.ToString();
+    texboxUnitWidth.text = data.coiCount.ToString();
+    textboxUnitHeight.text = data.rowCount.ToString();
 
-    colorStripWarp.Setup(data.repeatX, true);
-    colorStripWeft.Setup(data.repeatY, false);
+    colorStripWarp.Setup(data.coiCount, true);
+    colorStripWeft.Setup(data.rowCount, false);
 
     var diffuse = WeaveTextureGenerator.GenerateDiffuse(data);;
     var height = WeaveTextureGenerator.GenerateHeigh(data);
@@ -190,7 +190,7 @@ public class WeaveUI : MonoBehaviour
   {       
     render.material.mainTexture = diffuse;    
     float factor = repeatSize.value;
-    render.material.mainTextureScale = new Vector2(data.repeatX*factor, data.repeatY*factor);
+    render.material.mainTextureScale = new Vector2(data.coiCount*factor, data.rowCount*factor);
     render.material.SetTexture("_BumpMap", normal);    
     render.material.SetTexture("_MetallicGlossMap", metallicGloss);
     render.material.EnableKeyword("_NORMALMAP");    
@@ -231,14 +231,14 @@ public class WeaveUI : MonoBehaviour
       {
         float factor = repeatSize.value;        
         sphereRenderer.material.mainTextureScale = 
-          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+          new Vector2(currentData.coiCount * factor, currentData.rowCount * factor);
 
         // 업스케일 스피어 타일링도 같이 업데이트 필요
         sphereRendererUpsclae.material.mainTextureScale =
-          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+          new Vector2(currentData.coiCount * factor, currentData.rowCount * factor);
 
         planeRenderer.material.mainTextureScale =
-          new Vector2(currentData.repeatX * factor, currentData.repeatY * factor);
+          new Vector2(currentData.coiCount * factor, currentData.rowCount * factor);
       }
   }
 }

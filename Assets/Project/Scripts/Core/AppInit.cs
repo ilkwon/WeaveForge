@@ -39,8 +39,8 @@ public class AppInit : MonoBehaviour
       WeaveData data = new WeaveData();
       data.weaveName = "test_pattern";
       data.weaveCode = "DB-260412-001";
-      data.repeatX = 8;
-      data.repeatY = 8;
+      data.coiCount = 8;
+      data.rowCount = 8;
       data.cells = new int[8 * 8];
       for (int i = 0; i < data.cells.Length; i++)
         data.cells[i] = i % 2;
