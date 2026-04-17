@@ -60,8 +60,10 @@ Assets/Project/Scripts/Common/
  SQLite.cs
 Assets/Project/Scripts/Core/
  AppInit.cs
+ CellDrawer.cs
  ColorSettings.cs
  WeaveGrid.cs
+ WeaveLayoutManager.cs
  WeaveSaveManager.cs
  WeaveTextureGenerator.cs
 Assets/Project/Scripts/Data/
@@ -71,6 +73,7 @@ Assets/Project/Scripts/Data/
 Assets/Project/Scripts/UI/
  ColorStripUI.cs
  PalettePopupUI.cs
+ WarpStripView.cs
  WeaveItemUI.cs
  WeaveUI.cs
 Assets/TutorialInfo/Scripts/Readme.cs

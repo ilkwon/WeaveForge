@@ -56,10 +56,12 @@
     <Compile Include="Assets/Project/Scripts/Common/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
     <Compile Include="Assets/Project/Scripts/Data/Defines.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/WeaveLayoutManager.cs" />
     <Compile Include="Assets/Project/Scripts/Common/FileLogger.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResult.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PalettePopupUI.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResultExtensions.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/CellDrawer.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveTextureGenerator.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
@@ -67,6 +69,7 @@
     <Compile Include="Assets/Project/Scripts/Core/AppInit.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DBConn.cs" />
     <Compile Include="Assets/Project/Scripts/Data/types.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/WarpStripView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
