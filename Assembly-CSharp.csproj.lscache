@@ -52,6 +52,13 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
+Assets/Project/Scripts/CellGrid/
+ CellDrawer.cs
+ CellGridView.cs
+ FontRenderer.cs
+ ThreadingView.cs
+ TieupView.cs
+ Treadling.cs
 Assets/Project/Scripts/Common/
  DataResult.cs
  DataResultExtensions.cs
@@ -60,9 +67,7 @@ Assets/Project/Scripts/Common/
  SQLite.cs
 Assets/Project/Scripts/Core/
  AppInit.cs
- CellDrawer.cs
  ColorSettings.cs
- FontRenderer.cs
  WeaveGrid.cs
  WeaveLayoutManager.cs
  WeaveSaveManager.cs

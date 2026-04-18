@@ -49,6 +49,7 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets/Project/Scripts/CellGrid/CellGridView.cs" />
     <Compile Include="Assets/Project/Scripts/Core/ColorSettings.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveGrid.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemUI.cs" />
@@ -56,21 +57,24 @@
     <Compile Include="Assets/Project/Scripts/Common/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
     <Compile Include="Assets/Project/Scripts/Data/Defines.cs" />
-    <Compile Include="Assets/Project/Scripts/Core/FontRenderer.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveLayoutManager.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/CellDrawer.cs" />
     <Compile Include="Assets/Project/Scripts/Common/FileLogger.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResult.cs" />
     <Compile Include="Assets/Project/Scripts/UI/DropDownView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PalettePopupUI.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResultExtensions.cs" />
-    <Compile Include="Assets/Project/Scripts/Core/CellDrawer.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/TieupView.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveTextureGenerator.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeftStripView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveUI.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/FontRenderer.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/Treadling.cs" />
     <Compile Include="Assets/Project/Scripts/Core/AppInit.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DBConn.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/ThreadingView.cs" />
     <Compile Include="Assets/Project/Scripts/Data/types.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WarpStripView.cs" />
   </ItemGroup>
