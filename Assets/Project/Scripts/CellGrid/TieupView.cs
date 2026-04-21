@@ -21,6 +21,8 @@ public class TieupView : CellGridView
   {
     Init();
   }
+
+  //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
   {
     var old = _gridData[row, col];
@@ -45,5 +47,23 @@ public class TieupView : CellGridView
   {
     return _gridData[row, col];
   }
+
   //---------------------------------------------------------------------------
+  public void LoadPattern(WeaveData data)
+  {
+    for (int row = 0; row < RowCount; row++)
+    {
+      for (int col = 0; col < ColCount; col++)
+      {
+        
+        _gridData[row, col] = data.cells[row * ColCount + col];
+        Color32 color = _gridData[row, col] == 1
+            ? new Color32(0, 0, 0, 255)
+            : new Color32(255, 255, 255, 255);
+        _drawer.FillCell(col, row, color);
+      }
+    }
+    _drawer.Apply();
+  }
+
 }

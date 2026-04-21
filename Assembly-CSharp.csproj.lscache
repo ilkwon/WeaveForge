@@ -2,12 +2,10 @@ version=1
 
 # This file caches language service data to improve the performance of C# Dev Kit.
 # It is not intended for manual editing. It can safely be deleted and will be
-# regenerated automatically.
+# regenerated automatically. For more information, see https://aka.ms/lscache
 #
-# To exclude from version control, add *.lscache to your .gitignore file.
-#
-# To disable caching, add the following to your VS Code settings:
-#   "dotnet.projectsystem.enableLanguageServiceCache": false
+# To control where cache files are stored, use the following VS Code setting:
+#   "dotnet.projectsystem.cacheInProjectFolder": true
 
 [project]
 language=C#
@@ -55,6 +53,7 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 Assets/Project/Scripts/CellGrid/
  CellDrawer.cs
  CellGridView.cs
+ DrawdownView.cs
  FontRenderer.cs
  ThreadingView.cs
  TieupView.cs
@@ -78,7 +77,6 @@ Assets/Project/Scripts/Data/
  WeaveData.cs
 Assets/Project/Scripts/UI/
  ColorStripUI.cs
- DropDownView.cs
  PalettePopupUI.cs
  WarpStripView.cs
  WeaveItemUI.cs
@@ -363,8 +361,11 @@ Library/PackageCache/com.unity.collections@538ace9075bc/
 Library/PackageCache/
  com.unity.ext.nunit@d8c07649098d/net40/unity-custom/nunit.framework.dll
  com.unity.nuget.mono-cecil@ecb9724e46ff/Mono.Cecil.dll
+ com.unity.nuget.newtonsoft-json@4dfd81071c64/Runtime/Newtonsoft.Json.dll
  com.unity.visualscripting@8bed5ad90189/Runtime/VisualScripting.Flow/Dependencies/NCalc/Unity.VisualScripting.Antlr3.Runtime.dll
 Library/ScriptAssemblies/
+ MCPForUnity.Editor.dll
+ MCPForUnity.Runtime.dll
  Unity.AI.Navigation.dll
  Unity.AI.Navigation.Editor.ConversionSystem.dll
  Unity.AI.Navigation.Editor.dll
