@@ -18,11 +18,14 @@ public class ThreadingView : CellGridView
     CellSize = tieupView.CellSize;
 
     tieupView.OnPatternLoaded += Resize;
-    Init();
 
     _threadingData = new int[ColCount];
     for (int i = 0; i < ColCount; i++)
       _threadingData[i] = -1; // 미지정
+
+    Init();
+    
+    UpdatePosition();
 
   }
 
@@ -46,6 +49,7 @@ public class ThreadingView : CellGridView
   {
     ColCount = tieupView.ColCount * 4;
     RowCount = tieupView.RowCount + 1;
+    
     _threadingData = new int[ColCount];
     for (int i = 0; i < ColCount; i++)
       _threadingData[i] = -1; // 미지정
@@ -87,7 +91,7 @@ public class ThreadingView : CellGridView
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)
   {
-    if (x < 0 || y < 0 || _threadingData[0] == -1) return;
+    if (x < 0 || y < 0) return;
 
     Color32 color = (_threadingData[x] == y)
         ? new Color32(0, 0, 0, 255)

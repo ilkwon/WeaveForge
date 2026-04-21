@@ -70,7 +70,7 @@ public class TieupView : CellGridView
       }
     }
     _drawer.Apply();
-    
+    OnPatternLoaded?.Invoke();
   }
 
 }

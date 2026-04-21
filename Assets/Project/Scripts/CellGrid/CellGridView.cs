@@ -29,6 +29,7 @@ public class CellGridView : MonoBehaviour
     if (font != null)
       _fontRenderer = new FontRenderer(_drawer, font);
 
+    _hoverCell = new Vector2Int(-1, -1);
     RawImage rawImage = GetComponent<RawImage>();
     rawImage.texture = _drawer.Texture;
     GetComponent<RectTransform>().sizeDelta =

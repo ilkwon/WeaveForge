@@ -19,12 +19,14 @@ public class TreadlingView : CellGridView
     CellSize = tieupView.CellSize;
     
     tieupView.OnPatternLoaded += Resize;
-    
-    Init();
 
     _treadlingData = new int[RowCount];
     for (int i = 0; i < RowCount; i++)
       _treadlingData[i] = -1;    
+    
+    Init();
+    
+    UpdatePosition();
   }
 
   private void UpdatePosition()
@@ -49,6 +51,7 @@ public class TreadlingView : CellGridView
   {
     ColCount = tieupView.ColCount + 1;
     RowCount = tieupView.RowCount * 4;
+ 
     _treadlingData = new int[RowCount];
     for (int i = 0; i < RowCount; i++)
       _treadlingData[i] = -1;
@@ -90,7 +93,7 @@ public class TreadlingView : CellGridView
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)
   {
-    if (x < 0 || y < 0 || _treadlingData[0] == -1) return;
+    if (x < 0 || y < 0) return;
     Color32 color = (_treadlingData[y] == x)
         ? new Color32(0, 0, 0, 255)
         : new Color32(255, 255, 255, 255);
