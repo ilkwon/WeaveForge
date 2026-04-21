@@ -58,12 +58,14 @@
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
     <Compile Include="Assets/Project/Scripts/Data/Defines.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveLayoutManager.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/PatternListUI.cs" />
     <Compile Include="Assets/Project/Scripts/CellGrid/CellDrawer.cs" />
     <Compile Include="Assets/Project/Scripts/Common/FileLogger.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResult.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PalettePopupUI.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DataResultExtensions.cs" />
     <Compile Include="Assets/Project/Scripts/CellGrid/DrawdownView.cs" />
+    <Compile Include="Assets/Project/Scripts/CellGrid/TreadlingView.cs" />
     <Compile Include="Assets/Project/Scripts/CellGrid/TieupView.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveTextureGenerator.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
@@ -71,7 +73,6 @@
     <Compile Include="Assets/Project/Scripts/UI/WeftStripView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveUI.cs" />
     <Compile Include="Assets/Project/Scripts/CellGrid/FontRenderer.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/Treadling.cs" />
     <Compile Include="Assets/Project/Scripts/Core/AppInit.cs" />
     <Compile Include="Assets/Project/Scripts/Common/DBConn.cs" />
     <Compile Include="Assets/Project/Scripts/CellGrid/ThreadingView.cs" />

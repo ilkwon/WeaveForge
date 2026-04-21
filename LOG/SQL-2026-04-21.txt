@@ -1,0 +1,2211 @@
+﻿2026-04-21 19:35:16 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:35:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:35:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:35:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:35:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 19:35:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 19:39:30 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:39:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:39:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:39:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:39:42 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:39:42 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:39:42 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:39:42 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:39:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 19:39:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:39:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 19:39:54 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 19:41:19 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:41:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:41:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:41:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:41:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 19:42:24 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:42:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:42:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:42:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:44:33 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:44:33 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:44:33 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:44:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:46:02 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:46:02 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:46:02 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:46:03 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:46:41 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:46:41 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:46:41 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:46:41 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:46:51 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 19:46:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 19:46:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:49:38 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:49:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:49:38 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:49:39 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:49:47 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:49:47 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:49:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:49:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:49:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:49:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:51:19 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:51:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:51:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:51:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:52:43 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:52:43 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:52:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:52:44 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:58:29 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:58:29 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:58:29 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:58:29 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:59:24 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:59:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:59:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:59:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:59:43 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 19:59:43 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 19:59:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 19:59:44 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:00:12 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:00:12 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:00:12 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:00:12 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:01:34 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:01:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:01:34 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:01:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:02:50 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:02:50 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:02:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:02:50 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:03:06 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:03:06 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:03:06 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:03:06 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:03:19 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:03:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:03:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:03:20 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:04:31 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:04:31 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:04:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:04:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:06:11 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:06:11 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:06:11 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:06:11 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:06:34 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:06:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:06:34 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:06:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:07:16 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:07:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:07:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:07:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:07:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:09:38 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:09:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:09:38 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:09:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:09:41 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:23:02 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:23:02 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:23:02 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:23:02 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:34:10 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:34:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:34:10 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:34:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:35:32 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:35:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:35:32 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:35:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:00 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:36:00 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:36:00 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:17 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:36:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:36:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:30 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:36:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:36:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:36:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:41:39 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:41:39 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:41:39 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:41:40 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:41:58 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:41:58 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:41:58 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:41:58 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:42:18 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:42:18 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:42:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:42:18 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:42:45 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:42:45 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:42:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:42:45 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:43:00 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:43:00 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:43:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:43:00 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:44:16 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:44:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:44:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:44:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:45:32 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:45:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:45:32 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:45:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:45:55 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:45:55 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:45:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:45:55 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:52:40 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:52:40 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:52:40 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:52:40 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:52:44 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:53:09 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:53:09 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:53:09 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:53:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:56:56 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:56:56 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:56:56 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:56:57 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:57:31 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:57:31 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:57:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:57:31 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:57:47 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:57:47 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:57:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:57:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:58:59 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:58:59 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:58:59 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:58:59 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:59:09 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 20:59:09 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 20:59:09 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 20:59:09 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:00:18 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:00:18 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:00:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:00:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:00:34 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:00:44 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:00:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:00:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:00:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:00:49 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:00:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:00:51 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:00:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:00:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:01:01 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:04 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:01:05 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:06 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:01:07 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:08 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:01:10 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:11 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:01:13 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:01:14 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:21 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:01:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:01:27 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:01:29 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:02:16 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:02:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:02:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:02:16 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:02:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:02:20 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:02:22 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:02:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:02:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:02:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:02:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:02:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:02:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:02:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:02:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:05:11 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:05:11 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:05:11 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:05:13 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:05:15 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:05:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:05:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:05:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:05:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:14:43 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:14:43 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:14:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:14:43 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:14:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:14:58 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:15:01 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:15:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:19:10 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:19:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:19:10 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:19:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:19:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:20:17 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:20:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:20:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:20:17 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:20:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:10 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:22:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:22:10 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:22:12 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:24 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:22:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:22:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:22:28 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:29 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:22:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:22:32 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:22:33 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:22:36 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:22:38 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:22:39 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:22:40 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:22:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:22:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:22:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:22:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:22:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:22:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:28:04 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:28:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:28:04 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:28:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:28:07 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:28:14 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:28:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:28:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:28:21 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:28:27 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:28:28 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:28:44 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:34:48 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:34:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:34:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:34:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:34:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:34:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:34:57 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:34:59 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:37:43 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:37:43 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:37:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:37:44 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:37:49 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:37:51 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:37:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:37:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-21 21:37:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:37:59 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:38:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:38:31 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:38:31 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:38:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:38:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:38:51 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:38:59 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:38:59 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:38:59 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:39:00 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:39:13 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:40:50 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:40:50 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:40:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:40:51 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:43:38 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:43:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:43:38 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:43:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:43:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-21 21:43:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:43:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-21 21:43:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-21 21:44:41 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:44:41 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:44:41 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:44:42 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:44:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:46:39 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:46:39 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:46:39 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:46:39 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:46:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:48:23 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:48:23 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:48:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:48:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:48:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:48:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:48:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:52:04 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:52:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:52:04 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:52:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:52:08 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:52:53 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:52:53 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:52:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:52:53 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:03 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:56:03 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:13 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:20 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:56:20 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:20 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:20 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:35 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:56:35 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:35 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:35 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:52 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:56:52 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:56:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:56:52 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:57:26 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-21 21:57:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-21 21:57:26 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-21 21:57:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+

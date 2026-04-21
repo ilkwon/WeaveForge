@@ -35,7 +35,7 @@ public class WeaveGrid : MonoBehaviour
 
   public void LoadPattern(WeaveData data)
   {
-    ColCount = data.coiCount;
+    ColCount = data.colCount;
     RowCount = data.rowCount;
     gridData = new int[RowCount, ColCount];
 
@@ -80,7 +80,7 @@ public class WeaveGrid : MonoBehaviour
   //-------------------------------------------------------------------------
   public void GetData(WeaveData data)
   {
-    data.coiCount = ColCount;
+    data.colCount = ColCount;
     data.rowCount = RowCount;
     data.cells = new int[ColCount * RowCount];
     for (int y = 0; y < RowCount; y++)

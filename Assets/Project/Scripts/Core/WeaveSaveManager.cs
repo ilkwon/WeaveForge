@@ -51,7 +51,7 @@ public class WeaveSaveManager : MonoBehaviour
     data.savedAt = ToNowDateString();
 
     // 모드 판단
-    WeaveMode mode = (data.coiCount > 64 || data.rowCount > 64)
+    WeaveMode mode = (data.colCount > 64 || data.rowCount > 64)
       ? WeaveMode.Jacquard
       : WeaveMode.Dobby;
 
@@ -72,7 +72,7 @@ public class WeaveSaveManager : MonoBehaviour
     {
       { "@name",       data.weaveName },
       { "@code",       data.weaveCode ?? "" },
-      { "@repeatX",    data.coiCount },
+      { "@repeatX",    data.colCount },
       { "@repeatY",    data.rowCount },
       { "@cells",      cellsValue },
       { "@warpColors",    data.warpColorNames != null ? string.Join(",", data.warpColorNames) : "" },
@@ -122,11 +122,11 @@ public class WeaveSaveManager : MonoBehaviour
     WeaveData data = new();
     data.weaveName = row["Name"].ToString();
     data.weaveCode = row["Code"].ToString();
-    data.coiCount = Convert.ToInt32(row["RepeatX"]);
+    data.colCount = Convert.ToInt32(row["RepeatX"]);
     data.rowCount = Convert.ToInt32(row["RepeatY"]);
     data.savedAt = row["SavedAt"].ToString();
 
-    WeaveMode mode = (data.coiCount > 64 || data.rowCount > 64)
+    WeaveMode mode = (data.colCount > 64 || data.rowCount > 64)
       ? WeaveMode.Jacquard
       : WeaveMode.Dobby;
 
@@ -139,7 +139,7 @@ public class WeaveSaveManager : MonoBehaviour
     {
       byte[] blob = Convert.FromBase64String(cellsStr);
       var bits = new System.Collections.BitArray(blob);
-      data.cells = new int[data.coiCount * data.rowCount];
+      data.cells = new int[data.colCount * data.rowCount];
       for (int i = 0; i < data.cells.Length; i++)
         data.cells[i] = bits[i] ? 1 : 0;
     }

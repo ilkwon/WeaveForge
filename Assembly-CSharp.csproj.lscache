@@ -57,7 +57,7 @@ Assets/Project/Scripts/CellGrid/
  FontRenderer.cs
  ThreadingView.cs
  TieupView.cs
- Treadling.cs
+ TreadlingView.cs
 Assets/Project/Scripts/Common/
  DataResult.cs
  DataResultExtensions.cs
@@ -78,6 +78,7 @@ Assets/Project/Scripts/Data/
 Assets/Project/Scripts/UI/
  ColorStripUI.cs
  PalettePopupUI.cs
+ PatternListUI.cs
  WarpStripView.cs
  WeaveItemUI.cs
  WeaveUI.cs

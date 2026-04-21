@@ -2,6 +2,8 @@ using UnityEngine;
 
 public class TieupView : CellGridView
 {
+  public System.Action OnPatternLoaded;
+
   private int[,] _gridData;
   private int _painValue = 1;
   //---------------------------------------------------------------------------
@@ -51,11 +53,15 @@ public class TieupView : CellGridView
   //---------------------------------------------------------------------------
   public void LoadPattern(WeaveData data)
   {
+    RowCount = data.rowCount;
+    ColCount = data.colCount;
+    
+    Init();
+
     for (int row = 0; row < RowCount; row++)
     {
       for (int col = 0; col < ColCount; col++)
-      {
-        
+      {        
         _gridData[row, col] = data.cells[row * ColCount + col];
         Color32 color = _gridData[row, col] == 1
             ? new Color32(0, 0, 0, 255)
@@ -64,6 +70,7 @@ public class TieupView : CellGridView
       }
     }
     _drawer.Apply();
+    
   }
 
 }

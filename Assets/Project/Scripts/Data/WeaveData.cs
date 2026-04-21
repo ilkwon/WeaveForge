@@ -13,7 +13,7 @@ public class WeaveData
 {
     public string weaveName;
     public string weaveCode;
-    public int coiCount; 
+    public int colCount; 
     public int rowCount;
     public int[] cells;
     public string[] warpColorNames;

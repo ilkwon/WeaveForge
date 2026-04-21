@@ -6,12 +6,12 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateDiffuse(WeaveData data)
   {
-    Texture2D dest = new(data.coiCount, data.rowCount)
+    Texture2D dest = new(data.colCount, data.rowCount)
     {
       filterMode = FilterMode.Point,
     };
 
-    var width = data.coiCount;
+    var width = data.colCount;
     var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
     string[] warpColors = ColorSettings.LoadWarpColors(width);
@@ -36,12 +36,12 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateHeigh(WeaveData data)
   {
-    Texture2D dest = new(data.coiCount, data.rowCount)
+    Texture2D dest = new(data.colCount, data.rowCount)
     {
       filterMode = FilterMode.Point,
     };
 
-    var width = data.coiCount;
+    var width = data.colCount;
     var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
 
@@ -65,7 +65,7 @@ public class WeaveTextureGenerator : MonoBehaviour
   public static Texture2D GenerateHeightUpscale(WeaveData data)
   {
     int cellSize = 16;
-    int width = data.coiCount * cellSize;
+    int width = data.colCount * cellSize;
     int height = data.rowCount * cellSize;
     Texture2D dest = new(width, height)
     {
@@ -76,9 +76,9 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     for (int cy = 0; cy < data.rowCount; cy++)
     {
-      for (int cx = 0; cx < data.coiCount; cx++)
+      for (int cx = 0; cx < data.colCount; cx++)
       {
-        int cell = data.cells[cy * data.coiCount + cx];
+        int cell = data.cells[cy * data.colCount + cx];
 
         for (int py = 0; py < cellSize; py++)
         {
