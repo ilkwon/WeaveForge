@@ -3,11 +3,15 @@ using System.Collections;
 using System;
 
 [RequireComponent(typeof(RectTransform))]
+
+/// <summary>
+/// 트레들링 뷰 : 위사 배열. (타이업 column count + 컬러피커 1)
+/// </summary>
 public class TreadlingView : CellGridView
 {
   [SerializeField] private TieupView tieupView;
   private int[] _treadlingData; // 각 위사가 몇 번 트레들인지
-  
+
   //---------------------------------------------------------------------------
   IEnumerator Start()
   {
@@ -17,21 +21,21 @@ public class TreadlingView : CellGridView
     ColCount = treadleCount + 1; // 트레들 수 + 컬러피커 1열
     RowCount = tieupView.RowCount * 4;
     CellSize = tieupView.CellSize;
-    
+
     tieupView.OnPatternLoaded += Resize;
 
     _treadlingData = new int[RowCount];
     for (int i = 0; i < RowCount; i++)
-      _treadlingData[i] = -1;    
-    
+      _treadlingData[i] = -1;
+
     Init();
-    
+
     UpdatePosition();
   }
 
   private void UpdatePosition()
   {
-    
+
     // 위치 — 타이업 아래, 컬러피커 1열 오른쪽 돌출
     RectTransform rt = GetComponent<RectTransform>();
     RectTransform tieupRT = tieupView.GetComponent<RectTransform>();
@@ -51,7 +55,7 @@ public class TreadlingView : CellGridView
   {
     ColCount = tieupView.ColCount + 1;
     RowCount = tieupView.RowCount * 4;
- 
+
     _treadlingData = new int[RowCount];
     for (int i = 0; i < RowCount; i++)
       _treadlingData[i] = -1;
@@ -99,7 +103,7 @@ public class TreadlingView : CellGridView
         : new Color32(255, 255, 255, 255);
     _drawer.FillCell(x, y, color);
   }
-  
+
   //---------------------------------------------------------------------------
   public int GetTreadling(int row)
   {

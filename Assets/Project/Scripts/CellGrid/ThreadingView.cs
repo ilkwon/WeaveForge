@@ -2,6 +2,9 @@ using UnityEngine;
 using System.Collections;
 using System;
 
+/// <summary>
+    /// 트레딩 뷰 : 경사 배열.
+    /// </summary>
 public class ThreadingView : CellGridView
 {
   [SerializeField] private TieupView tieupView;
