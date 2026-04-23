@@ -3,6 +3,12 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+public enum CellDrawType
+{
+    Dot,    // 행 위치로 값 표현 (점)
+    Number  // 셀 안에 숫자로 값 표현
+}
+
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(RawImage))]
 public class CellGridView : MonoBehaviour
@@ -11,6 +17,7 @@ public class CellGridView : MonoBehaviour
   [SerializeField] protected int rowCount = 0;
   [SerializeField] protected int cellSize = 40;
   [SerializeField] protected Font font;
+  [SerializeField] protected CellDrawType drawType = CellDrawType.Dot;
 
   protected CellDrawer _drawer;
   protected FontRenderer _fontRenderer;
@@ -23,6 +30,7 @@ public class CellGridView : MonoBehaviour
   //---------------------------------------------------------------------------
   protected virtual void Init()
   {
+    
     _drawer = new CellDrawer(ColCount, RowCount, CellSize);
     _drawer.CreateTexture();
 
@@ -30,6 +38,7 @@ public class CellGridView : MonoBehaviour
       _fontRenderer = new FontRenderer(_drawer, font);
 
     _hoverCell = new Vector2Int(-1, -1);
+
     RawImage rawImage = GetComponent<RawImage>();
     rawImage.texture = _drawer.Texture;
     GetComponent<RectTransform>().sizeDelta =

@@ -12,12 +12,11 @@ using UnityEngine.UI;
 //---------------------------------------------------------------------------
 public class DrawdownView : CellGridView
 {
-
+  //---------------------------------------------------------------------------
   [SerializeField] TieupView tieupView;
-
   [SerializeField] ThreadingView threadingView;
-
   [SerializeField] TreadlingView treadlingView;
+  //---------------------------------------------------------------------------
   IEnumerator Start()
   {
     yield return null;
@@ -28,6 +27,7 @@ public class DrawdownView : CellGridView
 
   }
 
+  //---------------------------------------------------------------------------
   private void Resize()
   {
     ColCount = tieupView.ColCount * 4;
@@ -36,9 +36,11 @@ public class DrawdownView : CellGridView
 
     Init();
     UpdatePosition();
-    
+
+    Recalculate();
   }
 
+  //---------------------------------------------------------------------------
   private void UpdatePosition()
   {
     RectTransform rt = GetComponent<RectTransform>();
@@ -48,9 +50,28 @@ public class DrawdownView : CellGridView
     rt.anchorMax = new Vector2(1f, 1f);
     rt.pivot = new Vector2(1f, 1f);
     rt.sizeDelta = new Vector2(ColCount * CellSize, RowCount * CellSize);
+    // 
     rt.anchoredPosition = new Vector2(
         tieupRT.anchoredPosition.x - tieupRT.sizeDelta.x,
         tieupRT.anchoredPosition.y - tieupRT.sizeDelta.y
     );
+  }
+
+  //---------------------------------------------------------------------------
+  private void Recalculate()
+  {
+    var warpCount = threadingView.ColCount; // 경사 헤더 컬럼 수
+    var weftCount = treadlingView.RowCount; // 위사 헤더 행 수
+
+    for (int x = 0; x < warpCount; x++)
+    {
+      for (int y = 0; y < weftCount; y++)
+      {
+        int shaft = threadingView.GetThreading(x);
+        int treadle = treadlingView.GetTreadling(y);
+      }
+    }
+
+
   }
 }

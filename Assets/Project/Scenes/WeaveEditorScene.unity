@@ -518,6 +518,80 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &740258300
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 740258302}
+  - component: {fileID: 740258301}
+  - component: {fileID: 740258303}
+  m_Layer: 0
+  m_Name: PalettePopup
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &740258301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740258300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed10475d963c940ec8d6f7f2269cafcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PalettePopupUI
+  colorCellPrefab: {fileID: 6477347094653023300, guid: b40b53820cce4462887e272d0d0c9f76, type: 3}
+--- !u!224 &740258302
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740258300}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2111770364}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -1699, y: 316}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &740258303
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 740258300}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a8695521f0d02e499659fee002a26c2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.GridLayoutGroup
+  m_Padding:
+    m_Left: 0
+    m_Right: 0
+    m_Top: 0
+    m_Bottom: 0
+  m_ChildAlignment: 0
+  m_StartCorner: 0
+  m_StartAxis: 0
+  m_CellSize: {x: 40, y: 40}
+  m_Spacing: {x: 0, y: 0}
+  m_Constraint: 1
+  m_ConstraintCount: 5
 --- !u!1 &791784527
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,6 +681,7 @@ MonoBehaviour:
   rowCount: 0
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  drawType: 1
   tieupView: {fileID: 1075997391}
 --- !u!1 &951792170
 GameObject:
@@ -768,6 +843,7 @@ MonoBehaviour:
   rowCount: 8
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  drawType: 0
 --- !u!222 &1075997392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -861,6 +937,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c56c9ddb6ea0244ca83ffc3dcad76afa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DrawdownView
+  colCount: 0
+  rowCount: 0
+  cellSize: 40
+  font: {fileID: 12800000, guid: 25b593e38913942779bfe13117e8fefe, type: 3}
+  drawType: 0
+  tieupView: {fileID: 1075997391}
+  threadingView: {fileID: 1873106609}
+  treadlingView: {fileID: 791784531}
 --- !u!1 &1333264408
 GameObject:
   m_ObjectHideFlags: 0
@@ -1571,6 +1655,8 @@ MonoBehaviour:
   rowCount: 0
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  drawType: 1
+  palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1 &2111770360
 GameObject:
@@ -1585,7 +1671,7 @@ GameObject:
   - component: {fileID: 2111770362}
   - component: {fileID: 2111770361}
   m_Layer: 5
-  m_Name: Canvas
+  m_Name: CanvasPopup
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1668,6 +1754,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 413742920}
+  - {fileID: 740258302}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}

@@ -1,9 +1,14 @@
 using UnityEngine;
 
+    /// <summary>
+    /// 타이업 뷰 : 조직도.
+    /// </summary>
 public class TieupView : CellGridView
 {
   public System.Action OnPatternLoaded;
 
+  public WeaveData CurrentData => _currentData;
+  private WeaveData _currentData;
   private int[,] _gridData;
   private int _painValue = 1;
   //---------------------------------------------------------------------------
@@ -53,6 +58,8 @@ public class TieupView : CellGridView
   //---------------------------------------------------------------------------
   public void LoadPattern(WeaveData data)
   {
+    _currentData = data;
+
     RowCount = data.rowCount;
     ColCount = data.colCount;
     
@@ -70,7 +77,24 @@ public class TieupView : CellGridView
       }
     }
     _drawer.Apply();
+    SetWarpColor(data);
+    
     OnPatternLoaded?.Invoke();
+  }
+  private void SetWarpColor(WeaveData data)
+  {
+    
+    int warpCount = ColCount * 4;
+    if (data.warpColorNames == null || data.warpColorNames.Length != warpCount)
+    {
+        var newColors = new string[warpCount];
+        for (int i = 0; i < warpCount; i++)
+            newColors[i] = (data.warpColorNames != null && i < data.warpColorNames.Length)
+                ? data.warpColorNames[i]
+                : "White";
+        data.warpColorNames = newColors;
+    }
+
   }
 
 }
