@@ -31,11 +31,38 @@ public class PalettePopupUI : MonoBehaviour
       });
     }
   }
-  
+
   //----------------------------------------------------------------------
-  public void Show(Action<string> callback)
+  public void Show(Action<string> callback, Vector2 screenPosition)
   {
     onColorSelected = callback;
+
+    RectTransform rt = GetComponent<RectTransform>();
+
+    float popupWidth = rt.sizeDelta.x;
+    float popupHeight = rt.sizeDelta.y;
+
+    float x = screenPosition.x;
+    float y = screenPosition.y - popupHeight;
+    
+    // 오른쪽 밖으로 나가면 왼쪽으로 당기기
+    if (x + popupWidth > Screen.width)
+        x = Screen.width - popupWidth;
+
+    // 왼쪽 밖으로 나가면 오른쪽으로 당기기
+    if (x < 0)
+        x = 0;
+
+    // 아래쪽 밖으로 나가면 위로 올리기
+    if (y - popupHeight < 0)
+        y = popupHeight;
+
+    // 위쪽 밖으로 나가면 아래로 내리기
+    if (y > Screen.height)
+        y = Screen.height;
+
+    rt.position = new Vector3(x, y, 0);
+
     gameObject.SetActive(true);
   }
 

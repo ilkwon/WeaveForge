@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
 using System;
+using UnityEngine.InputSystem;
 
 public class ColorStripUI : MonoBehaviour
 {
@@ -61,7 +62,7 @@ public class ColorStripUI : MonoBehaviour
         ColorSettings.SaveWarpColors(colorNames.ToArray());
       else
         ColorSettings.SaveWeftColors(colorNames.ToArray());      
-    });
+    }, Mouse.current.position.ReadValue());
   }
 
   //-------------------------------------------------------------------------

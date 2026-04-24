@@ -563,10 +563,10 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2111770364}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1699, y: 316}
-  m_SizeDelta: {x: 100, y: 100}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 310, y: 124}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &740258303
 MonoBehaviour:
@@ -588,7 +588,7 @@ MonoBehaviour:
   m_ChildAlignment: 0
   m_StartCorner: 0
   m_StartAxis: 0
-  m_CellSize: {x: 40, y: 40}
+  m_CellSize: {x: 60, y: 60}
   m_Spacing: {x: 0, y: 0}
   m_Constraint: 1
   m_ConstraintCount: 5
@@ -682,6 +682,7 @@ MonoBehaviour:
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
   drawType: 1
+  palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1 &951792170
 GameObject:

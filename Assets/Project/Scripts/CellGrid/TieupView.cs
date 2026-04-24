@@ -10,7 +10,7 @@ public class TieupView : CellGridView
   public WeaveData CurrentData => _currentData;
   private WeaveData _currentData;
   private int[,] _gridData;
-  private int _painValue = 1;
+  
   //---------------------------------------------------------------------------
   protected override void Init()
   {
@@ -78,12 +78,14 @@ public class TieupView : CellGridView
     }
     _drawer.Apply();
     SetWarpColor(data);
-    
+    SetWeftColor(data);
+
     OnPatternLoaded?.Invoke();
   }
+
+  //---------------------------------------------------------------------------
   private void SetWarpColor(WeaveData data)
   {
-    
     int warpCount = ColCount * 4;
     if (data.warpColorNames == null || data.warpColorNames.Length != warpCount)
     {
@@ -96,5 +98,20 @@ public class TieupView : CellGridView
     }
 
   }
+  //---------------------------------------------------------------------------
+  private void SetWeftColor(WeaveData data)
+  {
+    int weftCount = RowCount * 4;
+    if (data.weftColorNames == null || data.weftColorNames.Length != weftCount)
+    {
+        var newColors = new string[weftCount];
+        for (int i = 0; i < weftCount; i++)
+            newColors[i] = (data.weftColorNames != null && i < data.weftColorNames.Length)
+                ? data.weftColorNames[i]
+                : "White";
+        data.weftColorNames = newColors;
+    }
+  }
 
+  //---------------------------------------------------------------------------
 }

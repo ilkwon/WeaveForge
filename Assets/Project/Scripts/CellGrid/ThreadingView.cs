@@ -14,7 +14,6 @@ public class ThreadingView : CellGridView
   [SerializeField] private TieupView tieupView;
   private int[] _threadingData; // 각 경사가 몇 번 종광인지
   private Color[] _warpColors;
-  private WeaveData _currentData;
   //---------------------------------------------------------------------------
   IEnumerator Start()
   {
@@ -31,13 +30,9 @@ public class ThreadingView : CellGridView
     for (int i = 0; i < ColCount; i++)
       _threadingData[i] = -1; // 미지정
 
-    Init();
-    UpdatePosition();
-    InitColors();
-    GenerateStraightDraw();
-    LoadColors(tieupView.CurrentData);
+    Refresh();
   }
-
+  //---------------------------------------------------------------------------
   private void InitColors()
   {
     _warpColors = new Color[ColCount];
@@ -57,7 +52,6 @@ public class ThreadingView : CellGridView
     _fontRenderer.PrepareNumbers(1, shaftCount);  // 
     for (int i = 0; i < ColCount; i++)
     {
-      
       _fontRenderer.DrawNumber(_threadingData[i], i, _threadingData[i] - 1, Color.black);
     }
     
@@ -89,6 +83,11 @@ public class ThreadingView : CellGridView
     for (int i = 0; i < ColCount; i++)
       _threadingData[i] = -1; // 미지정
 
+    Refresh();
+  }
+  //---------------------------------------------------------------------------
+  private void Refresh()
+  {
     Init();
 
     // 위치 — 타이업 왼쪽, 컬러피커 1줄 위로 돌출
@@ -97,6 +96,7 @@ public class ThreadingView : CellGridView
     GenerateStraightDraw();
     LoadColors(tieupView.CurrentData);
   }
+
   //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
   {
@@ -115,7 +115,7 @@ public class ThreadingView : CellGridView
         data.warpColorNames[col] = colorName;
         WeaveSaveManager.Instance.Save(data, false);
       }
-    });
+    }, Mouse.current.position.ReadValue());
   }
 
   //---------------------------------------------------------------------------
@@ -142,7 +142,7 @@ public class ThreadingView : CellGridView
   {
     return _threadingData[col];
   }
-
+  //---------------------------------------------------------------------------
   protected override void Update()
   {
     if (Mouse.current.leftButton.wasPressedThisFrame)
@@ -168,10 +168,9 @@ public class ThreadingView : CellGridView
         OnCellClicked(cx, cy);
     }              
   }
-  //--------------
+  //---------------------------------------------------------------------------
   private void LoadColors(WeaveData data)
   {
-    
     if (data == null) return;
     if (data.warpColorNames == null || string.IsNullOrEmpty(data.warpColorNames[0])) return;
     
@@ -183,4 +182,5 @@ public class ThreadingView : CellGridView
     }
     _drawer.Apply();
   }
+  //---------------------------------------------------------------------------
 }

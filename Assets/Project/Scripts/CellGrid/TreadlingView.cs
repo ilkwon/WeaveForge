@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System;
+using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(RectTransform))]
 
@@ -9,8 +10,10 @@ using System;
 /// </summary>
 public class TreadlingView : CellGridView
 {
+  [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
   private int[] _treadlingData; // 각 위사가 몇 번 트레들인지
+  private Color[] _weftColors;
 
   //---------------------------------------------------------------------------
   IEnumerator Start()
@@ -28,11 +31,47 @@ public class TreadlingView : CellGridView
     for (int i = 0; i < RowCount; i++)
       _treadlingData[i] = -1;
 
-    Init();
-
-    UpdatePosition();
+    Refresh();
   }
 
+  //---------------------------------------------------------------------------
+  private void Refresh()
+  {
+    Init();
+    UpdatePosition();
+    InitColors();
+    GenerateStraightDraw();
+    LoadColors(tieupView.CurrentData);
+  }
+  //---------------------------------------------------------------------------
+  private void InitColors()
+  {
+    _weftColors = new Color[RowCount];
+    for (int i = 0; i < RowCount; i++)
+      _weftColors[i] = Color.white;
+  }
+
+  //---------------------------------------------------------------------------
+  private void GenerateStraightDraw()
+  {
+    var treadleCount = tieupView.ColCount;  // 트레들 수
+    for (int i = 0; i < RowCount; i++)
+    {
+      _treadlingData[i] = (i % treadleCount) + 1; // 단순히 트레들 수로 나눈 나머지로 초기값 설정 (직조 패턴에 따라 달라질 수 있음)
+    }
+
+    _fontRenderer.PrepareNumbers(1, treadleCount);  // 트레들 수에 맞춰 숫자 준비
+    for (int i = 0; i < RowCount; i++)
+    {
+      int treadleNum = _treadlingData[i];
+      //_fontRenderer.DrawNumber(treadleNum, ColCount - 1 - (treadleNum - 1), i, Color.black); // 트레들 번호에 맞춰 숫자 그리기
+      _fontRenderer.DrawNumber(treadleNum, treadleNum - 1, i, Color.black); // 트레들 번호에 맞춰 숫자 그리기 (컬러피커 열이 오른쪽 맨끝이다.)
+    }
+    _drawer.Apply();
+  }
+
+
+  //---------------------------------------------------------------------------
   private void UpdatePosition()
   {
 
@@ -60,48 +99,49 @@ public class TreadlingView : CellGridView
     for (int i = 0; i < RowCount; i++)
       _treadlingData[i] = -1;
 
-    Init();
-
-    // 위치 — 타이업 왼쪽, 컬러피커 1열 왼쪽으로 돌출
-    UpdatePosition();
+    Refresh();
   }
 
   //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
   {
     int lastCol = ColCount - 1;
-    if (col == lastCol) return; // 컬러피커 열은 무시
+    if (col != lastCol) return; // 컬러피커 열이 아닌 경우 클릭 무시
 
-    int prevCol = _treadlingData[row];
-
-    // 이전 점 지우기
-    if (prevCol >= 0)
+    // 컬러피커 열 클릭 시 팔레트 팝업 열기
+    palettePopup.Show((colorName) =>
     {
-      _drawer.FillCell(prevCol, row, new Color32(255, 255, 255, 255));
-    }
+      _weftColors[row] = ColorPalette.GetColor(colorName);
+      _drawer.FillCell(col, row, _weftColors[row]);
+      _drawer.Apply();
 
-    // 같은 곳 클릭하면 해제
-    if (prevCol == col)
-    {
-      _treadlingData[row] = -1;
-    }
-    else
-    {
-      _treadlingData[row] = col;
-      _drawer.FillCell(col, row, new Color32(0, 0, 0, 255));
-    }
-
-    _drawer.Apply();
+      // 현재 패턴 데이터에 색상 정보 저장
+      var data = tieupView.CurrentData;
+      if (data != null && data.weftColorNames != null && row < data.weftColorNames.Length)
+      {
+        data.weftColorNames[row] = colorName;
+        WeaveSaveManager.Instance.Save(data, false);
+      }
+    }, Mouse.current.position.ReadValue());
   }
-
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)
   {
-    if (x < 0 || y < 0) return;
-    Color32 color = (_treadlingData[y] == x)
-        ? new Color32(0, 0, 0, 255)
-        : new Color32(255, 255, 255, 255);
-    _drawer.FillCell(x, y, color);
+    if (x < 0 || y < 0 || _treadlingData == null) return;
+
+    if (drawType == CellDrawType.Dot)
+    {
+      Color32 color = (_treadlingData[y] == x)
+          ? new Color32(0, 0, 0, 255)
+          : new Color32(255, 255, 255, 255);
+      _drawer.FillCell(x, y - 1, color);
+    }
+    else
+    {
+      _drawer.FillCell(x, y, new Color32(255, 255, 255, 255));
+      if (_treadlingData[y] == x && x > 0)
+        _fontRenderer.DrawNumber(_treadlingData[y], x - 1, y, Color.black);
+    }
   }
 
   //---------------------------------------------------------------------------
@@ -109,6 +149,47 @@ public class TreadlingView : CellGridView
   {
     return _treadlingData[row];
   }
+  //---------------------------------------------------------------------------
+  protected override void Update()
+  {
+    // 마우스 클릭 위치가 그리드 영역 내에 있는지 확인
+    if (Mouse.current.leftButton.wasPressedThisFrame)
+    {
+      RectTransform rt = GetComponent<RectTransform>();
+      Vector2 localMousePos;
+      RectTransformUtility.ScreenPointToLocalPointInRectangle(
+          rt, Mouse.current.position.ReadValue(), null, out localMousePos);
 
+      if (localMousePos.x < -rt.sizeDelta.x || localMousePos.x > 0 ||
+          localMousePos.y < -rt.sizeDelta.y || localMousePos.y > 0)
+        return;
+
+      RectTransformUtility.ScreenPointToLocalPointInRectangle(
+          rt, Mouse.current.position.ReadValue(), null, out Vector2 localPos);
+
+      float adjustedX = localPos.x + rt.sizeDelta.x;
+      float adjustedY = localPos.y + rt.sizeDelta.y;
+
+      int cx = (int)(adjustedX / CellSize);
+      int cy = (int)(adjustedY / CellSize);
+      if (cx >= 0 && cx < ColCount && cy >= 0 && cy < RowCount)
+        OnCellClicked(cx, cy);
+    }
+
+  }
+  //---------------------------------------------------------------------------
+  private void LoadColors(WeaveData data)
+  {
+    if (data == null) return;
+    if (data.weftColorNames == null || string.IsNullOrEmpty(data.weftColorNames[0])) return;
+
+    for (int i = 0; i < RowCount; i++)
+    {
+      var colorName = data.weftColorNames[i];
+      _weftColors[i] = ColorPalette.GetColor(colorName);
+      _drawer.FillCell(ColCount - 1, i, _weftColors[i]); // 컬러피커 열에 색상 적용
+    }
+    _drawer.Apply();
+  }
   //---------------------------------------------------------------------------
 }
