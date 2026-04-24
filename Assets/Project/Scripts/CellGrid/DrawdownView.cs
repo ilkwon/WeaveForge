@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(RawImage))]
@@ -37,6 +38,13 @@ public class DrawdownView : CellGridView
     Init();
     UpdatePosition();
 
+    StartCoroutine(RecalculateNextFrame());
+  }
+  
+  //---------------------------------------------------------------------------
+  private IEnumerator RecalculateNextFrame()
+  {
+    yield return null; // 다음 프레임까지 대기
     Recalculate();
   }
 
@@ -67,11 +75,36 @@ public class DrawdownView : CellGridView
     {
       for (int y = 0; y < weftCount; y++)
       {
-        int shaft = threadingView.GetThreading(x);
-        int treadle = treadlingView.GetTreadling(y);
+        int shaft = threadingView.GetThreading(x);    // x열의 종광 번호
+        int treadle = treadlingView.GetTreadling(y);  // y행의 트레들 번호
+
+        if (shaft < 1 || shaft > tieupView.RowCount) { _drawer.FillCell(x, y, Color.white); continue; }
+        if (treadle < 1 || treadle > tieupView.ColCount) { _drawer.FillCell(x, y, Color.white); continue; }
+
+        var result = tieupView.GetCell(treadle - 1, shaft - 1); // 타이up은 0-based 인덱스
+        Color color = result == 1 ? Color.black : Color.white; // 타이업이 1이면 검정, 아니면 흰색
+        _drawer.FillCell(x, y, color);
       }
     }
+    _drawer.Apply();
+  }
 
+  //---------------------------------------------------------------------------
+  private void Update()
+  {
+    RectTransform rt = GetComponent<RectTransform>();
+    Vector2 localMousePos;
+    RectTransformUtility.ScreenPointToLocalPointInRectangle(
+        rt, Mouse.current.position.ReadValue(), null, out localMousePos);
 
+    if (localMousePos.x < -rt.sizeDelta.x || localMousePos.x > 0 ||
+        localMousePos.y < -rt.sizeDelta.y || localMousePos.y > 0)
+      return;
+
+    int cx = (int)((localMousePos.x + rt.sizeDelta.x) / CellSize);
+    int cy = (int)((localMousePos.y + rt.sizeDelta.y) / CellSize);
+
+    if (Mouse.current.leftButton.wasPressedThisFrame)
+      OnCellClicked(cx, cy);
   }
 }
