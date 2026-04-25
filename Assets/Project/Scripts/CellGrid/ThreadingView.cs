@@ -172,7 +172,7 @@ public class ThreadingView : CellGridView
   private void LoadColors(WeaveData data)
   {
     if (data == null) return;
-    if (data.warpColorNames == null || string.IsNullOrEmpty(data.warpColorNames[0])) return;
+    if (data.warpColorNames == null || data.warpColorNames.Length == 0) return;
     
     for (int i = 0; i < ColCount; i++)
     {

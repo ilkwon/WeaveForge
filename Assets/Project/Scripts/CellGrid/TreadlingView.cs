@@ -44,8 +44,8 @@ public class TreadlingView : CellGridView
   //---------------------------------------------------------------------------
   private void InitColors()
   {
-    _weftColors = new Color[ColCount];
-    for (int i = 0; i < ColCount; i++)
+    _weftColors = new Color[RowCount];
+    for (int i = 0; i < RowCount; i++)
       _weftColors[i] = Color.white;
   }
 
@@ -181,7 +181,7 @@ public class TreadlingView : CellGridView
   private void LoadColors(WeaveData data)
   {
     if (data == null) return;
-    if (data.weftColorNames == null || string.IsNullOrEmpty(data.weftColorNames[0])) return;
+    if (data.weftColorNames == null || data.weftColorNames.Length == 0) return;
 
     for (int i = 0; i < RowCount; i++)
     {
@@ -189,6 +189,7 @@ public class TreadlingView : CellGridView
       _weftColors[i] = ColorPalette.GetColor(colorName);
       _drawer.FillCell(ColCount - 1, i, _weftColors[i]); // 컬러피커 열에 색상 적용
     }
+    _drawer.Apply();
   }
   //---------------------------------------------------------------------------
 }
