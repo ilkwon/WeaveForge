@@ -1,10 +1,8 @@
 using UnityEngine;
-using System.Collections;
-using System;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 [RequireComponent(typeof(RectTransform))]
-
 /// <summary>
 /// 트레들링 뷰 : 위사 배열. (타이업 column count + 컬러피커 1)
 /// </summary>
@@ -46,8 +44,8 @@ public class TreadlingView : CellGridView
   //---------------------------------------------------------------------------
   private void InitColors()
   {
-    _weftColors = new Color[RowCount];
-    for (int i = 0; i < RowCount; i++)
+    _weftColors = new Color[ColCount];
+    for (int i = 0; i < ColCount; i++)
       _weftColors[i] = Color.white;
   }
 
@@ -57,7 +55,9 @@ public class TreadlingView : CellGridView
     var treadleCount = tieupView.ColCount;  // 트레들 수
     for (int i = 0; i < RowCount; i++)
     {
-      _treadlingData[i] = (i % treadleCount) + 1; // 단순히 트레들 수로 나눈 나머지로 초기값 설정 (직조 패턴에 따라 달라질 수 있음)
+      int treadleNum = ((RowCount - 1 - i) % treadleCount) + 1; // 단순히 트레들 수로 나눈 나머지로 초기값 설정 (직조 패턴에 따라 달라질 수 있음)
+      _treadlingData[i] = treadleNum;
+      //_treadlingData[i] = (i % treadleCount) + 1        
     }
 
     _fontRenderer.PrepareNumbers(1, treadleCount);  // 트레들 수에 맞춰 숫자 준비
@@ -189,7 +189,6 @@ public class TreadlingView : CellGridView
       _weftColors[i] = ColorPalette.GetColor(colorName);
       _drawer.FillCell(ColCount - 1, i, _weftColors[i]); // 컬러피커 열에 색상 적용
     }
-    _drawer.Apply();
   }
   //---------------------------------------------------------------------------
 }

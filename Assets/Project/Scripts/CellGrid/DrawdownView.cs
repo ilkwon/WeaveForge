@@ -25,7 +25,7 @@ public class DrawdownView : CellGridView
     CellSize = tieupView.CellSize;
 
     tieupView.OnPatternLoaded += Resize;
-
+    tieupView.OnTieupChanged += Recalculate;    
   }
 
   //---------------------------------------------------------------------------
@@ -78,8 +78,10 @@ public class DrawdownView : CellGridView
         int shaft = threadingView.GetThreading(x);    // x열의 종광 번호
         int treadle = treadlingView.GetTreadling(y);  // y행의 트레들 번호
 
-        if (shaft < 1 || shaft > tieupView.RowCount) { _drawer.FillCell(x, y, Color.white); continue; }
-        if (treadle < 1 || treadle > tieupView.ColCount) { _drawer.FillCell(x, y, Color.white); continue; }
+        bool validShaft = shaft >= 1 && shaft <= tieupView.RowCount;
+        bool validTreadle = treadle >= 1 && treadle <= tieupView.ColCount;
+        if (!validShaft || !validTreadle)
+          continue;        
 
         var result = tieupView.GetCell(treadle - 1, shaft - 1); // 타이up은 0-based 인덱스
         Color color = result == 1 ? Color.black : Color.white; // 타이업이 1이면 검정, 아니면 흰색
@@ -90,7 +92,7 @@ public class DrawdownView : CellGridView
   }
 
   //---------------------------------------------------------------------------
-  private void Update()
+  protected override void Update()
   {
     RectTransform rt = GetComponent<RectTransform>();
     Vector2 localMousePos;
@@ -107,4 +109,5 @@ public class DrawdownView : CellGridView
     if (Mouse.current.leftButton.wasPressedThisFrame)
       OnCellClicked(cx, cy);
   }
+  //---------------------------------------------------------------------------
 }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
     /// <summary>
@@ -6,7 +7,7 @@ using UnityEngine;
 public class TieupView : CellGridView
 {
   public System.Action OnPatternLoaded;
-
+  public System.Action OnTieupChanged;
   public WeaveData CurrentData => _currentData;
   private WeaveData _currentData;
   private int[,] _gridData;
@@ -39,6 +40,8 @@ public class TieupView : CellGridView
         : new Color32(255, 255, 255, 255);
     _drawer.FillCell(col, row, color);
     _drawer.Apply();
+
+    OnTieupChanged?.Invoke();
   }
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)

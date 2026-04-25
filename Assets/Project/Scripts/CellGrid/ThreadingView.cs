@@ -1,8 +1,6 @@
 using UnityEngine;
-using System.Collections;
-using System;
 using UnityEngine.InputSystem;
-using System.Runtime.CompilerServices;
+using System.Collections;
 
 /// <summary>
 /// 트레딩 뷰 : 경사 배열.
@@ -10,10 +8,10 @@ using System.Runtime.CompilerServices;
 public class ThreadingView : CellGridView
 {
   [SerializeField] private PalettePopupUI palettePopup;
-  
   [SerializeField] private TieupView tieupView;
   private int[] _threadingData; // 각 경사가 몇 번 종광인지
   private Color[] _warpColors;
+
   //---------------------------------------------------------------------------
   IEnumerator Start()
   {
@@ -46,7 +44,9 @@ public class ThreadingView : CellGridView
     var shaftCount = tieupView.RowCount;
     for (int i = 0; i < ColCount; i++)
     {
-      _threadingData[i] = (i % shaftCount) + 1; // 단순히 종광 수로 나눈 나머지로 초기값 설정 (직조 패턴에 따라 달라질 수 있음)
+      // 단순히 종광 수로 나눈 나머지로 초기값 설정 
+      // (직조 패턴에 따라 달라질 수 있음)
+      _threadingData[i] = ((ColCount - 1 - i) % shaftCount) + 1;
     }
 
     _fontRenderer.PrepareNumbers(1, shaftCount);  // 

@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public enum CellDrawType
 {
-    Dot,    // 행 위치로 값 표현 (점)
-    Number  // 셀 안에 숫자로 값 표현
+  Dot,    // 행 위치로 값 표현 (점)
+  Number  // 셀 안에 숫자로 값 표현
 }
 
 [RequireComponent(typeof(RectTransform))]
@@ -17,20 +17,30 @@ public class CellGridView : MonoBehaviour
   [SerializeField] protected int rowCount = 0;
   [SerializeField] protected int cellSize = 40;
   [SerializeField] protected Font font;
-  [SerializeField] protected CellDrawType drawType = CellDrawType.Dot;
 
   protected CellDrawer _drawer;
   protected FontRenderer _fontRenderer;
   protected Vector2Int _hoverCell = new Vector2Int(-1, -1);
-
+  protected CellDrawType drawType = CellDrawType.Dot;
   public int ColCount { get => colCount; set => colCount = value; }
   public int RowCount { get => rowCount; set => rowCount = value; }
   public int CellSize { get => cellSize; set => cellSize = value; }
 
   //---------------------------------------------------------------------------
+  protected virtual void OnDestroy()
+  {
+    if (_drawer != null && _drawer.Texture != null)
+    {
+      Destroy(_drawer.Texture);      
+      _drawer = null;
+    }
+  }
+  //---------------------------------------------------------------------------
   protected virtual void Init()
   {
-    
+    if (_drawer != null && _drawer.Texture != null)
+      Destroy(_drawer.Texture);
+
     _drawer = new CellDrawer(ColCount, RowCount, CellSize);
     _drawer.CreateTexture();
 
