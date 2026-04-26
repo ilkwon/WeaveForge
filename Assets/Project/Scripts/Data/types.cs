@@ -39,6 +39,6 @@ public static class ColorPalette
       if (c.colorName == name) return c.color;
     return Color.white;
   }
-
+  public static readonly Color Unset = new(0, 0, 0, 0);  // alpha=0 = 미선택
   //--------------------------------------------------------------------------
 }

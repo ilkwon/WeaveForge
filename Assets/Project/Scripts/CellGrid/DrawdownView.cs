@@ -3,8 +3,8 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-
 [RequireComponent(typeof(RawImage))]
+[RequireComponent(typeof(RectTransform))]
 /// <summary>
 /// 직물조직 뷰 : 타이업, 트레딩, 트레들링 뷰를 종합하여 직물 조직도를 보여준다.
 /// 타이업, 트레딩, 트레들링 뷰를 참조하여 그린다. 타이업, 트레딩, 트레들링 
@@ -26,8 +26,12 @@ public class DrawdownView : CellGridView
 
     tieupView.OnPatternLoaded += Resize;
     tieupView.OnTieupChanged += Recalculate;   
-    threadingView.OnThreadingChanged += Recalculate; // 경사 변경 시 Recalculate 호출
-    treadlingView.OnTreadlingChanged += Recalculate; // 위사 변경 시 Re
+    // 경위사 변경 시 Recalculate 호출
+    threadingView.OnThreadingChanged += Recalculate; 
+    threadingView.OnColorChanged += Recalculate; 
+    treadlingView.OnTreadlingChanged += Recalculate; 
+    treadlingView.OnColorChanged += Recalculate; 
+
   }
 
   //---------------------------------------------------------------------------
@@ -77,16 +81,18 @@ public class DrawdownView : CellGridView
     {
       for (int y = 0; y < weftCount; y++)
       {
+        // 각 셀에 대해 해당 경사와 위사 번호를 가져온다.
         int shaft = threadingView.GetThreading(x);    // x열의 종광 번호
         int treadle = treadlingView.GetTreadling(y);  // y행의 트레들 번호
-
+        
         bool validShaft = shaft >= 1 && shaft <= tieupView.RowCount;
         bool validTreadle = treadle >= 1 && treadle <= tieupView.ColCount;
+        // 유효한 종광과 트레들 번호인지 확인 (타이업 범위 내에 있는지)
         if (!validShaft || !validTreadle)
           continue;        
-
+        
         var result = tieupView.GetCell(treadle - 1, shaft - 1); // 타이up은 0-based 인덱스
-        Color color = result == 1 ? Color.black : Color.white; // 타이업이 1이면 검정, 아니면 흰색
+        Color color = result == 1 ? threadingView.WarpColor(x) : treadlingView.WeftColor(y); // 타이업이 1이면 검정, 아니면 흰색
         _drawer.FillCell(x, y, color);
       }
     }

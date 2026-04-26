@@ -770,3 +770,3130 @@
         WHERE Code = 'DB-260412-004' LIMIT 1;
 ]
 
+2026-04-26 21:44:26 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 21:44:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:44:26 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:44:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:44:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:45:26 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 21:45:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:45:26 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:45:27 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:46:36 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 21:46:36 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:46:36 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:46:38 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:46:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:47:01 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Gray,Brown,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:47:05 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Gray,Red,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:47:08 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Red,Red,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:47:53 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Red,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:47:55 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Red,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:47:57 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,White,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:47'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:48:07 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:48'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:48:10 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,Brown,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:48'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:48:12 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,Brown,Brown,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:48'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:48:13 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,Brown,Brown,Brown',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:48'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:18 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 21:53:18 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:53:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:53:19 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:53:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:53:31 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,White,Brown,Brown',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:34 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,White,White,Brown',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:36 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Camel,Black,Red,Beige,Camel,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:42 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Black,Red,Beige,Camel,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:44 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Beige,Camel,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:50 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,White,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:53:53 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Gray,White,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:53'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:04 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Gray,Beige,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:06 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,White',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:08 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:15 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Green,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:20 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Green,Black,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:24 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Black,Black,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:27 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Black,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:29 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,White,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:32 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,White,Black,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:34 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,White,Black,Black,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:37 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',White,Green,Black,Black,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:39 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = ',Green,Green,Black,Black,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:54:41 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 21:54'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 21:55:12 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 21:55:12 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:55:12 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:55:13 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 21:55:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 21:55:58 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 21:56:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:03:08 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:03:08 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:03:08 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:03:09 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:03:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:03:25 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:03'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:06:55 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:06:55 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:06:55 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:06:57 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:07:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:07:19 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:07'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:07:23 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:07'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:07:26 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:07'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:08:57 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:08:57 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:08:57 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:08:58 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:09:05 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:09:17 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:22 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Green,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:26 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:31 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Beige,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:34 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:36 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Ivory,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:38 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Beige,Ivory,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:43 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Ivory,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:47 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Navy,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:51 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Black,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:54 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Black,Red,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:09:58 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:09'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:10:02 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Navy,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:10'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:11:07 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:11'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:11:20 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Red',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Ivory',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:11'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:11:29 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Red',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:11'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:11:46 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:11:46 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:11:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:11:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:11:54 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:12:11 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:12:13 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Green',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:12:15 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Red',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:12:17 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Green',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:12:21 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Green',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:12:25 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:12'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:16:24 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:16:24 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:16:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:16:26 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:16:35 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:16:48 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:16'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:16:55 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:16'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:17:06 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Beige',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:17'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:27 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:21:27 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:21:27 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:21:29 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:21:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:21:42 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Red,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:45 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:47 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:50 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:54 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:21:56 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:21'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:00 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Beige,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:04 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Ivory,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:10 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Camel,Camel,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:16 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Camel,Camel,Brown,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:19 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Camel,Brown,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:21 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Brown,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:23 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Beige,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:24 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Brown',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:27 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:31 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Navy,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:34 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Red,Navy,Navy,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:37 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Red,Green,Navy,Navy,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:40 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:55 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Red,Navy,Navy,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:22:59 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Black',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:22'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:28 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Brown,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:38 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Brown,Camel,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:41 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Brown,Red,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:45 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Camel,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:47 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Beige,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:49 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Ivory',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:51 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:23:55 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Navy,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:23'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:24:00 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Green,Red',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:24'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:24:03 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:24'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:24:06 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Red,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:24'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:42 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Brown,Red,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:44 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Brown,Brown,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:46 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Brown,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:48 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Red,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:50 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Red,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:52 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Red',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:25:54 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Brown',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:25'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:26:09 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Brown',
+            WeftColors    = 'Green,Green,Green,Green,Green,Green,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:26'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:26:13 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Brown',
+            WeftColors    = 'Green,Green,Green,Green,Green,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:26'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:26:16 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Brown',
+            WeftColors    = 'Green,Green,Green,Navy,Green,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:26'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:26:21 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '평직',
+            RepeatX       = 2,
+            RepeatY       = 2,
+            Cells         = '0,1,1,0',
+            WarpColors    = 'Red,Red,Red,Camel,Camel,Brown,Brown,Brown',
+            WeftColors    = 'Green,Navy,Green,Navy,Green,Navy,Green,Navy',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:26'
+        WHERE Code = 'DB-260412-001';
+]
+
+2026-04-26 22:26:25 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:09 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:21 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:21 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:22 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:23 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 22:31:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:24 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:26 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:26 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:27 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:28 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:29 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:31:31 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:31:32 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:53:49 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:53:49 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:53:49 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:53:51 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:54:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:54:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:54:08 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:54'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:54:21 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:54'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:54:24 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:54'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:57:10 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 22:57:10 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:57:10 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 22:57:12 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 22:57:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 22:57:23 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:57'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:57:29 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:57'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:57:35 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 22:57'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 22:59:58 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:00:02 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:00'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:00:07 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:00'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:04:33 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:04:33 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:04:33 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:04:34 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:04:52 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:04:52 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:04:52 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:04:54 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:05:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:05:03 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Beige,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:05'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:05:08 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Beige,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:05'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:05:11 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Beige,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:05'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:15:03 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:15:03 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:15:03 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:15:05 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:15:28 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:15:28 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:15:28 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:15:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:15:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:15:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:15:53 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:15'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:16:51 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:16'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:18:40 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:18:40 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:18:40 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:18:42 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:18:49 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:18:50 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:18:54 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:18'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:18:59 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:18'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:19:04 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:19'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:19:06 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:19'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:19:09 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,Brown,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:19'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:21:48 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:21:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:21:48 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:21:50 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:21:58 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:22:03 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:22:06 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,Camel,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:22:09 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,Beige,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:22:12 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:22:31 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,Green,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:22:34 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,Green,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:22'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:26:30 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:26:30 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:26:30 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:26:32 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:28:04 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:28:04 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:28:04 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:28:06 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:28:12 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:28:13 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:28:18 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,Green,Green,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:28:20 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,Green,Green,Green,Green,Beige,Camel,Green,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:28:22 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-26 23:28:26 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '허니컴',
+            RepeatX       = 6,
+            RepeatY       = 6,
+            Cells         = '0,1,1,1,1,0,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,0,1,1,1,1,0',
+            WarpColors    = ',Green,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-005';
+]
+
+2026-04-26 23:28:31 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '허니컴',
+            RepeatX       = 6,
+            RepeatY       = 6,
+            Cells         = '0,1,1,1,1,0,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,0,1,1,1,1,0',
+            WarpColors    = ',Green,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-005';
+]
+
+2026-04-26 23:28:35 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '허니컴',
+            RepeatX       = 6,
+            RepeatY       = 6,
+            Cells         = '0,1,1,1,1,0,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,1,0,0,0,0,1,0,1,1,1,1,0',
+            WarpColors    = ',Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-005';
+]
+
+2026-04-26 23:28:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:28:40 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '바스킷',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-004';
+]
+
+2026-04-26 23:28:44 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '바스킷',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-004';
+]
+
+2026-04-26 23:28:48 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '바스킷',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-004';
+]
+
+2026-04-26 23:28:50 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '바스킷',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '0,0,1,1,0,0,1,1,1,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:28'
+        WHERE Code = 'DB-260412-004';
+]
+
+2026-04-26 23:30:46 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:30:46 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:30:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:30:48 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:30:56 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:31:05 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '능직',
+            RepeatX       = 4,
+            RepeatY       = 4,
+            Cells         = '1,0,0,1,0,0,1,1,0,1,0,0,1,1,0,0',
+            WarpColors    = 'Red,Red,Red,Green,Camel,Camel,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,Green,Green,Green,Green,Beige,Camel,Red,Brown',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:31'
+        WHERE Code = 'DB-260412-002';
+]
+
+2026-04-26 23:42:37 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:42:37 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:42:37 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:42:39 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:42:49 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:42:52 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:42'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:42:54 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:42'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:42:57 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Brown,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:42'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:42:59 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Green,Brown,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:42'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:02 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Green,Brown,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:18 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:21 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:23 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:25 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,Beige,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Beige,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:35 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,White,Camel,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Beige,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:43:38 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,White,Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,White,Beige,Beige,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:43'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:45:34 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:45:39 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-26 23:45:40 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:45:41 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-26 23:45:42 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:45:43 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:45:44 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:45:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:45:45 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:45:46 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:45:47 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:47:53 [INFO] : SQL : [CREATE TABLE IF NOT EXISTS Colors (
+        Idx    INTEGER PRIMARY KEY AUTOINCREMENT,
+        Key    TEXT    NOT NULL UNIQUE,
+        Value  TEXT    NOT NULL
+    );]
+
+2026-04-26 23:47:53 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:47:53 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:47:55 [INFO] : SQL : [
+        SELECT Idx, Name, Code, RepeatX, RepeatY, SavedAt
+        FROM WeavePattern
+        ORDER BY Idx ASC;
+]
+
+2026-04-26 23:48:00 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:48:08 [INFO] : SQL : [
+        UPDATE WeavePattern
+        SET Name          = '수자직',
+            RepeatX       = 5,
+            RepeatY       = 5,
+            Cells         = '0,0,0,1,0,0,1,0,0,0,0,0,0,0,1,0,0,1,0,0,1,0,0,0,0',
+            WarpColors    = 'Red,White,Red,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White,White',
+            WeftColors    = ',White,White,White,White,White,White,White,White,White,White,White,White,Navy,Beige,Beige,Beige,Green,Green,Green',
+            WarpThickness = '',
+            WeftThickness = '',
+            WeaveMode     = 'Dobby',
+            SavedAt       = '26-04-26 23:48'
+        WHERE Code = 'DB-260412-003';
+]
+
+2026-04-26 23:48:14 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:48:15 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:48:16 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+
+2026-04-26 23:48:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:48:17 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:48:18 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:48:19 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:48:20 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-001' LIMIT 1;
+]
+
+2026-04-26 23:50:07 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-002' LIMIT 1;
+]
+
+2026-04-26 23:50:08 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-003' LIMIT 1;
+]
+
+2026-04-26 23:50:09 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-004' LIMIT 1;
+]
+
+2026-04-26 23:50:12 [INFO] : SQL : [
+        SELECT * FROM WeavePattern
+        WHERE Code = 'DB-260412-005' LIMIT 1;
+]
+

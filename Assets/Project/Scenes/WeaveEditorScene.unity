@@ -643,7 +643,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 0.61960787, g: 0.61960787, b: 0.61960787, a: 1}
+  m_Color: {r: 0.80784315, g: 0.80784315, b: 0.80784315, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -681,7 +681,6 @@ MonoBehaviour:
   rowCount: 0
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
-  drawType: 1
   palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1 &951792170
@@ -844,7 +843,6 @@ MonoBehaviour:
   rowCount: 8
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
-  drawType: 0
 --- !u!222 &1075997392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -904,7 +902,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 0.1, g: 0.3, b: 0.1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -942,7 +940,6 @@ MonoBehaviour:
   rowCount: 0
   cellSize: 40
   font: {fileID: 12800000, guid: 25b593e38913942779bfe13117e8fefe, type: 3}
-  drawType: 0
   tieupView: {fileID: 1075997391}
   threadingView: {fileID: 1873106609}
   treadlingView: {fileID: 791784531}
@@ -1618,7 +1615,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.RawImage
   m_Material: {fileID: 0}
-  m_Color: {r: 0.5283019, g: 0.47597012, b: 0.47597012, a: 1}
+  m_Color: {r: 0.80784315, g: 0.80784315, b: 0.80784315, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1656,7 +1653,6 @@ MonoBehaviour:
   rowCount: 0
   cellSize: 40
   font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
-  drawType: 1
   palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1 &2111770360

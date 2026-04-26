@@ -1,18 +1,18 @@
 using System;
 using UnityEngine;
 
-    /// <summary>
-    /// 타이업 뷰 : 조직도.
-    /// </summary>
+/// <summary>
+/// 타이업 뷰 : 조직도.
+/// </summary>
 public class TieupView : CellGridView
 {
   public System.Action OnPatternLoaded;
   public System.Action OnTieupChanged;
-  
+
   public WeaveData CurrentData => _currentData;
   private WeaveData _currentData;
   private int[,] _gridData;
-  
+
   //---------------------------------------------------------------------------
   protected override void Init()
   {
@@ -66,13 +66,13 @@ public class TieupView : CellGridView
 
     RowCount = data.rowCount;
     ColCount = data.colCount;
-    
+
     Init();
 
     for (int row = 0; row < RowCount; row++)
     {
       for (int col = 0; col < ColCount; col++)
-      {        
+      {
         _gridData[row, col] = data.cells[row * ColCount + col];
         Color32 color = _gridData[row, col] == 1
             ? new Color32(0, 0, 0, 255)
@@ -80,6 +80,7 @@ public class TieupView : CellGridView
         _drawer.FillCell(col, row, color);
       }
     }
+
     _drawer.Apply();
     SetWarpColor(data);
     SetWeftColor(data);
@@ -93,12 +94,12 @@ public class TieupView : CellGridView
     int warpCount = ColCount * 4;
     if (data.warpColorNames == null || data.warpColorNames.Length != warpCount)
     {
-        var newColors = new string[warpCount];
-        for (int i = 0; i < warpCount; i++)
-            newColors[i] = (data.warpColorNames != null && i < data.warpColorNames.Length)
-                ? data.warpColorNames[i]
-                : "White";
-        data.warpColorNames = newColors;
+      var newColors = new string[warpCount];
+      for (int i = 0; i < warpCount; i++)
+        newColors[i] = (data.warpColorNames != null && i < data.warpColorNames.Length)
+            ? data.warpColorNames[i]
+            : string.Empty;
+      data.warpColorNames = newColors;
     }
 
   }
@@ -108,14 +109,13 @@ public class TieupView : CellGridView
     int weftCount = RowCount * 4;
     if (data.weftColorNames == null || data.weftColorNames.Length != weftCount)
     {
-        var newColors = new string[weftCount];
-        for (int i = 0; i < weftCount; i++)
-            newColors[i] = (data.weftColorNames != null && i < data.weftColorNames.Length)
-                ? data.weftColorNames[i]
-                : "White";
-        data.weftColorNames = newColors;
+      var newColors = new string[weftCount];
+      for (int i = 0; i < weftCount; i++)
+        newColors[i] = (data.weftColorNames != null && i < data.weftColorNames.Length)
+            ? data.weftColorNames[i]
+            : string.Empty;
+      data.weftColorNames = newColors;
     }
   }
-
   //---------------------------------------------------------------------------
 }

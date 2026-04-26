@@ -11,6 +11,7 @@ public class ThreadingView : CellGridView
   [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
   public System.Action OnThreadingChanged;
+  public System.Action OnColorChanged;
   private int[] _threadingData; // 각 경사가 몇 번 종광인지
   private Color[] _warpColors;
 
@@ -37,7 +38,7 @@ public class ThreadingView : CellGridView
   {
     _warpColors = new Color[ColCount];
     for (int i = 0; i < ColCount; i++)
-      _warpColors[i] = Color.white;
+      _warpColors[i] = ColorPalette.Unset; // 미지정
   }
 
   //---------------------------------------------------------------------------
@@ -104,7 +105,7 @@ public class ThreadingView : CellGridView
   {
     if (row == RowCount - 1)
     {
-      PopupPalette(col, row);
+      PopupPalette(col, row);      
       return;
     }
 
@@ -138,15 +139,25 @@ public class ThreadingView : CellGridView
       palettePopup.Show((colorName) =>
       {
         _warpColors[col] = ColorPalette.GetColor(colorName);
-        _drawer.FillCell(col, RowCount - 1, _warpColors[col]);
+        Debug.Log($"Selected color for col {col}: {colorName} -> {_warpColors[col]}");
+        for (int i = 0; i < ColCount; i++)
+        {
+          if (_warpColors[i] == ColorPalette.Unset) // 미지정 컬러는 선택한 컬러로 초기화
+          {
+              _warpColors[i] = _warpColors[col];              
+          }
+          _drawer.FillCell(i, RowCount - 1, (Color32)_warpColors[i]);
+        }
+        
         _drawer.Apply();
 
         var data = tieupView.CurrentData;
         if (data != null && data.warpColorNames != null && col < data.warpColorNames.Length)
         {
           data.warpColorNames[col] = colorName;
-          WeaveSaveManager.Instance.Save(data, false);
+          WeaveSaveManager.Instance.Save(data, false);                    
         }
+        OnColorChanged?.Invoke();
       }, Mouse.current.position.ReadValue());
   }
 
@@ -177,6 +188,9 @@ public class ThreadingView : CellGridView
   //---------------------------------------------------------------------------
   protected override void Update()
   {
+    if (palettePopup.gameObject.activeSelf)
+      return;
+    
     if (Mouse.current.leftButton.wasPressedThisFrame)
     {
       RectTransform rt = GetComponent<RectTransform>();
@@ -209,11 +223,21 @@ public class ThreadingView : CellGridView
     for (int i = 0; i < ColCount; i++)
     {
       var colorName = data.warpColorNames[i];
-      _warpColors[i] = ColorPalette.GetColor(colorName);
-      _drawer.FillCell(i, RowCount - 1, _warpColors[i]);
+      Debug.Log($"LoadColors: col={i}, colorName={colorName}");
+      //_warpColors[i] = string.IsNullOrEmpty(colorName) ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
+      _warpColors[i] = (string.IsNullOrEmpty(colorName) || colorName == "White") ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
+      _drawer.FillCell(i, RowCount - 1, (Color32)_warpColors[i]);
     }
     _drawer.Apply();
   }
   //---------------------------------------------------------------------------
-
+  public Color WarpColor(int col)
+  {
+    if (_warpColors == null || col < 0 || col >= _warpColors.Length)
+      return Color.black;
+    if (_warpColors[col] == ColorPalette.Unset)  // 미지정 컬러는 검정으로 반환
+      return Color.gray;  //
+    return _warpColors[col];
+  }
+  //---------------------------------------------------------------------------
 }

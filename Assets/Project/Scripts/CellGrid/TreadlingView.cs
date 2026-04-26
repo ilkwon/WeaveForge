@@ -11,10 +11,10 @@ public class TreadlingView : CellGridView
 {
   [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
+  public System.Action OnTreadlingChanged;
+  public System.Action OnColorChanged;
   private int[] _treadlingData; // 각 위사가 몇 번 트레들인지
   private Color[] _weftColors;
-
-  public System.Action OnTreadlingChanged;
 
   //---------------------------------------------------------------------------
   IEnumerator Start()
@@ -49,7 +49,7 @@ public class TreadlingView : CellGridView
   {
     _weftColors = new Color[RowCount];
     for (int i = 0; i < RowCount; i++)
-      _weftColors[i] = Color.white;
+      _weftColors[i] = ColorPalette.Unset; // 미지정
   }
 
   //---------------------------------------------------------------------------
@@ -107,7 +107,7 @@ public class TreadlingView : CellGridView
 
   //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
-  {    
+  {
     if (col == ColCount - 1)
     {
       PopupPalette(col, row);
@@ -139,7 +139,15 @@ public class TreadlingView : CellGridView
     palettePopup.Show((colorName) =>
     {
       _weftColors[row] = ColorPalette.GetColor(colorName);
-      _drawer.FillCell(col, row, _weftColors[row]);
+
+      for (int i = 0; i < RowCount; i++)
+      {        
+        if (_weftColors[i] == ColorPalette.Unset)
+          _weftColors[i] = _weftColors[row];          
+        
+        _drawer.FillCell(ColCount - 1, i, (Color32)_weftColors[i]);
+      }
+
       _drawer.Apply();
 
       // 현재 패턴 데이터에 색상 정보 저장
@@ -147,8 +155,9 @@ public class TreadlingView : CellGridView
       if (data != null && data.weftColorNames != null && row < data.weftColorNames.Length)
       {
         data.weftColorNames[row] = colorName;
-        WeaveSaveManager.Instance.Save(data, false);
+        WeaveSaveManager.Instance.Save(data, false);        
       }
+      OnColorChanged?.Invoke();
     }, Mouse.current.position.ReadValue());
   }
 
@@ -180,6 +189,10 @@ public class TreadlingView : CellGridView
   //---------------------------------------------------------------------------
   protected override void Update()
   {
+    // 팝업 열려있으면 클릭 무시)
+    if (palettePopup.gameObject.activeSelf)
+      return;
+
     // 마우스 클릭 위치가 그리드 영역 내에 있는지 확인
     if (Mouse.current.leftButton.wasPressedThisFrame)
     {
@@ -214,10 +227,21 @@ public class TreadlingView : CellGridView
     for (int i = 0; i < RowCount; i++)
     {
       var colorName = data.weftColorNames[i];
-      _weftColors[i] = ColorPalette.GetColor(colorName);
-      _drawer.FillCell(ColCount - 1, i, _weftColors[i]); // 컬러피커 열에 색상 적용
+      //Debug.Log($"LoadColors: row={i}, colorName={colorName}");
+      //_weftColors[i] = string.IsNullOrEmpty(colorName) ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
+      _weftColors[i] = (string.IsNullOrEmpty(colorName) || colorName == "White") ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
+      _drawer.FillCell(ColCount - 1, i, (Color32)_weftColors[i]);
     }
     _drawer.Apply();
+  }
+  //---------------------------------------------------------------------------
+  public Color WeftColor(int row)
+  {
+    if (_weftColors == null || row < 0 || row >= _weftColors.Length)
+      return Color.black;
+    if (_weftColors[row] == ColorPalette.Unset)  
+      return Color.gray;  //
+    return _weftColors[row];
   }
   //---------------------------------------------------------------------------
 }
