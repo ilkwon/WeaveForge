@@ -25,7 +25,9 @@ public class DrawdownView : CellGridView
     CellSize = tieupView.CellSize;
 
     tieupView.OnPatternLoaded += Resize;
-    tieupView.OnTieupChanged += Recalculate;    
+    tieupView.OnTieupChanged += Recalculate;   
+    threadingView.OnThreadingChanged += Recalculate; // 경사 변경 시 Recalculate 호출
+    treadlingView.OnTreadlingChanged += Recalculate; // 위사 변경 시 Re
   }
 
   //---------------------------------------------------------------------------

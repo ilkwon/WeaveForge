@@ -1,14 +1,16 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 /// <summary>
 /// 트레딩 뷰 : 경사 배열.
 /// </summary>
 public class ThreadingView : CellGridView
-{
+{  
   [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
+  public System.Action OnThreadingChanged;
   private int[] _threadingData; // 각 경사가 몇 번 종광인지
   private Color[] _warpColors;
 
@@ -34,8 +36,8 @@ public class ThreadingView : CellGridView
   private void InitColors()
   {
     _warpColors = new Color[ColCount];
-   for (int i = 0; i < ColCount; i++)
-       _warpColors[i] = Color.white;
+    for (int i = 0; i < ColCount; i++)
+      _warpColors[i] = Color.white;
   }
 
   //---------------------------------------------------------------------------
@@ -54,7 +56,7 @@ public class ThreadingView : CellGridView
     {
       _fontRenderer.DrawNumber(_threadingData[i], i, _threadingData[i] - 1, Color.black);
     }
-    
+
     _drawer.Apply();
   }
   //---------------------------------------------------------------------------
@@ -100,22 +102,52 @@ public class ThreadingView : CellGridView
   //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
   {
-    if (row != RowCount - 1) return; 
+    if (row == RowCount - 1)
+    {
+      PopupPalette(col, row);
+      return;
+    }
 
-    // 컬러피커 구현.
-    palettePopup.Show((colorName) =>
-    {      
-      _warpColors[col] = ColorPalette.GetColor(colorName);
-      _drawer.FillCell(col, RowCount - 1, _warpColors[col]);
-      _drawer.Apply();
+    // 종광 영역
+    var prevShaft = _threadingData[col];
+    // 이전 숫자 지우기
+    if (prevShaft >= 1)
+        _drawer.FillCell(col, prevShaft - 1, Color.white);
+    
+    if (prevShaft == row + 1)
+    {
+      // 같은 셀 클릭 -> 해제
+      _threadingData[col] = -1;
+    }
+    else
+    {
+      // 다른 셀 클릭 -> 업데이트
+      int threadingNum = row + 1;
+      _threadingData[col] = threadingNum;
+      _fontRenderer.DrawNumber(threadingNum, col, row, Color.black);    
+    }
 
-      var data = tieupView.CurrentData;
-      if (data != null && data.warpColorNames != null && col < data.warpColorNames.Length)
+    _drawer.Apply();
+    OnThreadingChanged?.Invoke();
+  }
+
+  //---------------------------------------------------------------------------
+  private void PopupPalette(int col, int row)
+  {
+      // 컬러피커 구현.
+      palettePopup.Show((colorName) =>
       {
-        data.warpColorNames[col] = colorName;
-        WeaveSaveManager.Instance.Save(data, false);
-      }
-    }, Mouse.current.position.ReadValue());
+        _warpColors[col] = ColorPalette.GetColor(colorName);
+        _drawer.FillCell(col, RowCount - 1, _warpColors[col]);
+        _drawer.Apply();
+
+        var data = tieupView.CurrentData;
+        if (data != null && data.warpColorNames != null && col < data.warpColorNames.Length)
+        {
+          data.warpColorNames[col] = colorName;
+          WeaveSaveManager.Instance.Save(data, false);
+        }
+      }, Mouse.current.position.ReadValue());
   }
 
   //---------------------------------------------------------------------------
@@ -166,21 +198,22 @@ public class ThreadingView : CellGridView
       int cy = (int)(adjustedY / CellSize);
       if (cx >= 0 && cx < ColCount && cy >= 0 && cy < RowCount)
         OnCellClicked(cx, cy);
-    }              
+    }
   }
   //---------------------------------------------------------------------------
   private void LoadColors(WeaveData data)
   {
     if (data == null) return;
     if (data.warpColorNames == null || data.warpColorNames.Length == 0) return;
-    
+
     for (int i = 0; i < ColCount; i++)
     {
       var colorName = data.warpColorNames[i];
       _warpColors[i] = ColorPalette.GetColor(colorName);
-      _drawer.FillCell(i, RowCount - 1, _warpColors[i]);     
+      _drawer.FillCell(i, RowCount - 1, _warpColors[i]);
     }
     _drawer.Apply();
   }
   //---------------------------------------------------------------------------
+
 }

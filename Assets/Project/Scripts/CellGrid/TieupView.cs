@@ -8,6 +8,7 @@ public class TieupView : CellGridView
 {
   public System.Action OnPatternLoaded;
   public System.Action OnTieupChanged;
+  
   public WeaveData CurrentData => _currentData;
   private WeaveData _currentData;
   private int[,] _gridData;

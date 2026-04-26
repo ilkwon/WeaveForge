@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections;
+using System;
 
 [RequireComponent(typeof(RectTransform))]
 /// <summary>
@@ -12,6 +13,8 @@ public class TreadlingView : CellGridView
   [SerializeField] private TieupView tieupView;
   private int[] _treadlingData; // 각 위사가 몇 번 트레들인지
   private Color[] _weftColors;
+
+  public System.Action OnTreadlingChanged;
 
   //---------------------------------------------------------------------------
   IEnumerator Start()
@@ -104,10 +107,34 @@ public class TreadlingView : CellGridView
 
   //---------------------------------------------------------------------------
   protected override void OnCellClicked(int col, int row)
-  {
-    int lastCol = ColCount - 1;
-    if (col != lastCol) return; // 컬러피커 열이 아닌 경우 클릭 무시
+  {    
+    if (col == ColCount - 1)
+    {
+      PopupPalette(col, row);
+      return;
+    }
 
+    // 숫자를 고치려면 이전 셀 초기화.
+    var prevTreadle = _treadlingData[row];
+    if (prevTreadle >= 1)
+      _drawer.FillCell(prevTreadle - 1, row, new Color32(255, 255, 255, 255)); // 이전 트레들 번호 위치 초기화
+
+    // 같은 셀 클릭시 -> 해제
+    if (prevTreadle == col + 1)
+      _treadlingData[row] = -1;
+    else
+    {
+      int treadleNum = col + 1;
+      _treadlingData[row] = treadleNum; // 선택한 셀의 트레들 번호 저장
+      _fontRenderer.DrawNumber(treadleNum, col, row, Color.black); // 선택한 셀에 숫자 그리기  
+    }
+    _drawer.Apply();
+    OnTreadlingChanged?.Invoke();
+  }
+
+  //---------------------------------------------------------------------------
+  private void PopupPalette(int col, int row)
+  {
     // 컬러피커 열 클릭 시 팔레트 팝업 열기
     palettePopup.Show((colorName) =>
     {
@@ -124,6 +151,7 @@ public class TreadlingView : CellGridView
       }
     }, Mouse.current.position.ReadValue());
   }
+
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)
   {
