@@ -214,7 +214,7 @@ public class WeaveUI : MonoBehaviour
       data.weaveCode = code;
       data.savedAt = saveAt;
       GameObject item = Instantiate(listItemPrefab, listContent);
-      item.GetComponent<WeaveItemUI>().Setup(i + 1, data);
+      item.GetComponent<WeaveItemUI>().Setup(i + 1, data, () => OnDeleteButton(code));
       string captured = code;
       item.GetComponent<WeaveItemUI>().buttonSelect.onClick.AddListener(() =>
       {
@@ -222,6 +222,13 @@ public class WeaveUI : MonoBehaviour
       });
     }
   }
+  //-------------------------------------------------------------------------
+  private void OnDeleteButton(string code)
+  {
+    WeaveSaveManager.Instance.Delete(code);
+    RefreshList();
+  }
+
   //-------------------------------------------------------------------------
   private void Update()
   {

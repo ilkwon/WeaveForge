@@ -235,8 +235,8 @@ public class ThreadingView : CellGridView
   {
     if (_warpColors == null || col < 0 || col >= _warpColors.Length)
       return Color.black;
-    if (_warpColors[col] == ColorPalette.Unset)  // 미지정 컬러는 검정으로 반환
-      return Color.gray;  //
+    if (_warpColors[col] == ColorPalette.Unset)
+      return Color.black;  //  미지정 경사 컬러는 검정
     return _warpColors[col];
   }
   //---------------------------------------------------------------------------

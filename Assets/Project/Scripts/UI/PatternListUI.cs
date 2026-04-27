@@ -47,7 +47,10 @@ public class PatternListUI : MonoBehaviour
     data.savedAt = savedAt;
 
     GameObject item = Instantiate(listItemPrefab, listContent);
-    item.GetComponent<WeaveItemUI>().Setup(no, data);
+    item.GetComponent<WeaveItemUI>().Setup(no, data, () => {
+      WeaveSaveManager.Instance.Delete(code);
+      RefreshList(); 
+    });
 
     string captured = code;
     item.GetComponent<WeaveItemUI>().buttonSelect.onClick.AddListener(() =>
@@ -82,4 +85,22 @@ public class PatternListUI : MonoBehaviour
 
     toggleButtonLabel.text = _isExpanded ? "◀" : "▶";
   }
+  //-------------------------------------------------------------------------
+  public void NewDocument()
+  {
+    var data = new WeaveData(){
+      weaveName = "새 패턴",
+      weaveCode = System.DateTime.Now.ToString("yyyyMMddHHmmss"),
+      rowCount = 8,
+      colCount = 8,
+      cells = new int[8 * 8],
+      warpColorNames = new string[8 * 4],
+      weftColorNames = new string[8 * 4],
+      savedAt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
+    };
+    WeaveSaveManager.Instance.Save(data, true);
+    tieupView.LoadPattern(data);
+    RefreshList();
+  }
+  //-------------------------------------------------------------------------
 }

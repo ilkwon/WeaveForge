@@ -228,7 +228,7 @@ public class TreadlingView : CellGridView
     {
       var colorName = data.weftColorNames[i];
       //Debug.Log($"LoadColors: row={i}, colorName={colorName}");
-      //_weftColors[i] = string.IsNullOrEmpty(colorName) ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
+      
       _weftColors[i] = (string.IsNullOrEmpty(colorName) || colorName == "White") ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
       _drawer.FillCell(ColCount - 1, i, (Color32)_weftColors[i]);
     }
@@ -240,7 +240,7 @@ public class TreadlingView : CellGridView
     if (_weftColors == null || row < 0 || row >= _weftColors.Length)
       return Color.black;
     if (_weftColors[row] == ColorPalette.Unset)  
-      return Color.gray;  //
+      return Color.white;  // 미지정 위사 컬러는 흰색으로 반환.
     return _weftColors[row];
   }
   //---------------------------------------------------------------------------

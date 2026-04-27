@@ -53,6 +53,7 @@
     <Compile Include="Assets/Project/Scripts/Core/ColorSettings.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveGrid.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemUI.cs" />
+    <Compile Include="Assets/Project/Scripts/UI/WeaveItemContextMenu.cs" />
     <Compile Include="Assets/Project/Scripts/UI/ColorStripUI.cs" />
     <Compile Include="Assets/Project/Scripts/Common/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />

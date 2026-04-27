@@ -80,6 +80,7 @@ Assets/Project/Scripts/UI/
  PalettePopupUI.cs
  PatternListUI.cs
  WarpStripView.cs
+ WeaveItemContextMenu.cs
  WeaveItemUI.cs
  WeaveUI.cs
  WeftStripView.cs
