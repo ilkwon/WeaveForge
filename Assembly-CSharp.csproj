@@ -49,36 +49,38 @@
     <Analyzer Include="/Applications/Unity/Hub/Editor/6000.4.1f1/Unity.app/Contents/Resources/BuildPipeline/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets/Project/Scripts/CellGrid/CellGridView.cs" />
     <Compile Include="Assets/Project/Scripts/Core/ColorSettings.cs" />
-    <Compile Include="Assets/Project/Scripts/Core/WeaveGrid.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/TieupView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemUI.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/TreadlingView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemContextMenu.cs" />
+    <Compile Include="Assets/Project/Scripts/Views/WeftStripView.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/FontRenderer.cs" />
+    <Compile Include="Assets/Common/Scripts/Util/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/UI/ColorStripUI.cs" />
-    <Compile Include="Assets/Project/Scripts/Common/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/Data/WeaveData.cs" />
-    <Compile Include="Assets/Project/Scripts/Data/Defines.cs" />
-    <Compile Include="Assets/Project/Scripts/Core/WeaveLayoutManager.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PatternListUI.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/CellDrawer.cs" />
-    <Compile Include="Assets/Project/Scripts/Common/FileLogger.cs" />
-    <Compile Include="Assets/Project/Scripts/Common/DataResult.cs" />
+    <Compile Include="Assets/Project/Scripts/Rendering/WeaveTextureGenerator.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/Defines.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PalettePopupUI.cs" />
-    <Compile Include="Assets/Project/Scripts/Common/DataResultExtensions.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/DrawdownView.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/TreadlingView.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/TieupView.cs" />
-    <Compile Include="Assets/Project/Scripts/Core/WeaveTextureGenerator.cs" />
+    <Compile Include="Assets/Common/Scripts/Util/DataResult.cs" />
+    <Compile Include="Assets/Project/Scripts/Data/ColorTypes.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/ThreadingView.cs" />
+    <Compile Include="Assets/Project/Scripts/Legacy/WeaveGrid.cs" />
+    <Compile Include="Assets/Project/Scripts/Views/WarpStripView.cs" />
+    <Compile Include="Assets/Common/Scripts/Util/DataResultExtensions.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
+    <Compile Include="Assets/Project/Scripts/Legacy/WeaveUI.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
-    <Compile Include="Assets/Project/Scripts/UI/WeftStripView.cs" />
-    <Compile Include="Assets/Project/Scripts/UI/WeaveUI.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/FontRenderer.cs" />
+    <Compile Include="Assets/Common/Scripts/Util/FileLogger.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/CellDrawer.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/DrawdownView.cs" />
+    <Compile Include="Assets/Project/Scripts/Weave/CellGridView.cs" />
+    <Compile Include="Assets/Common/Scripts/DesignPatterns/Singleton.cs" />
     <Compile Include="Assets/Project/Scripts/Core/AppInit.cs" />
-    <Compile Include="Assets/Project/Scripts/Common/DBConn.cs" />
-    <Compile Include="Assets/Project/Scripts/CellGrid/ThreadingView.cs" />
-    <Compile Include="Assets/Project/Scripts/Data/types.cs" />
-    <Compile Include="Assets/Project/Scripts/UI/WarpStripView.cs" />
+    <Compile Include="Assets/Project/Scripts/Legacy/WeaveLayoutManager.cs" />
+    <Compile Include="Assets/Common/Scripts/Util/DBConn.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/WeaveDocumentManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />
@@ -87,7 +89,7 @@
     <None Include="Assets/TextMesh Pro/Shaders/TMP_Bitmap.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/TMPro_Mobile.cginc" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF SSD.shader" />
-    <None Include="Assets/WeaveSQL.xml" />
+    <None Include="Assets/StreamingAssets/WeaveSQL.xml" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets/TextMesh Pro/Shaders/SDFFunctions.hlsl" />
     <None Include="Assets/TextMesh Pro/Shaders/TMP_SDF-Surface.shader" />

@@ -26,9 +26,21 @@ public class TieupView : CellGridView
     rt.anchoredPosition = new Vector2(-40, -40);
   }
   //---------------------------------------------------------------------------
-  void Start()
+  private void Start()
   {
     Init();
+    WeaveDocumentManager.Instance.OnDocumentChanged += LoadPattern;
+
+    // 현재 열려있는 문서가 있을 경우 로드
+    if (WeaveDocumentManager.Instance.CurrentWeaveData != null)
+      LoadPattern(WeaveDocumentManager.Instance.CurrentWeaveData);
+  }
+  //--------------------------------------------------------------------------
+  protected override void OnDestroy()
+  {    
+    base.OnDestroy();
+
+    WeaveDocumentManager.Instance.OnDocumentChanged -= LoadPattern;
   }
 
   //---------------------------------------------------------------------------
@@ -118,4 +130,5 @@ public class TieupView : CellGridView
     }
   }
   //---------------------------------------------------------------------------
+
 }

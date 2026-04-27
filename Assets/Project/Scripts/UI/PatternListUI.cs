@@ -4,7 +4,7 @@ using TMPro;
 
 public class PatternListUI : MonoBehaviour
 {
-  [SerializeField] private TieupView tieupView;
+  //[SerializeField] private TieupView tieupView;
   [SerializeField] private Transform listContent;
   [SerializeField] private GameObject listItemPrefab;
   [SerializeField] private GameObject scrollView;
@@ -48,11 +48,13 @@ public class PatternListUI : MonoBehaviour
 
     GameObject item = Instantiate(listItemPrefab, listContent);
     item.GetComponent<WeaveItemUI>().Setup(no, data, () => {
-      WeaveSaveManager.Instance.Delete(code);
+          
+      WeaveDocumentManager.Instance.DeleteDocument(code);
       RefreshList(); 
     });
 
     string captured = code;
+    //Debug.Log($"[PatternListUI] OnSelect called: {code}");
     item.GetComponent<WeaveItemUI>().buttonSelect.onClick.AddListener(() =>
     {
       OnSelect(captured);
@@ -62,9 +64,7 @@ public class PatternListUI : MonoBehaviour
   //-------------------------------------------------------------------------
   private void OnSelect(string code)
   {
-    WeaveData data = WeaveSaveManager.Instance.Load(code);
-    if (data == null) return;
-    tieupView.LoadPattern(data);
+    WeaveDocumentManager.Instance.OpenDocument(code);    
   }
 
   //-------------------------------------------------------------------------
@@ -88,18 +88,8 @@ public class PatternListUI : MonoBehaviour
   //-------------------------------------------------------------------------
   public void NewDocument()
   {
-    var data = new WeaveData(){
-      weaveName = "새 패턴",
-      weaveCode = System.DateTime.Now.ToString("yyyyMMddHHmmss"),
-      rowCount = 8,
-      colCount = 8,
-      cells = new int[8 * 8],
-      warpColorNames = new string[8 * 4],
-      weftColorNames = new string[8 * 4],
-      savedAt = System.DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"),
-    };
-    WeaveSaveManager.Instance.Save(data, true);
-    tieupView.LoadPattern(data);
+    WeaveDocumentManager.Instance.NewDocument();
+    
     RefreshList();
   }
   //-------------------------------------------------------------------------

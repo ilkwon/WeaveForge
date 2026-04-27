@@ -4,38 +4,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using Deconim.DBConn;
 
-public class WeaveSaveManager : MonoBehaviour
+public class WeaveSaveManager : Singleton<WeaveSaveManager>
 {
-  private static WeaveSaveManager s_instance;
-  public static WeaveSaveManager Instance
-  {
-    get
-    {
-      if (s_instance == null)
-        s_instance = FindAnyObjectByType<WeaveSaveManager>();
-      return s_instance;
-    }
-  }
-
-
   private string SaveDir =>
     Path.Combine(Application.persistentDataPath, "WeaveSaves");
   //-------------------------------------------------------------------------
-  private void Awake()
+  protected override void Awake()
   {
-    if (s_instance == null)
-      s_instance = this;
-    else
-      Destroy(gameObject);
+    base.Awake();
 
     if (!Directory.Exists(SaveDir))
       Directory.CreateDirectory(SaveDir);
   }
-
+  
+  //-------------------------------------------------------------------------
   private string ToNowDateString()
   {
     return DateTime.Now.ToString("yy-MM-dd HH:mm");
   }
+  
   //-------------------------------------------------------------------------
   public void SaveJson(WeaveData data)
   {

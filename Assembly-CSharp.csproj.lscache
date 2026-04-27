@@ -50,40 +50,46 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
-Assets/Project/Scripts/CellGrid/
- CellDrawer.cs
- CellGridView.cs
- DrawdownView.cs
- FontRenderer.cs
- ThreadingView.cs
- TieupView.cs
- TreadlingView.cs
-Assets/Project/Scripts/Common/
- DataResult.cs
- DataResultExtensions.cs
- DBConn.cs
- FileLogger.cs
- SQLite.cs
+Assets/Common/Scripts/
+ DesignPatterns/Singleton.cs
+ Util/
+  DataResult.cs
+  DataResultExtensions.cs
+  DBConn.cs
+  FileLogger.cs
+  SQLite.cs
 Assets/Project/Scripts/Core/
  AppInit.cs
  ColorSettings.cs
+ Defines.cs
+ WeaveDocumentManager.cs
+ WeaveSaveManager.cs
+Assets/Project/Scripts/Data/
+ ColorTypes.cs
+ WeaveData.cs
+Assets/Project/Scripts/Legacy/
  WeaveGrid.cs
  WeaveLayoutManager.cs
- WeaveSaveManager.cs
- WeaveTextureGenerator.cs
-Assets/Project/Scripts/Data/
- Defines.cs
- types.cs
- WeaveData.cs
-Assets/Project/Scripts/UI/
- ColorStripUI.cs
- PalettePopupUI.cs
- PatternListUI.cs
- WarpStripView.cs
- WeaveItemContextMenu.cs
- WeaveItemUI.cs
  WeaveUI.cs
- WeftStripView.cs
+Assets/Project/Scripts/
+ Rendering/WeaveTextureGenerator.cs
+ UI/
+  ColorStripUI.cs
+  PalettePopupUI.cs
+  PatternListUI.cs
+  WeaveItemContextMenu.cs
+  WeaveItemUI.cs
+ Views/
+  WarpStripView.cs
+  WeftStripView.cs
+ Weave/
+  CellDrawer.cs
+  CellGridView.cs
+  DrawdownView.cs
+  FontRenderer.cs
+  ThreadingView.cs
+  TieupView.cs
+  TreadlingView.cs
 Assets/TutorialInfo/Scripts/Readme.cs
 Temp/obj/Assembly-CSharp/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 

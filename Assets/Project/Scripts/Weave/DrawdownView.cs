@@ -25,12 +25,16 @@ public class DrawdownView : CellGridView
     CellSize = tieupView.CellSize;
 
     tieupView.OnPatternLoaded += Resize;
-    tieupView.OnTieupChanged += Recalculate;   
+    tieupView.OnTieupChanged += Recalculate;
     // 경위사 변경 시 Recalculate 호출
-    threadingView.OnThreadingChanged += Recalculate; 
-    threadingView.OnColorChanged += Recalculate; 
-    treadlingView.OnTreadlingChanged += Recalculate; 
-    treadlingView.OnColorChanged += Recalculate; 
+    threadingView.OnThreadingChanged += Recalculate;
+    threadingView.OnColorChanged += Recalculate;
+    treadlingView.OnTreadlingChanged += Recalculate;
+    treadlingView.OnColorChanged += Recalculate;
+
+    // TieupView가 이미 패턴을 로드한 상태라면 즉시 렌더링 시작
+    if (tieupView.CurrentData != null)
+      Resize();
 
   }
 
@@ -46,7 +50,7 @@ public class DrawdownView : CellGridView
 
     StartCoroutine(RecalculateNextFrame());
   }
-  
+
   //---------------------------------------------------------------------------
   private IEnumerator RecalculateNextFrame()
   {
@@ -84,13 +88,13 @@ public class DrawdownView : CellGridView
         // 각 셀에 대해 해당 경사와 위사 번호를 가져온다.
         int shaft = threadingView.GetThreading(x);    // x열의 종광 번호
         int treadle = treadlingView.GetTreadling(y);  // y행의 트레들 번호
-        
+
         bool validShaft = shaft >= 1 && shaft <= tieupView.RowCount;
         bool validTreadle = treadle >= 1 && treadle <= tieupView.ColCount;
         // 유효한 종광과 트레들 번호인지 확인 (타이업 범위 내에 있는지)
         if (!validShaft || !validTreadle)
-          continue;        
-        
+          continue;
+
         var result = tieupView.GetCell(treadle - 1, shaft - 1); // 타이up은 0-based 인덱스
         Color color = result == 1 ? threadingView.WarpColor(x) : treadlingView.WeftColor(y); // 타이업이 1이면 검정, 아니면 흰색
         _drawer.FillCell(x, y, color);
