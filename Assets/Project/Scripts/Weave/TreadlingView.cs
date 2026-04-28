@@ -60,14 +60,12 @@ public class TreadlingView : CellGridView
     {
       int treadleNum = ((RowCount - 1 - i) % treadleCount) + 1; // 단순히 트레들 수로 나눈 나머지로 초기값 설정 (직조 패턴에 따라 달라질 수 있음)
       _treadlingData[i] = treadleNum;
-      //_treadlingData[i] = (i % treadleCount) + 1        
     }
 
     _fontRenderer.PrepareNumbers(1, treadleCount);  // 트레들 수에 맞춰 숫자 준비
     for (int i = 0; i < RowCount; i++)
     {
       int treadleNum = _treadlingData[i];
-      //_fontRenderer.DrawNumber(treadleNum, ColCount - 1 - (treadleNum - 1), i, Color.black); // 트레들 번호에 맞춰 숫자 그리기
       _fontRenderer.DrawNumber(treadleNum, treadleNum - 1, i, Color.black); // 트레들 번호에 맞춰 숫자 그리기 (컬러피커 열이 오른쪽 맨끝이다.)
     }
     _drawer.Apply();
@@ -141,10 +139,10 @@ public class TreadlingView : CellGridView
       _weftColors[row] = ColorPalette.GetColor(colorName);
 
       for (int i = 0; i < RowCount; i++)
-      {        
+      {
         if (_weftColors[i] == ColorPalette.Unset)
-          _weftColors[i] = _weftColors[row];          
-        
+          _weftColors[i] = _weftColors[row];
+
         _drawer.FillCell(ColCount - 1, i, (Color32)_weftColors[i]);
       }
 
@@ -154,8 +152,14 @@ public class TreadlingView : CellGridView
       var data = tieupView.CurrentData;
       if (data != null && data.weftColorNames != null && row < data.weftColorNames.Length)
       {
+        for (int i = 0; i < RowCount && i < data.weftColorNames.Length; i++)
+        {
+          if (string.IsNullOrEmpty(data.weftColorNames[i]) || data.weftColorNames[i] == "White")
+            data.weftColorNames[i] = colorName; // 미지정 컬러는 선택한 컬러로 초기화
+        }
+
         data.weftColorNames[row] = colorName;
-        WeaveSaveManager.Instance.Save(data, false);        
+        WeaveSaveManager.Instance.Save(data, false);
       }
       OnColorChanged?.Invoke();
     }, Mouse.current.position.ReadValue());
@@ -228,7 +232,7 @@ public class TreadlingView : CellGridView
     {
       var colorName = data.weftColorNames[i];
       //Debug.Log($"LoadColors: row={i}, colorName={colorName}");
-      
+
       _weftColors[i] = (string.IsNullOrEmpty(colorName) || colorName == "White") ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
       _drawer.FillCell(ColCount - 1, i, (Color32)_weftColors[i]);
     }
@@ -239,7 +243,7 @@ public class TreadlingView : CellGridView
   {
     if (_weftColors == null || row < 0 || row >= _weftColors.Length)
       return Color.black;
-    if (_weftColors[row] == ColorPalette.Unset)  
+    if (_weftColors[row] == ColorPalette.Unset)
       return Color.white;  // 미지정 위사 컬러는 흰색으로 반환.
     return _weftColors[row];
   }

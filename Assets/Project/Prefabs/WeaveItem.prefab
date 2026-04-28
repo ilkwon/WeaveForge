@@ -173,8 +173,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 379.84796, y: 0.00011158}
-  m_SizeDelta: {x: 158.57, y: 88.427}
+  m_AnchoredPosition: {x: 446.95142, y: -0.00049972534}
+  m_SizeDelta: {x: 351.7186, y: 88.427}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &218145307392166489
 CanvasRenderer:
@@ -235,7 +235,7 @@ MonoBehaviour:
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 20
   m_fontSizeMax: 30
   m_fontStyle: 0
   m_HorizontalAlignment: 2
@@ -431,7 +431,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 2.5999756, y: 0.000045776}
+  m_AnchoredPosition: {x: 2.5999756, y: 0.000045776367}
   m_SizeDelta: {x: 52.857, y: 88.426}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6361805153471523733
@@ -568,7 +568,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 65.57178, y: 0.00041199}
+  m_AnchoredPosition: {x: 65.57178, y: 0.0004119873}
   m_SizeDelta: {x: 153.7589, y: 88.427}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &4232066939073819561
@@ -706,7 +706,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
   m_AnchoredPosition: {x: 224.78662, y: 0.00008773804}
-  m_SizeDelta: {x: 151.4029, y: 88.426}
+  m_SizeDelta: {x: 212.729, y: 88.426}
   m_Pivot: {x: 0, y: 0.5}
 --- !u!222 &6969000150727826792
 CanvasRenderer:
@@ -767,7 +767,7 @@ MonoBehaviour:
   m_fontSizeBase: 12
   m_fontWeight: 400
   m_enableAutoSizing: 1
-  m_fontSizeMin: 18
+  m_fontSizeMin: 20
   m_fontSizeMax: 30
   m_fontStyle: 1
   m_HorizontalAlignment: 2
@@ -849,7 +849,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 538.4224, y: 88.4268}
+  m_SizeDelta: {x: 802.0673, y: 88.4268}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &7997176346185535797
 CanvasRenderer:

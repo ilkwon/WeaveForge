@@ -3,9 +3,25 @@ using UnityEngine;
 
 public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
 {
+  [SerializeField] private TieupView tieupView;
+
   public WeaveData CurrentWeaveData { get; private set; }
   public Action<WeaveData> OnDocumentChanged; // 문서가 변경될 때마다 호출되는 이벤트
-
+  protected override void Awake()
+  {
+    base.Awake();
+    // 초기화 작업이 필요한 경우 여기에 추가
+  }
+  //-------------------------------------------------------------------------
+  private void Start()
+  {
+    tieupView.OnTieupChanged += SaveDocument;
+  }
+  //-------------------------------------------------------------------------
+  private void OnDestroy()
+  {   
+    tieupView.OnTieupChanged -= SaveDocument;
+  }
   //-------------------------------------------------------------------------
   public void OpenDocument(string code)
   {
@@ -35,7 +51,7 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
     CurrentWeaveData = data;
     OnDocumentChanged?.Invoke(CurrentWeaveData);
   }
-
+  //-------------------------------------------------------------------------
   public void SaveDocument()
   {
     if (CurrentWeaveData == null) return;

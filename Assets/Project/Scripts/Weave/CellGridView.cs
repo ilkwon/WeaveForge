@@ -1,4 +1,5 @@
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -31,7 +32,7 @@ public class CellGridView : MonoBehaviour
   {
     if (_drawer != null && _drawer.Texture != null)
     {
-      Destroy(_drawer.Texture);      
+      Destroy(_drawer.Texture);
       _drawer = null;
     }
   }
@@ -55,36 +56,64 @@ public class CellGridView : MonoBehaviour
       new Vector2(ColCount * CellSize, RowCount * CellSize);
   }
   //---------------------------------------------------------------------------
+  private Vector2Int _lastPos = new Vector2Int(-1, -1);
+  private int _drawCell = 0;
+  protected bool _applyFlag = false;
   protected virtual void Update()
   {
+    _applyFlag = false;
     RectTransform rt = GetComponent<RectTransform>();
-    Vector2 localMousePos;
     RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        rt, Mouse.current.position.ReadValue(), null, out localMousePos);
+        rt, Mouse.current.position.ReadValue(), null, out Vector2 localMousePos);
 
     if (localMousePos.x < -rt.sizeDelta.x || localMousePos.x > 0 ||
         localMousePos.y < -rt.sizeDelta.y || localMousePos.y > 0)
       return;
 
-    UpdateHover();
+    UpdateHover(localMousePos);
 
-    if (Mouse.current.leftButton.wasPressedThisFrame && _hoverCell.x >= 0)
+    UpdateMouse(localMousePos);
+
+    if (_applyFlag)
+      _drawer.Apply();
+  }
+  //---------------------------------------------------------------------------
+  private void UpdateMouse(Vector2 localMousePos)
+  {
+    bool firstClick = Mouse.current.leftButton.wasPressedThisFrame && Mouse.current.leftButton.isPressed;
+    bool dragging = Mouse.current.leftButton.isPressed && !firstClick;
+    if (firstClick &&
+      _hoverCell.x >= 0 &&  _hoverCell != _lastPos)
+    { 
+      _drawCell = GetCellValue(_hoverCell.x, _hoverCell.y) == 1 ? 0 : 1;              
       OnCellClicked(_hoverCell.x, _hoverCell.y);
+      _lastPos = _hoverCell;
+    }
+    else if (dragging && _hoverCell.x >= 0)
+    {      
+      OnCellDrag(_hoverCell.x, _hoverCell.y, _drawCell);
+      _lastPos = _hoverCell;
+    }
+    // 마우스 버튼이 떼어졌을 때 위치 초기화
+    else if (Mouse.current.leftButton.wasReleasedThisFrame)
+    {      
+        _lastPos = new Vector2Int(-1, -1);
+        //Debug.Log("Mouse down at: " + localMousePos);
+    }
   }
 
   //---------------------------------------------------------------------------
-  private void UpdateHover()
+  
+  private void UpdateHover(Vector2 localPos)
   {
     RectTransform rt = GetComponent<RectTransform>();
-    Vector2 localPos;
-    RectTransformUtility.ScreenPointToLocalPointInRectangle(
-        rt, Mouse.current.position.ReadValue(), null, out localPos);
 
     float adjustedX = localPos.x + rt.sizeDelta.x;
     float adjustedY = localPos.y + rt.sizeDelta.y;
 
     int cx = (int)(adjustedX / CellSize);
     int cy = (int)(adjustedY / CellSize);
+
     if (cx < 0 || cx >= ColCount || cy < 0 || cy >= RowCount) return;
 
     Vector2Int curr = new Vector2Int(cx, cy);
@@ -93,7 +122,8 @@ public class CellGridView : MonoBehaviour
       RestoreCell(_hoverCell.x, _hoverCell.y);
       _hoverCell = curr;
       _drawer.HighlightCell(curr.x, curr.y);
-      _drawer.Apply();
+      //_drawer.Apply();
+      _applyFlag = true;
     }
   }
 
@@ -105,6 +135,7 @@ public class CellGridView : MonoBehaviour
   }
   //---------------------------------------------------------------------------
   protected virtual void OnCellClicked(int col, int row) { }
+  protected virtual void OnCellDrag(int col, int row, int dragValue) { }
   //---------------------------------------------------------------------------
-
+  protected virtual int GetCellValue(int col, int row) { return 0; }
 }

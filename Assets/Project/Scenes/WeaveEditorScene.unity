@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f18d0ca9ad2a14c1fb345492f2a5d7c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::WeaveDocumentManager
+  tieupView: {fileID: 1075997391}
 --- !u!1 &389019907
 GameObject:
   m_ObjectHideFlags: 0
@@ -334,7 +335,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 600}
+  m_SizeDelta: {x: 759.2449, y: 600}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &413742921
 MonoBehaviour:
@@ -675,7 +676,7 @@ MonoBehaviour:
   colCount: 0
   rowCount: 0
   cellSize: 40
-  font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  font: {fileID: 12800000, guid: ab42029a67dea4889a7c9f698a4cab80, type: 3}
   palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1 &951792170
@@ -837,7 +838,7 @@ MonoBehaviour:
   colCount: 8
   rowCount: 8
   cellSize: 40
-  font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  font: {fileID: 12800000, guid: ab42029a67dea4889a7c9f698a4cab80, type: 3}
 --- !u!222 &1075997392
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -934,7 +935,7 @@ MonoBehaviour:
   colCount: 0
   rowCount: 0
   cellSize: 40
-  font: {fileID: 12800000, guid: 25b593e38913942779bfe13117e8fefe, type: 3}
+  font: {fileID: 12800000, guid: ab42029a67dea4889a7c9f698a4cab80, type: 3}
   tieupView: {fileID: 1075997391}
   threadingView: {fileID: 1873106609}
   treadlingView: {fileID: 791784531}
@@ -1814,7 +1815,7 @@ MonoBehaviour:
   colCount: 0
   rowCount: 0
   cellSize: 40
-  font: {fileID: 12800000, guid: 0bdc19bb6ddb04264b59eb335329f625, type: 3}
+  font: {fileID: 12800000, guid: ab42029a67dea4889a7c9f698a4cab80, type: 3}
   palettePopup: {fileID: 740258301}
   tieupView: {fileID: 1075997391}
 --- !u!1001 &2040972310

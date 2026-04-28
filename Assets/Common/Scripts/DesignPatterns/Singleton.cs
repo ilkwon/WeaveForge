@@ -13,8 +13,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
         if (s_instance == null)
         {
           GameObject singletonObj = new GameObject(typeof(T).Name);
-          s_instance = singletonObj.AddComponent<T>();
-          DontDestroyOnLoad(singletonObj);
+          s_instance = singletonObj.AddComponent<T>();          
         }
       }
       return s_instance;
@@ -23,15 +22,9 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
   //-------------------------------------------------------------------------
   protected virtual void Awake()
   {
-    if (s_instance == null)
-    {
-      s_instance = this as T;
-      DontDestroyOnLoad(gameObject);
-    }
-
-    else if (s_instance != this)
-    {
-      Destroy(gameObject);
-    }
+    if (s_instance == null)    
+      s_instance = this as T;    
+    else 
+      Destroy(gameObject);    
   }
 }

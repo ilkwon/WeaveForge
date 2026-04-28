@@ -214,3 +214,483 @@
 
 2026-04-28 01:41:41 [INFO] : dbConnType : [1]
 
+2026-04-28 01:44:52 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:44:52 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:44:52 [INFO] : LocalDB open 성공
+
+2026-04-28 01:44:52 [INFO] : dbConnType : [1]
+
+2026-04-28 01:45:47 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:45:47 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:45:47 [INFO] : LocalDB open 성공
+
+2026-04-28 01:45:47 [INFO] : dbConnType : [1]
+
+2026-04-28 01:46:20 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:46:20 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:46:20 [INFO] : LocalDB open 성공
+
+2026-04-28 01:46:20 [INFO] : dbConnType : [1]
+
+2026-04-28 01:49:11 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:49:11 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:49:11 [INFO] : LocalDB open 성공
+
+2026-04-28 01:49:11 [INFO] : dbConnType : [1]
+
+2026-04-28 01:55:15 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:55:15 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:55:15 [INFO] : LocalDB open 성공
+
+2026-04-28 01:55:15 [INFO] : dbConnType : [1]
+
+2026-04-28 01:55:30 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:55:30 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:55:30 [INFO] : LocalDB open 성공
+
+2026-04-28 01:55:30 [INFO] : dbConnType : [1]
+
+2026-04-28 01:55:55 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:55:55 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:55:55 [INFO] : LocalDB open 성공
+
+2026-04-28 01:55:55 [INFO] : dbConnType : [1]
+
+2026-04-28 01:59:06 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:59:06 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:59:06 [INFO] : LocalDB open 성공
+
+2026-04-28 01:59:06 [INFO] : dbConnType : [1]
+
+2026-04-28 01:59:28 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 01:59:28 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 01:59:28 [INFO] : LocalDB open 성공
+
+2026-04-28 01:59:28 [INFO] : dbConnType : [1]
+
+2026-04-28 02:01:05 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:01:05 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:01:05 [INFO] : LocalDB open 성공
+
+2026-04-28 02:01:05 [INFO] : dbConnType : [1]
+
+2026-04-28 02:10:33 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:10:33 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:10:33 [INFO] : LocalDB open 성공
+
+2026-04-28 02:10:33 [INFO] : dbConnType : [1]
+
+2026-04-28 02:11:03 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:11:03 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:11:03 [INFO] : LocalDB open 성공
+
+2026-04-28 02:11:03 [INFO] : dbConnType : [1]
+
+2026-04-28 02:12:50 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:12:50 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:12:50 [INFO] : LocalDB open 성공
+
+2026-04-28 02:12:50 [INFO] : dbConnType : [1]
+
+2026-04-28 02:13:01 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:13:01 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:13:01 [INFO] : LocalDB open 성공
+
+2026-04-28 02:13:01 [INFO] : dbConnType : [1]
+
+2026-04-28 02:13:18 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 02:13:19 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 02:13:19 [INFO] : LocalDB open 성공
+
+2026-04-28 02:13:19 [INFO] : dbConnType : [1]
+
+2026-04-28 15:48:09 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 15:48:09 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 15:48:09 [INFO] : LocalDB open 성공
+
+2026-04-28 15:48:09 [INFO] : dbConnType : [1]
+
+2026-04-28 16:08:23 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:08:23 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:08:23 [INFO] : LocalDB open 성공
+
+2026-04-28 16:08:23 [INFO] : dbConnType : [1]
+
+2026-04-28 16:11:32 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:11:32 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:11:32 [INFO] : LocalDB open 성공
+
+2026-04-28 16:11:32 [INFO] : dbConnType : [1]
+
+2026-04-28 16:14:10 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:14:10 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:14:10 [INFO] : LocalDB open 성공
+
+2026-04-28 16:14:10 [INFO] : dbConnType : [1]
+
+2026-04-28 16:18:58 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:18:58 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:18:58 [INFO] : LocalDB open 성공
+
+2026-04-28 16:18:58 [INFO] : dbConnType : [1]
+
+2026-04-28 16:26:51 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:26:51 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:26:51 [INFO] : LocalDB open 성공
+
+2026-04-28 16:26:51 [INFO] : dbConnType : [1]
+
+2026-04-28 16:31:28 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:31:28 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:31:28 [INFO] : LocalDB open 성공
+
+2026-04-28 16:31:28 [INFO] : dbConnType : [1]
+
+2026-04-28 16:32:19 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:32:19 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:32:19 [INFO] : LocalDB open 성공
+
+2026-04-28 16:32:19 [INFO] : dbConnType : [1]
+
+2026-04-28 16:33:04 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:33:04 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:33:04 [INFO] : LocalDB open 성공
+
+2026-04-28 16:33:04 [INFO] : dbConnType : [1]
+
+2026-04-28 16:38:20 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:38:20 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:38:20 [INFO] : LocalDB open 성공
+
+2026-04-28 16:38:20 [INFO] : dbConnType : [1]
+
+2026-04-28 16:44:51 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:44:51 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:44:51 [INFO] : LocalDB open 성공
+
+2026-04-28 16:44:51 [INFO] : dbConnType : [1]
+
+2026-04-28 16:46:45 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:46:45 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:46:45 [INFO] : LocalDB open 성공
+
+2026-04-28 16:46:45 [INFO] : dbConnType : [1]
+
+2026-04-28 16:47:09 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:47:09 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:47:09 [INFO] : LocalDB open 성공
+
+2026-04-28 16:47:09 [INFO] : dbConnType : [1]
+
+2026-04-28 16:47:46 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:47:46 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:47:46 [INFO] : LocalDB open 성공
+
+2026-04-28 16:47:46 [INFO] : dbConnType : [1]
+
+2026-04-28 16:49:59 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:49:59 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:49:59 [INFO] : LocalDB open 성공
+
+2026-04-28 16:49:59 [INFO] : dbConnType : [1]
+
+2026-04-28 16:57:13 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:57:13 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:57:13 [INFO] : LocalDB open 성공
+
+2026-04-28 16:57:13 [INFO] : dbConnType : [1]
+
+2026-04-28 16:57:48 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:57:48 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:57:48 [INFO] : LocalDB open 성공
+
+2026-04-28 16:57:48 [INFO] : dbConnType : [1]
+
+2026-04-28 16:58:03 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:58:03 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:58:03 [INFO] : LocalDB open 성공
+
+2026-04-28 16:58:03 [INFO] : dbConnType : [1]
+
+2026-04-28 16:58:22 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 16:58:22 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 16:58:22 [INFO] : LocalDB open 성공
+
+2026-04-28 16:58:22 [INFO] : dbConnType : [1]
+
+2026-04-28 18:31:49 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 18:31:49 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 18:31:49 [INFO] : LocalDB open 성공
+
+2026-04-28 18:31:49 [INFO] : dbConnType : [1]
+
+2026-04-28 20:22:40 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:22:40 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:22:40 [INFO] : LocalDB open 성공
+
+2026-04-28 20:22:40 [INFO] : dbConnType : [1]
+
+2026-04-28 20:29:51 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:29:51 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:29:51 [INFO] : LocalDB open 성공
+
+2026-04-28 20:29:51 [INFO] : dbConnType : [1]
+
+2026-04-28 20:30:04 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:30:04 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:30:04 [INFO] : LocalDB open 성공
+
+2026-04-28 20:30:04 [INFO] : dbConnType : [1]
+
+2026-04-28 20:51:07 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:51:07 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:51:07 [INFO] : LocalDB open 성공
+
+2026-04-28 20:51:07 [INFO] : dbConnType : [1]
+
+2026-04-28 20:51:42 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:51:42 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:51:42 [INFO] : LocalDB open 성공
+
+2026-04-28 20:51:42 [INFO] : dbConnType : [1]
+
+2026-04-28 20:54:07 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 20:54:07 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 20:54:07 [INFO] : LocalDB open 성공
+
+2026-04-28 20:54:07 [INFO] : dbConnType : [1]
+
+2026-04-28 21:13:08 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:13:08 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:13:08 [INFO] : LocalDB open 성공
+
+2026-04-28 21:13:08 [INFO] : dbConnType : [1]
+
+2026-04-28 21:13:39 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:13:39 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:13:39 [INFO] : LocalDB open 성공
+
+2026-04-28 21:13:39 [INFO] : dbConnType : [1]
+
+2026-04-28 21:14:09 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:14:09 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:14:09 [INFO] : LocalDB open 성공
+
+2026-04-28 21:14:09 [INFO] : dbConnType : [1]
+
+2026-04-28 21:28:33 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:28:33 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:28:33 [INFO] : LocalDB open 성공
+
+2026-04-28 21:28:33 [INFO] : dbConnType : [1]
+
+2026-04-28 21:29:50 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:29:50 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:29:50 [INFO] : LocalDB open 성공
+
+2026-04-28 21:29:50 [INFO] : dbConnType : [1]
+
+2026-04-28 21:31:39 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:31:39 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:31:39 [INFO] : LocalDB open 성공
+
+2026-04-28 21:31:39 [INFO] : dbConnType : [1]
+
+2026-04-28 21:31:51 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:31:51 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:31:51 [INFO] : LocalDB open 성공
+
+2026-04-28 21:31:51 [INFO] : dbConnType : [1]
+
+2026-04-28 21:56:23 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:56:23 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:56:23 [INFO] : LocalDB open 성공
+
+2026-04-28 21:56:23 [INFO] : dbConnType : [1]
+
+2026-04-28 21:57:13 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 21:57:13 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 21:57:13 [INFO] : LocalDB open 성공
+
+2026-04-28 21:57:13 [INFO] : dbConnType : [1]
+
+2026-04-28 22:03:29 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 22:03:29 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 22:03:29 [INFO] : LocalDB open 성공
+
+2026-04-28 22:03:29 [INFO] : dbConnType : [1]
+
+2026-04-28 22:31:24 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 22:31:24 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 22:31:24 [INFO] : LocalDB open 성공
+
+2026-04-28 22:31:24 [INFO] : dbConnType : [1]
+
+2026-04-28 23:24:23 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:24:23 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:24:23 [INFO] : LocalDB open 성공
+
+2026-04-28 23:24:23 [INFO] : dbConnType : [1]
+
+2026-04-28 23:27:51 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:27:51 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:27:51 [INFO] : LocalDB open 성공
+
+2026-04-28 23:27:51 [INFO] : dbConnType : [1]
+
+2026-04-28 23:31:18 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:31:18 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:31:18 [INFO] : LocalDB open 성공
+
+2026-04-28 23:31:18 [INFO] : dbConnType : [1]
+
+2026-04-28 23:34:58 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:34:58 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:34:58 [INFO] : LocalDB open 성공
+
+2026-04-28 23:34:58 [INFO] : dbConnType : [1]
+
+2026-04-28 23:40:40 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:40:40 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:40:40 [INFO] : LocalDB open 성공
+
+2026-04-28 23:40:40 [INFO] : dbConnType : [1]
+
+2026-04-28 23:52:10 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:52:10 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:52:10 [INFO] : LocalDB open 성공
+
+2026-04-28 23:52:10 [INFO] : dbConnType : [1]
+
+2026-04-28 23:57:15 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:57:15 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:57:15 [INFO] : LocalDB open 성공
+
+2026-04-28 23:57:15 [INFO] : dbConnType : [1]
+
+2026-04-28 23:59:10 [INFO] : xmlPath : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/WeaveSQL.xml]
+
+2026-04-28 23:59:10 [DEBUG] : localDB_path : [/Users/deco/Workspace/DigitalWeavenURP/Assets/StreamingAssets/weave.db]
+
+2026-04-28 23:59:10 [INFO] : LocalDB open 성공
+
+2026-04-28 23:59:10 [INFO] : dbConnType : [1]
+

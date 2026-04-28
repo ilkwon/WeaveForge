@@ -154,6 +154,11 @@ public class ThreadingView : CellGridView
         var data = tieupView.CurrentData;
         if (data != null && data.warpColorNames != null && col < data.warpColorNames.Length)
         {
+          for(int i = 0; i < ColCount && i < data.warpColorNames.Length; i++)
+          {
+              if (string.IsNullOrEmpty(data.warpColorNames[i]) || data.warpColorNames[i] == "White")
+                  data.warpColorNames[i] = colorName; // 미지정 컬러는 선택한 컬러로 초기화
+          }
           data.warpColorNames[col] = colorName;
           WeaveSaveManager.Instance.Save(data, false);                    
         }

@@ -48,22 +48,49 @@ public class TieupView : CellGridView
   {
     var old = _gridData[row, col];
     _gridData[row, col] = old == 1 ? 0 : 1;
-    Color32 color = _gridData[row, col] == 1
+    
+    // 데이터 저장
+    if (_currentData != null)
+      _currentData.cells[row * ColCount + col] = _gridData[row, col];
+    DrawCell(col, row, _gridData[row, col] == 1);
+    //_drawer.Apply();
+    _applyFlag = true;
+    OnTieupChanged?.Invoke();
+  }
+  //---------------------------------------------------------------------------
+  protected override void OnCellDrag(int col, int row, int dragValue)
+  {
+    _gridData[row, col] = dragValue;
+
+    // 데이터 저장
+    if (_currentData != null)
+      _currentData.cells[row * ColCount + col] = _gridData[row, col];
+
+    DrawCell(col, row, dragValue == 1);
+    //_drawer.Apply();
+    _applyFlag = true;
+    OnTieupChanged?.Invoke();
+  }
+  //---------------------------------------------------------------------------
+  private void DrawCell(int col, int row, bool drag)
+  {
+    Color32 color = drag
         ? new Color32(0, 0, 0, 255)
         : new Color32(255, 255, 255, 255);
     _drawer.FillCell(col, row, color);
-    _drawer.Apply();
 
-    OnTieupChanged?.Invoke();
+  }
+
+  //---------------------------------------------------------------------------
+  protected override int GetCellValue(int col, int row)
+  {
+    return _gridData[row, col];
   }
   //---------------------------------------------------------------------------
   protected override void RestoreCell(int x, int y)
   {
     if (x < 0 || y < 0) return;
-    Color32 color = _gridData[y, x] == 1
-        ? new Color32(0, 0, 0, 255)
-        : new Color32(255, 255, 255, 255);
-    _drawer.FillCell(x, y, color);
+    DrawCell(x, y, _gridData[y, x] == 1);
   }
   //---------------------------------------------------------------------------
   public int GetCell(int col, int row)

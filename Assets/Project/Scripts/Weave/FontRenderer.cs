@@ -32,15 +32,25 @@ public class FontRenderer
   public void DrawNumber(int number, int col, int row, Color32 color)
   {
     string text = number.ToString();
+    //int cellSize = _drawer.CellSize
     int fontSize = _drawer.CellSize - 4;
-    _font.RequestCharactersInTexture(text, fontSize, FontStyle.Normal);    
-
+    _font.RequestCharactersInTexture(text, fontSize, FontStyle.Normal);
+    int totalWidth = 0;
     foreach (char c in text)
     {
       if (_font.GetCharacterInfo(c, out CharacterInfo info, fontSize))
       {
-        //Debug.Log($"[Font] char='{c}' uvBL=({info.uvBottomLeft.x:F4},{info.uvBottomLeft.y:F4}) uvTR=({info.uvTopRight.x:F4},{info.uvTopRight.y:F4}) glyph=({info.glyphWidth},{info.glyphHeight}) minX={info.minX} maxX={info.maxX} minY={info.minY} maxY={info.maxY}");
-        BlitGlyph(col, row, info, color);
+        totalWidth += info.advance;
+      }
+    }
+
+    int cursorX = (_drawer.CellSize - totalWidth) / 2;
+    foreach (char c in text)
+    {
+      if (_font.GetCharacterInfo(c, out CharacterInfo info, fontSize))
+      {
+        BlitGlyph(col, row, info, color, cursorX);
+        cursorX += info.advance;
       }
     }
   }
@@ -84,7 +94,7 @@ public class FontRenderer
   }
 
   //--------------------------------------------------------------------------
-  private void BlitGlyph(int col, int row, CharacterInfo info, Color32 color)
+  private void BlitGlyph(int col, int row, CharacterInfo info, Color32 color, int xOffset = -1)
   {
     int cellSize = _drawer.CellSize;
 
@@ -108,7 +118,10 @@ public class FontRenderer
 
     int offsetX = (cellSize - pixelWidth) / 2;
     int offsetY = (cellSize - pixelHeight) / 2;
-    int destX = col * cellSize + offsetX;
+    
+    int destX = xOffset >= 0
+      ? col * _drawer.CellSize + xOffset         // 다자리 숫자: 외부 지정 위치
+      : col * _drawer.CellSize + (cellSize - pixelWidth) / 2; // 단일 문자: 셀 중앙
     int destY = row * cellSize + offsetY;
 
     for (int y = 0; y < pixelHeight; y++)
@@ -122,11 +135,13 @@ public class FontRenderer
           continue;
 
         Color32 pixelColor = _fontPixels[srcY * _fontTextureWidth + srcX];
-        if (pixelColor.a < 25) continue;
+        
+        if (pixelColor.a < 12) continue;
 
         int finalY = yFlipped ? destY + (pixelHeight - 1 - y) : destY + y;
         _drawer.SetPixel(destX + x, finalY, color);
       }
     }
   }
+  //-------------------------------------------------------------------------
 }

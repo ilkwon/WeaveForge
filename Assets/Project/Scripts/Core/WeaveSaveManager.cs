@@ -76,7 +76,7 @@ public class WeaveSaveManager : Singleton<WeaveSaveManager>
     else
       DBConn.Instance.update("update_weave_pattern_by_code", param);
 
-    Debug.Log($"[DB] Save ({mode}) : {data.weaveName}");
+    //Debug.Log($"[DB] Save ({mode}) : {data.weaveName}");
   }
   //-------------------------------------------------------------------------
   public WeaveData LoadJson(string patternName)
