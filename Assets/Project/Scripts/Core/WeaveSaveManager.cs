@@ -192,5 +192,16 @@ public class WeaveSaveManager : Singleton<WeaveSaveManager>
     DBConn.Instance.delete("delete_weave_pattern_by_code", param);
     Debug.Log($"[DB] Delete : {patternCode}");
   }
+
+  public void Rename(string code, string newName)
+  {
+    var param = new Dictionary<string, object>()
+    {
+      { "@code", code },
+      { "@name", newName }
+    };
+    DBConn.Instance.update("update_weave_pattern_name", param);
+    Debug.Log($"[DB] Rename : {code} -> {newName}");
+  }
   //-------------------------------------------------------------------------
 }

@@ -38,19 +38,7 @@
         SELECT * FROM WeavePattern
         WHERE Code = @code LIMIT 1;
 </select>    
-<insert id="insert_weave_pattern">
-        INSERT INTO WeavePattern (
-            Name, Code, RepeatX, RepeatY,
-            Cells, WarpColors, WeftColors,
-            WarpThickness, WeftThickness,
-            WeaveMode, SavedAt
-        ) VALUES (
-            @name, @code, @repeatX, @repeatY,
-            @cells, @warpColors, @weftColors,
-            @warpThickness, @weftThickness,
-            @weaveMode, @savedAt
-        );
-</insert>
+
 <insert id="upsert_weave_pattern">
     INSERT INTO WeavePattern (
         Name, Code, RepeatX, RepeatY,
@@ -111,4 +99,10 @@
     SELECT Value FROM Colors
     WHERE Key = @key;
 </select>
+<update id="update_weave_pattern_name">
+    UPDATE WeavePattern
+    SET Name = @name
+    WHERE Code = @code;
+</update>
+
 </sqlMap>

@@ -228,7 +228,7 @@ public class ThreadingView : CellGridView
     for (int i = 0; i < ColCount; i++)
     {
       var colorName = data.warpColorNames[i];
-      Debug.Log($"LoadColors: col={i}, colorName={colorName}");
+      //Debug.Log($"LoadColors: col={i}, colorName={colorName}");
       //_warpColors[i] = string.IsNullOrEmpty(colorName) ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
       _warpColors[i] = (string.IsNullOrEmpty(colorName) || colorName == "White") ? ColorPalette.Unset : ColorPalette.GetColor(colorName);
       _drawer.FillCell(i, RowCount - 1, (Color32)_warpColors[i]);

@@ -10,7 +10,7 @@ public class WeaveItemUI : MonoBehaviour, IPointerClickHandler
 {
   
   [SerializeField] private TMP_Text labelNo;
-  [SerializeField] private TMP_Text labelName;
+  [SerializeField] private TMP_InputField labelName;
   [SerializeField] private TMP_Text labelCode;
   [SerializeField] private TMP_Text labelDate;
   
@@ -32,8 +32,13 @@ public class WeaveItemUI : MonoBehaviour, IPointerClickHandler
     labelName.text = data.weaveName;
     labelCode.text = data.weaveCode;
     labelDate.text = data.savedAt;
-    //buttonSelect.onClick.AddListener(() => WeaveUI.OnLoad(data));
+    
     _onDelete = onDelete;
+    var code = data.weaveCode; // 캡처
+    labelName.onEndEdit.RemoveAllListeners();
+    labelName.onEndEdit.AddListener(newName => {
+      WeaveDocumentManager.Instance.RenameDocument(code, newName);
+    });
   }
 
   //---------------------------------------------------------------------------

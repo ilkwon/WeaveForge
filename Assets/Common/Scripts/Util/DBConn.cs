@@ -117,20 +117,20 @@ namespace Deconim.DBConn
       catch (InvalidOperationException e)
       {
         string msg = "SQLite InvalidOperationException : [" + e.Message + "]";
-        Debug.LogError(msg);
-        FileLogger.info(msg);
+        Debug.LogException(e);
+        FileLogger.error(msg);
       }
       catch (SQLiteException e)
       {
         string msg = "SQLite Exception : [" + e.Message + "]";
-        Debug.LogError(msg);
-        FileLogger.info(msg);
+        Debug.LogException(e);
+        FileLogger.error(msg);
       }
       catch (Exception e)
       {
         string msg = "General Exception : [" + e.Message + "]";
-        Debug.LogError(msg);
-        FileLogger.info(msg);
+        Debug.LogException(e);
+        FileLogger.error(msg);
       }
       return 0;
     }

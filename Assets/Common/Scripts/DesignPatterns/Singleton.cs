@@ -9,12 +9,7 @@ public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
     {
       if (s_instance == null)
       {
-        s_instance = FindAnyObjectByType<T>(FindObjectsInactive.Include);
-        if (s_instance == null)
-        {
-          GameObject singletonObj = new GameObject(typeof(T).Name);
-          s_instance = singletonObj.AddComponent<T>();          
-        }
+        s_instance = FindAnyObjectByType<T>(FindObjectsInactive.Include);        
       }
       return s_instance;
     }

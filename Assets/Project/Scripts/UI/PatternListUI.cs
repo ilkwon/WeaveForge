@@ -4,7 +4,7 @@ using TMPro;
 
 public class PatternListUI : MonoBehaviour
 {
-  //[SerializeField] private TieupView tieupView;
+  [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private Transform listContent;
   [SerializeField] private GameObject listItemPrefab;
   [SerializeField] private GameObject scrollView;
@@ -25,8 +25,7 @@ public class PatternListUI : MonoBehaviour
   private void RefreshList()
   {
     ClearList();
-    //scrollView.GetComponent<UnityEngine.UI.ScrollRect>().movementType
-    //  = ScrollRect.MovementType.Clamped;
+
     var list = WeaveSaveManager.Instance.GetList();
     for (int i = 0; i < list.Count; i++)
     {
@@ -36,6 +35,9 @@ public class PatternListUI : MonoBehaviour
 
       SpawnItem(i + 1, code, name, savedAt);
     }
+
+    Canvas.ForceUpdateCanvases(); // UI 업데이트 강제
+    scrollView.GetComponent<ScrollRect>().verticalNormalizedPosition = 0f;
   }
 
   //-------------------------------------------------------------------------
@@ -77,6 +79,8 @@ public class PatternListUI : MonoBehaviour
   //-------------------------------------------------------------------------
   public void TogglePanel()
   {
+    palettePopup.gameObject.SetActive(false); 
+
     _isExpanded = !_isExpanded;
     scrollView.SetActive(_isExpanded);
     panelRT.sizeDelta = new Vector2(

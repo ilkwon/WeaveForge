@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 using UnityEngine;
 
 public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
@@ -89,14 +90,31 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
     string date = System.DateTime.Now.ToString("yyMMdd");
 
     var list = WeaveSaveManager.Instance.GetList();
-    int count = 0;
+    
+    int maxSeq = 0;
     foreach (var item in list)
     {
-      if (item["Code"].StartsWith(type + "-" + date))
-        count++;
+      if (!item["Code"].StartsWith(type + "-" + date)) continue;  // 오늘 날짜의 패턴이 아니면 무시
+      var prefix = item["Code"].ToString();
+      int lastDash = prefix.LastIndexOf('-');
+      string numberPart = lastDash >= 0 ? prefix.Substring(lastDash + 1) : "000";
+      int num = int.TryParse(numberPart, out int n) ? n : 0;
+      if (num > maxSeq) // 가장 큰 번호 찾기
+        maxSeq = num;        
     }
-    string code = $"{type}-{date}-{(count + 1):D3}";
+
+    string code = $"{type}-{date}-{(maxSeq + 1):D3}";
     Debug.Log($"GenerateCode : {code}");
     return code;
   }
+  //-------------------------------------------------------------------------
+  public void RenameDocument(string code, string newName)
+  {
+    if (CurrentWeaveData != null && CurrentWeaveData.weaveCode == code)
+    {
+      CurrentWeaveData.weaveName = newName;
+      WeaveSaveManager.Instance.Rename(code, newName);      
+    }
+  }
+  //-------------------------------------------------------------------------
 }
