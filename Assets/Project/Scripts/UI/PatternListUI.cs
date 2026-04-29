@@ -66,7 +66,11 @@ public class PatternListUI : MonoBehaviour
   //-------------------------------------------------------------------------
   private void OnSelect(string code)
   {
-    WeaveDocumentManager.Instance.OpenDocument(code);    
+    var config = SaveDataWeaveConfig.Load();
+    config.lastSelectedCode = code;
+    SaveDataWeaveConfig.Save(config);
+
+    WeaveDocumentManager.Instance.OpenDocument(code);      
   }
 
   //-------------------------------------------------------------------------

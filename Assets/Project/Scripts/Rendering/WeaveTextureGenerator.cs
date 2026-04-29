@@ -14,8 +14,10 @@ public class WeaveTextureGenerator : MonoBehaviour
     var width = data.colCount;
     var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
-    string[] warpColors = ColorSettings.LoadWarpColors(width);
-    string[] weftColors = ColorSettings.LoadWeftColors(height);
+    
+    string[] warpColors = data.warpColorNames;
+    string[] weftColors = data.weftColorNames;
+
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
@@ -34,7 +36,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     return dest;
   }
   //---------------------------------------------------------------------------
-  public static Texture2D GenerateHeigh(WeaveData data)
+  public static Texture2D GenerateHeight(WeaveData data)
   {
     Texture2D dest = new(data.colCount, data.rowCount)
     {

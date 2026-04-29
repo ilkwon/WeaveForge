@@ -39,7 +39,7 @@ public class TieupView : CellGridView
   protected override void OnDestroy()
   {    
     base.OnDestroy();
-
+    
     WeaveDocumentManager.Instance.OnDocumentChanged -= LoadPattern;
   }
 
