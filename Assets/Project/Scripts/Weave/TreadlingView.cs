@@ -21,9 +21,9 @@ public class TreadlingView : CellGridView
   {
     yield return null;
 
-    int treadleCount = tieupView.ColCount;
-    ColCount = treadleCount + 1; // 트레들 수 + 컬러피커 1열
-    RowCount = tieupView.RowCount * 4;
+    //int treadleCount = tieupView.ColCount;
+    ColCount = tieupView.ColCount + 1; // 트레들 수 + 컬러피커 1열
+    RowCount = tieupView.RowCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.weftRepeat; // 종광 수 * 반복 수
     CellSize = tieupView.CellSize;
 
     tieupView.OnPatternLoaded += Resize;
@@ -94,7 +94,7 @@ public class TreadlingView : CellGridView
   private void Resize()
   {
     ColCount = tieupView.ColCount + 1;
-    RowCount = tieupView.RowCount * 4;
+    RowCount = tieupView.RowCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.weftRepeat;
 
     _treadlingData = new int[RowCount];
     for (int i = 0; i < RowCount; i++)

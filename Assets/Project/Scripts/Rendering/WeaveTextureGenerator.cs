@@ -6,6 +6,14 @@ public class WeaveTextureGenerator : MonoBehaviour
   //---------------------------------------------------------------------------
   public static Texture2D GenerateDiffuse(WeaveData data)
   {
+    if (data == null || data.colCount <= 0 || data.rowCount <= 0)
+      return new Texture2D(1, 1);
+    if (data.cells == null || data.cells.Length == 0)
+      data.cells = new int[data.colCount * data.rowCount];
+    if (data.warpColorNames == null || data.warpColorNames.Length == 0)
+      data.warpColorNames = new string[data.colCount];
+    if (data.weftColorNames == null || data.weftColorNames.Length == 0)
+      data.weftColorNames = new string[data.rowCount];
     Texture2D dest = new(data.colCount, data.rowCount)
     {
       filterMode = FilterMode.Point,
@@ -14,7 +22,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     var width = data.colCount;
     var height = data.rowCount;
     Color32[] pixels = new Color32[width * height];
-    
+
     string[] warpColors = data.warpColorNames;
     string[] weftColors = data.weftColorNames;
 
@@ -66,6 +74,11 @@ public class WeaveTextureGenerator : MonoBehaviour
   //--------------------------------------------------------------
   public static Texture2D GenerateHeightUpscale(WeaveData data)
   {
+    if (data == null || data.colCount <= 0 || data.rowCount <= 0)
+      return new Texture2D(1, 1);
+    if (data.cells == null || data.cells.Length == 0)
+      return new Texture2D(1, 1);
+
     int cellSize = 16;
     int width = data.colCount * cellSize;
     int height = data.rowCount * cellSize;
@@ -231,9 +244,9 @@ public class WeaveTextureGenerator : MonoBehaviour
         float r = (1 - h) * (max - min) + min;
         //Color roughness = new(r, r, r);
         pixels[y * width + x] = new Color32(
-          (byte)(r* 255),       // R
-          (byte)(r* 255),       // G
-          (byte)(r* 255),       // B
+          (byte)(r * 255),       // R
+          (byte)(r * 255),       // G
+          (byte)(r * 255),       // B
           255   // 알파 고정.
         );
       }
@@ -242,11 +255,11 @@ public class WeaveTextureGenerator : MonoBehaviour
     dest.Apply();
     return dest;
   }
-  
+
   //---------------------------------------------------------------------------
   public static Texture2D GenerateMetallicGloss(Texture2D heightMap, float minRoughness = 0.4f, float maxRoughness = 0.8f)
   {
-     var src = heightMap;
+    var src = heightMap;
     Texture2D dest = new(src.width, src.height)
     {
       filterMode = FilterMode.Point,
@@ -261,7 +274,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
-      {        
+      {
         // 높이가 높은 곳(실 위) → 러프니스 낮음 → Smoothness 높음 → 더 매끄럽게 반짝임.  실위가 반짝거림.
         // 실 위 (볼록한 부분):
         //   Height 높음 → Roughness 낮음 → Smoothness 높음 → 매끄럽고 반짝임
@@ -270,7 +283,7 @@ public class WeaveTextureGenerator : MonoBehaviour
         //   Height 낮음 → Roughness 높음 → Smoothness 낮음 → 거칠고 무광
         var h = srcPixels[y * width + x].r / 255f;  // 0~1 정규화
         float r = (1 - h) * (max - min) + min;  // 러프니스
-                      
+
         pixels[y * width + x] = new Color32(
           0,                           // R = Metallic 없음
           0,                           // G

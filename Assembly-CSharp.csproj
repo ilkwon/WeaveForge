@@ -55,7 +55,6 @@
     <Compile Include="Assets/Project/Scripts/Weave/TreadlingView.cs" />
     <Compile Include="Assets/Project/Scripts/UI/WeaveItemContextMenu.cs" />
     <Compile Include="Assets/Project/Scripts/Views/WeaveRenderView.cs" />
-    <Compile Include="Assets/Project/Scripts/Views/WeftStripView.cs" />
     <Compile Include="Assets/Project/Scripts/Weave/FontRenderer.cs" />
     <Compile Include="Assets/Common/Scripts/Util/SQLite.cs" />
     <Compile Include="Assets/Project/Scripts/UI/ColorStripUI.cs" />
@@ -66,6 +65,7 @@
     <Compile Include="Assets/Common/Scripts/Defined.cs" />
     <Compile Include="Assets/Project/Scripts/Core/SaveDataWeaveConfig.cs" />
     <Compile Include="Assets/Common/Scripts/SaveData/SaveDataViewer.cs" />
+    <Compile Include="Assets/Common/Scripts/SaveData/SaveWeaveConfigViewer.cs" />
     <Compile Include="Assets/Project/Scripts/UI/PalettePopupUI.cs" />
     <Compile Include="Assets/Common/Scripts/SaveData/SaveData.cs" />
     <Compile Include="Assets/Common/Scripts/Util/DataResult.cs" />
@@ -73,13 +73,15 @@
     <Compile Include="Assets/Common/Scripts/SaveData/SaveDataPartial.cs" />
     <Compile Include="Assets/Project/Scripts/Weave/ThreadingView.cs" />
     <Compile Include="Assets/Project/Scripts/Legacy/WeaveGrid.cs" />
-    <Compile Include="Assets/Project/Scripts/Views/WarpStripView.cs" />
     <Compile Include="Assets/Common/Scripts/Util/DataResultExtensions.cs" />
+    <Compile Include="Assets/Project/Scripts/Data/WeaveSettings.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveSaveManager.cs" />
+    <Compile Include="Assets/Project/Scripts/Legacy/WeftStripView.cs" />
     <Compile Include="Assets/Project/Scripts/Legacy/WeaveUI.cs" />
     <Compile Include="Assets/TutorialInfo/Scripts/Readme.cs" />
     <Compile Include="Assets/Common/Scripts/Util/FileLogger.cs" />
     <Compile Include="Assets/Project/Scripts/Weave/CellDrawer.cs" />
+    <Compile Include="Assets/Common/Scripts/SaveData/SaveDataInfoViewer.cs" />
     <Compile Include="Assets/Project/Scripts/Weave/DrawdownView.cs" />
     <Compile Include="Assets/Project/Scripts/Weave/CellGridView.cs" />
     <Compile Include="Assets/Common/Scripts/DesignPatterns/Singleton.cs" />
@@ -87,6 +89,7 @@
     <Compile Include="Assets/Project/Scripts/Legacy/WeaveLayoutManager.cs" />
     <Compile Include="Assets/Common/Scripts/Util/DBConn.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveDocumentManager.cs" />
+    <Compile Include="Assets/Project/Scripts/Legacy/WarpStripView.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

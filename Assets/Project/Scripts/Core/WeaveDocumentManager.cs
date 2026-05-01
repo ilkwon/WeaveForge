@@ -7,16 +7,22 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
   [SerializeField] private TieupView tieupView;
 
   public WeaveData CurrentWeaveData { get; private set; }
+  public WeaveSettings CurrentWeaveSettings { get; private set;  }
   public Action<WeaveData> OnDocumentChanged; // 문서가 변경될 때마다 호출되는 이벤트
+  public Action<WeaveSettings> OnSettingsChanged; // 설정이 변경될 때마다 호출되는 이벤트
+
   protected override void Awake()
   {
     base.Awake();
     // 초기화 작업이 필요한 경우 여기에 추가
+
+    
   }
   //-------------------------------------------------------------------------
   private void Start()
   {
     tieupView.OnTieupChanged += SaveDocument;
+    
   }
   //-------------------------------------------------------------------------
   private void OnDestroy()
@@ -33,23 +39,25 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
   }
 
   //-------------------------------------------------------------------------
-  public void NewDocument(int repeatCount = 4)
+  public void NewDocument()
   {    
+    var settings = CurrentWeaveSettings ?? new WeaveSettings();
     var data = new WeaveData()
     {
       weaveName = "새 패턴",
-      weaveCode = GenerateCode(new WeaveData() { colCount = 16, rowCount = 16 }),
-      colCount = 16,
-      rowCount = 16,
-      cells = new int[16 * 16],
-      warpColorNames = new string[16 * repeatCount],
-      weftColorNames = new string[16 * repeatCount],
-      warpThickness = new float[16],
-      weftThickness = new float[16],
+      weaveCode = GenerateCode(new WeaveData() { colCount = settings.colCount, rowCount = settings.rowCount }),
+      colCount = settings.colCount,
+      rowCount = settings.rowCount,
+      cells = new int[settings.colCount * settings.rowCount],
+      warpColorNames = new string[settings.colCount * settings.warpRepeat],
+      weftColorNames = new string[settings.colCount * settings.weftRepeat],
+      warpThickness = new float[settings.colCount],
+      weftThickness = new float[settings.rowCount],
       savedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
     };
     WeaveSaveManager.Instance.Save(data, isNew: true);
     CurrentWeaveData = data;
+    
     OnDocumentChanged?.Invoke(CurrentWeaveData);
   }
   //-------------------------------------------------------------------------
@@ -117,4 +125,9 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
     }
   }
   //-------------------------------------------------------------------------
+  public void ApplySettings(WeaveSettings settings)
+  {
+    CurrentWeaveSettings = settings ?? new WeaveSettings();
+    OnSettingsChanged?.Invoke(CurrentWeaveSettings);
+  }
 }

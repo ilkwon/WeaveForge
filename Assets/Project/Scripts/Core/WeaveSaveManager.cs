@@ -120,7 +120,10 @@ public class WeaveSaveManager : Singleton<WeaveSaveManager>
     string cellsStr = row["Cells"].ToString();
     if (mode == WeaveMode.Dobby)
     {
-      data.cells = Array.ConvertAll(cellsStr.Split(','), int.Parse);
+      if (string.IsNullOrEmpty(cellsStr))
+        data.cells = new int[data.colCount * data.rowCount];
+      else
+        data.cells = Array.ConvertAll(cellsStr.Split(','), int.Parse);
     }
     else
     {

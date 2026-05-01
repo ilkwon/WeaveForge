@@ -50,7 +50,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs" />
-    <Compile Include="Assets/Common/Scripts/SaveData/Editor/SaveDataViewerEditor.cs" />
+    <Compile Include="Assets/Common/Scripts/SaveData/Editor/SaveDataInfoViewerEditor.cs" />
+    <Compile Include="Assets/Common/Scripts/SaveData/Editor/SaveWeaveConfigViewerEditor.cs" />
+    <Compile Include="Assets/Common/Scripts/SaveData/Editor/SaveDataViewerEditorBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

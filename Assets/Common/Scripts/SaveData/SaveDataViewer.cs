@@ -1,7 +1,6 @@
 using UnityEngine;
-using System.Collections;
 
-public class SaveDataViewer : MonoBehaviour // old : ScriptableObject
+public abstract class SaveDataViewer<T> : MonoBehaviour where T : class, new()
 {
-	public SaveData.Info info;
+    public T data = new T();
 }

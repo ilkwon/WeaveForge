@@ -55,8 +55,10 @@ Assets/Common/Scripts/
  DesignPatterns/Singleton.cs
  SaveData/
   SaveData.cs
+  SaveDataInfoViewer.cs
   SaveDataPartial.cs
   SaveDataViewer.cs
+  SaveWeaveConfigViewer.cs
  Util/
   DataResult.cs
   DataResultExtensions.cs
@@ -73,10 +75,13 @@ Assets/Project/Scripts/Core/
 Assets/Project/Scripts/Data/
  ColorTypes.cs
  WeaveData.cs
+ WeaveSettings.cs
 Assets/Project/Scripts/Legacy/
+ WarpStripView.cs
  WeaveGrid.cs
  WeaveLayoutManager.cs
  WeaveUI.cs
+ WeftStripView.cs
 Assets/Project/Scripts/
  Rendering/WeaveTextureGenerator.cs
  UI/
@@ -85,10 +90,7 @@ Assets/Project/Scripts/
   PatternListUI.cs
   WeaveItemContextMenu.cs
   WeaveItemUI.cs
- Views/
-  WarpStripView.cs
-  WeaveRenderView.cs
-  WeftStripView.cs
+ Views/WeaveRenderView.cs
  Weave/
   CellDrawer.cs
   CellGridView.cs

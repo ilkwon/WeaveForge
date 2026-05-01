@@ -1,0 +1,1 @@
+public class SaveWeaveConfigViewer : SaveDataViewer<SaveDataWeaveConfig.Data> { }

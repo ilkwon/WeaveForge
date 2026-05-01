@@ -12,13 +12,17 @@ public class AppInit : MonoBehaviour
       mdbPath: Defines.DB_PATH,
       xmlPath: Defines.XML_PATH
     );
+    
+    // 로컮 세팅 로드.
+    var weaveConfig = SaveDataWeaveConfig.Load();
+    WeaveDocumentManager.Instance.ApplySettings(weaveConfig.weaveSettings);
 
     bool isNew = !DBConn.Instance.ExistsTable("WeavePattern");
     DBConn.Instance.create("create_colors_table");
     if (isNew)
     {
       DBConn.Instance.create("create_weave_pattern");
-      //Debug.Log("테이블 생성 완료");
+      WeaveDocumentManager.Instance.NewDocument();
     }
     else
     {
@@ -27,8 +31,8 @@ public class AppInit : MonoBehaviour
 
       if (list.Count > 0)
       {
-        var config = SaveDataWeaveConfig.Load();
-        string lastSelectedCode = config.lastSelectedCode;
+       
+        string lastSelectedCode = weaveConfig.lastSelectedCode;
         bool exists = list.Exists(item => item["Code"] == lastSelectedCode);
 
         if (!string.IsNullOrEmpty(lastSelectedCode) && exists)
@@ -37,7 +41,9 @@ public class AppInit : MonoBehaviour
           WeaveDocumentManager.Instance.OpenDocument(list[list.Count - 1]["Code"]);
       }
       else
+      {
         WeaveDocumentManager.Instance.NewDocument();
+      }
     }
   }
 

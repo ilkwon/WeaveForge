@@ -21,7 +21,7 @@ public class ThreadingView : CellGridView
     yield return null;
 
     int shaftCount = tieupView.RowCount;
-    ColCount = tieupView.ColCount * 4;
+    ColCount = tieupView.ColCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.warpRepeat;
     RowCount = shaftCount + 1; // 종광 수 + 컬러피커 1줄
     CellSize = tieupView.CellSize;
 

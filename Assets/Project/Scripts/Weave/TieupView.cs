@@ -39,8 +39,8 @@ public class TieupView : CellGridView
   protected override void OnDestroy()
   {    
     base.OnDestroy();
-    
-    WeaveDocumentManager.Instance.OnDocumentChanged -= LoadPattern;
+    if (WeaveDocumentManager.Instance != null)
+      WeaveDocumentManager.Instance.OnDocumentChanged -= LoadPattern;
   }
 
   //---------------------------------------------------------------------------
@@ -130,7 +130,7 @@ public class TieupView : CellGridView
   //---------------------------------------------------------------------------
   private void SetWarpColor(WeaveData data)
   {
-    int warpCount = ColCount * 4;
+    int warpCount = ColCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.warpRepeat;
     if (data.warpColorNames == null || data.warpColorNames.Length != warpCount)
     {
       var newColors = new string[warpCount];
@@ -145,7 +145,7 @@ public class TieupView : CellGridView
   //---------------------------------------------------------------------------
   private void SetWeftColor(WeaveData data)
   {
-    int weftCount = RowCount * 4;
+    int weftCount = RowCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.weftRepeat;;
     if (data.weftColorNames == null || data.weftColorNames.Length != weftCount)
     {
       var newColors = new string[weftCount];

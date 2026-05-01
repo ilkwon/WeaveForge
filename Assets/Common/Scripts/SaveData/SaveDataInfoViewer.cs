@@ -1,0 +1,1 @@
+public class SaveDataInfoViewer : SaveDataViewer<SaveData.Info> { }

@@ -13,8 +13,8 @@ public class WeaveData
 {
     public string weaveName;
     public string weaveCode;
-    public int colCount; 
-    public int rowCount;
+    public int colCount = 2; 
+    public int rowCount = 2;
     public int[] cells;
     public string[] warpColorNames;
     public string[] weftColorNames;

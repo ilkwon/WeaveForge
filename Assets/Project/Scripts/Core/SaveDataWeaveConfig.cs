@@ -16,6 +16,7 @@ public class SaveDataWeaveConfig
   {
     public int version;
     public string lastSelectedCode;
+    public WeaveSettings weaveSettings = new WeaveSettings();
     public Data()
     {
       version = 1;
@@ -26,6 +27,9 @@ public class SaveDataWeaveConfig
     {
       version = info.GetInt32("version");
       lastSelectedCode = info.GetString("lastSelectedCode");
+      
+      try { weaveSettings = (WeaveSettings)info.GetValue("weaveSettings", typeof(WeaveSettings)); }
+      catch (SerializationException) { weaveSettings = new WeaveSettings(); }
     }
 
     //--------------------------------------------------------------
@@ -33,6 +37,7 @@ public class SaveDataWeaveConfig
     {
       info.AddValue("version", version);
       info.AddValue("lastSelectedCode", lastSelectedCode);
+      info.AddValue("weaveSettings", weaveSettings);
     }
   }
 
@@ -40,7 +45,15 @@ public class SaveDataWeaveConfig
   public static Data Load()
   {
     Data data = new();
+    if (!System.IO.File.Exists(_path))
+    {
+      //Debug.Log("[SaveDataWeaveConfig] 파일 없음 → 기본값 사용");
+      return data;
+    }
     SaveData.Load<Data>(_path, ref data);
+    if (data.weaveSettings == null)
+      data.weaveSettings = new WeaveSettings();
+    
     return data;
   }
 

@@ -385,7 +385,7 @@ public partial class SaveData : MonoBehaviour
     return aes;
   }
   //----------------------------------------------------------------------------
-  public sealed class VersionBinder : SerializationBinder
+  public class VersionBinder : SerializationBinder
   {
     public override Type BindToType(string assemblyName, string typeName)
     {

@@ -50,9 +50,11 @@ TemporaryDependencyNodeTargetIdentifier=netstandard2.1
 /warnaserror+:NU1605
 
 [sourceFiles]
-Assets/
- Common/Scripts/SaveData/Editor/SaveDataViewerEditor.cs
- TutorialInfo/Scripts/Editor/ReadmeEditor.cs
+Assets/Common/Scripts/SaveData/Editor/
+ SaveDataInfoViewerEditor.cs
+ SaveDataViewerEditorBase.cs
+ SaveWeaveConfigViewerEditor.cs
+Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 Temp/obj/Assembly-CSharp-Editor/.NETStandard,Version=v2.1.AssemblyAttributes.cs
 
 [metadataReferences]

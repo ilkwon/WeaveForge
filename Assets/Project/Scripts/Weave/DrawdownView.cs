@@ -41,8 +41,8 @@ public class DrawdownView : CellGridView
   //---------------------------------------------------------------------------
   private void Resize()
   {
-    ColCount = tieupView.ColCount * 4;
-    RowCount = tieupView.RowCount * 4;
+    ColCount = tieupView.ColCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.warpRepeat;
+    RowCount = tieupView.RowCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.weftRepeat;
     CellSize = tieupView.CellSize;
 
     Init();
