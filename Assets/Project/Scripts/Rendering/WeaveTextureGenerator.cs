@@ -1,10 +1,48 @@
 using System;
+using Unity.ProjectAuditor.Editor.Core;
 using UnityEngine;
+/*
+  WeaveTextureGenerator.cs
+  - 위 조직 데이터를 기반으로 Diffuse, Normal, Roughness 텍스처를 생성하는 유틸리티 클래스.
+  - WeaveRenderView에서 사용.
 
+  [참고] Height 맵에서 Normal 맵 생성 시, Sobel 필터를 사용하여 높이의 변화량을 계산.
+  - Sobel 필터는 각 픽셀 주변의 높이값을 이용하여
+  - gx = (-1 * tl) + (0 * tm) + (1 * tr)
+       + (-2 * ml) + (0 * mm) + (2 * mr)
+       + (-1 * bl) + (0 * bm) + (1 * br);
+  - gy = (-1 * tl) + (-2 * tm) + (-1 * tr)
+       + (0 * ml) + (0 * mm) + (0 * mr)
+       + (1 * bl) + (2 * bm) + (1 * br);
+  - 여기서 tl, tm, tr, ml, mm, mr, bl, bm, br는 해당 픽셀 주변의 높이값입니다.
+  - gx와 gy를 이용하여 법선 벡터를 계산하고, 이를 RGB로 변환하여 Normal 맵을 생성.    
+  
+  [참고] Roughness 맵 생성 시, 높이값을 이용하여 실 위는 매끄럽게, 실 사이 교차점은 거칠게 표현.
+  - 높이가 높은 곳(실 위) → 러프니스 낮음 → Smoothness 높음 → 더 매끄럽게 반짝임.
+  - 실 위 (볼록한 부분):
+    Height 높음 → Roughness 낮음 → Smoothness 높음 → 매끄럽고 반짝임
+  - 실 사이 (교차점, 눌린 부분):
+    Height 낮음 → Roughness 높음 → Smoothness 낮음 → 거칠고 무광
+
+  EPI (Ends Per Inch)  → 1인치 안에 경사(세로실)가 몇 올
+  PPI (Picks Per Inch) → 1인치 안에 위사(가로실)가 몇 올
+  40수 면 표준 평직 기준
+  EPI = 100  → 1인치 안에 경사 100올
+  PPI = 72   → 1인치 안에 위사 72올
+
+  EPI가 PPI보다 높은 이유가 있습니다. 직기에서 경사는 항상 팽팽하게 당겨진 상태에서 
+  위사를 "바디(Reed)"로 강하게 눌러 넣습니다. 그래서 경사가 위사보다 더 촘촘하게 배열됨.
+  경사 1올 공간 = 25.4mm / 100 = 0.254mm
+  위사 1올 공간 = 25.4mm / 72  = 0.353mm
+
+  비율 = 위사 / 경사 = 0.353 / 0.254 ≈ 1.39
+  위사가 경사보다 1.39배 넓은 공간을 차지합니다. 그래서 셀이 정사각형이 아니라 위사 방향으로
+   약간 더 길어야 실제 원단 비율에 가깝움.  
+*/
 public class WeaveTextureGenerator : MonoBehaviour
 {
   //---------------------------------------------------------------------------
-  public static Texture2D GenerateDiffuse(WeaveData data)
+  public static Texture2D GenerateDiffuse(WeaveData data, WeaveSettings settings = null)
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
@@ -14,33 +52,45 @@ public class WeaveTextureGenerator : MonoBehaviour
       data.warpColorNames = new string[data.colCount];
     if (data.weftColorNames == null || data.weftColorNames.Length == 0)
       data.weftColorNames = new string[data.rowCount];
-    Texture2D dest = new(data.colCount, data.rowCount)
+    
+    int pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
+    int pixelsPerWeft = settings != null ? settings.pixelsPerWeft : 22;
+    // 밉맵 켜기. 
+    Texture2D dest = new(data.colCount * pixelsPerWarp, data.rowCount * pixelsPerWeft,  TextureFormat.RGBA32, true)
     {
-      filterMode = FilterMode.Point,
+      filterMode = FilterMode.Bilinear,
+      anisoLevel = 9,  // 밉맵 품질 향상 위해 추가
     };
+    
+    
+    var texWidth = dest.width;
+    var texHeight = dest.height;
 
-    var width = data.colCount;
-    var height = data.rowCount;
-    Color32[] pixels = new Color32[width * height];
+    Color32[] pixels = new Color32[texWidth * texHeight];
 
     string[] warpColors = data.warpColorNames;
     string[] weftColors = data.weftColorNames;
 
-    for (int y = 0; y < height; y++)
+    for (int cy = 0; cy < data.rowCount; cy++)
     {
-      for (int x = 0; x < width; x++)
+      for (int cx = 0; cx < data.colCount; cx++)
       {
-        int cell = data.cells[y * width + x];
+        int cell = data.cells[cy * data.colCount + cx];
         Color color = cell == 1
-        ? ColorPalette.GetColor(warpColors[x])
-        : ColorPalette.GetColor(weftColors[y]);
-        int texY = height - 1 - y;
-
-        pixels[texY * width + x] = color;
+        ? ColorPalette.GetColor(warpColors[cx])
+        : ColorPalette.GetColor(weftColors[cy]);
+        
+        for (int py = 0; py < pixelsPerWeft; py++){
+          for (int px = 0; px < pixelsPerWarp; px++){
+            int texX = cx * pixelsPerWarp + px;
+            int texY = (texHeight - 1) - (cy * pixelsPerWeft + py);
+            pixels[texY * texWidth + texX] = color;
+          }        
+        }
       }
     }
     dest.SetPixels32(pixels);
-    dest.Apply();
+    dest.Apply(true);  // 밉맵 생성
     return dest;
   }
   //---------------------------------------------------------------------------
@@ -72,19 +122,25 @@ public class WeaveTextureGenerator : MonoBehaviour
     return dest;
   }
   //--------------------------------------------------------------
-  public static Texture2D GenerateHeightUpscale(WeaveData data)
+  public static Texture2D GenerateHeightUpscale(WeaveData data, WeaveSettings settings = null)
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
     if (data.cells == null || data.cells.Length == 0)
       return new Texture2D(1, 1);
 
-    int cellSize = 16;
-    int width = data.colCount * cellSize;
-    int height = data.rowCount * cellSize;
-    Texture2D dest = new(width, height)
+    
+    var pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
+    var pixelsPerWeft = settings != null ? settings.pixelsPerWeft : 22;
+    var crimp = settings != null ? settings.crimpStrength : 0.1f;
+    //cellSize = Math.Max(pixelsPerWarp, pixelsPerWeft);
+    int width = data.colCount * pixelsPerWarp;
+    int height = data.rowCount * pixelsPerWeft;
+
+    Texture2D dest = new(width, height, TextureFormat.RGBA32, true)
     {
-      filterMode = FilterMode.Point,
+      filterMode = FilterMode.Bilinear,
+      anisoLevel = 9,  // 밉맵 품질 향상 위해 추가
     };
 
     Color32[] pixels = new Color32[width * height];
@@ -95,9 +151,9 @@ public class WeaveTextureGenerator : MonoBehaviour
       {
         int cell = data.cells[cy * data.colCount + cx];
 
-        for (int py = 0; py < cellSize; py++)
+        for (int py = 0; py < pixelsPerWeft; py++)
         {
-          for (int px = 0; px < cellSize; px++)
+          for (int px = 0; px < pixelsPerWarp; px++)
           {
             // 정규화 : cos에 쓰기위해 0부터 1사이값으로 변환
             // cellSize를 0 ~ 15 -> 0 ~ 1
@@ -105,18 +161,17 @@ public class WeaveTextureGenerator : MonoBehaviour
             // 중앙을 0.5 로 맞추려면
             // px 범위를 0~cellSize 가 아니라
             // 0~1 을 셀 중앙 기준으로 매핑
-            float u = ((float)px + .5f) / cellSize;
-            float v = ((float)py + .5f) / cellSize;
-            /// float curvX = (1 - Mathf.Cos(u * Mathf.PI)) /2;
-            /// float curvY = (1 - Mathf.Cos(v * Mathf.PI)) /2;
-            float sinU = Mathf.Sin(u * Mathf.PI);
-            float sinV = Mathf.Sin(v * Mathf.PI);
+            float u = ((float)px + .5f) / pixelsPerWarp;
+            float v = ((float)py + .5f) / pixelsPerWeft;
+
+            float sinU = Mathf.Sin(u * Mathf.PI) * (1f - crimp);
+            float sinV = Mathf.Sin(v * Mathf.PI) * (1f - crimp);
             // cell == 1 (경사가 위일때)
             // cell == 0 (위사가 위일때)
             float h = cell == 1 ? sinU : sinV;
 
-            int texX = cx * cellSize + px;
-            int texY = height - 1 - (cy * cellSize + py);
+            int texX = cx * pixelsPerWarp + px;
+            int texY = height - 1 - (cy * pixelsPerWeft + py);
             Color c = new(h, h, h);
             pixels[texY * width + texX] = c;
 
@@ -125,7 +180,7 @@ public class WeaveTextureGenerator : MonoBehaviour
       }
     }
     dest.SetPixels32(pixels);
-    dest.Apply();
+    dest.Apply(true);
     return dest;
   }
 
