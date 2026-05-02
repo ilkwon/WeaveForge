@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
@@ -7,6 +8,8 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
   [SerializeField] private TieupView tieupView;
 
   public WeaveData CurrentWeaveData { get; private set; }
+  
+  [ShowInInspector, ReadOnly]
   public WeaveSettings CurrentWeaveSettings { get; private set;  }
   public Action<WeaveData> OnDocumentChanged; // 문서가 변경될 때마다 호출되는 이벤트
   public Action<WeaveSettings> OnSettingsChanged; // 설정이 변경될 때마다 호출되는 이벤트
@@ -16,7 +19,7 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
     base.Awake();
     // 초기화 작업이 필요한 경우 여기에 추가
 
-    
+    CurrentWeaveSettings = SaveDataWeaveConfig.Load().weaveSettings ?? new WeaveSettings();
   }
   //-------------------------------------------------------------------------
   private void Start()

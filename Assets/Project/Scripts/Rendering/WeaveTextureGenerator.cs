@@ -54,34 +54,52 @@ public class WeaveTextureGenerator : MonoBehaviour
       data.weftColorNames = new string[data.rowCount];
     
     int pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
-    int pixelsPerWeft = settings != null ? settings.pixelsPerWeft : 22;
-    // 밉맵 켜기. 
-    Texture2D dest = new(data.colCount * pixelsPerWarp, data.rowCount * pixelsPerWeft,  TextureFormat.RGBA32, true)
+    int pixelsPerWeft = settings != null ? settings.PixelsPerWeft : 22;
+    // 커버리지 계산
+    float warpCoverage = settings != null ? settings.CoveragePercent / 100f : 0.565f;
+    float weftCoverage = settings != null ? settings.WeftCoveragePercent / 100f : 0.406f;
+
+    // 셀 반폭 픽셀
+    float warpHalfPx = pixelsPerWarp * warpCoverage / 2f;
+    float weftHalfPx = pixelsPerWeft * weftCoverage / 2f;
+
+    float centerX = pixelsPerWarp / 2f;
+    float centerY = pixelsPerWeft / 2f;
+    
+    // 밉맵 켜기.     
+    Texture2D dest = new(data.colCount * pixelsPerWarp, data.rowCount * pixelsPerWeft, TextureFormat.RGBA32, true)
     {
       filterMode = FilterMode.Bilinear,
       anisoLevel = 9,  // 밉맵 품질 향상 위해 추가
     };
-    
-    
+
     var texWidth = dest.width;
     var texHeight = dest.height;
 
     Color32[] pixels = new Color32[texWidth * texHeight];
 
-    string[] warpColors = data.warpColorNames;
-    string[] weftColors = data.weftColorNames;
+
 
     for (int cy = 0; cy < data.rowCount; cy++)
     {
       for (int cx = 0; cx < data.colCount; cx++)
       {
         int cell = data.cells[cy * data.colCount + cx];
-        Color color = cell == 1
-        ? ColorPalette.GetColor(warpColors[cx])
-        : ColorPalette.GetColor(weftColors[cy]);
+
+        Color warpColor = ColorPalette.GetColor(data.warpColorNames[cx]);
+        Color weftColor = ColorPalette.GetColor(data.weftColorNames[cy]);
         
         for (int py = 0; py < pixelsPerWeft; py++){
           for (int px = 0; px < pixelsPerWarp; px++){
+            float dx = Mathf.Abs(px - centerX);
+            float dy = Mathf.Abs(py - centerY);
+
+            Color color;
+            if (cell == 1) // 경사가 위에 있는 경우
+              color = dx <= warpHalfPx ? warpColor : Color.clear; // 셀 중앙에서 warpHalfPx 이내는 경사색, 그 외는 투명
+            else // 위사가 위에 있는 경우
+              color = dy <= weftHalfPx ? weftColor : Color.clear; // 셀 중앙에서 weftHalfPx 이내는 위사색, 그 외는 투명
+
             int texX = cx * pixelsPerWarp + px;
             int texY = (texHeight - 1) - (cy * pixelsPerWeft + py);
             pixels[texY * texWidth + texX] = color;
@@ -131,9 +149,16 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     
     var pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
-    var pixelsPerWeft = settings != null ? settings.pixelsPerWeft : 22;
-    var crimp = settings != null ? settings.crimpStrength : 0.1f;
-    //cellSize = Math.Max(pixelsPerWarp, pixelsPerWeft);
+    var pixelsPerWeft = settings != null ? settings.PixelsPerWeft : 22;
+    
+    
+    float warpCoverage = settings != null ? settings.CoveragePercent / 100f : 0.565f;
+    float weftCoverage = settings != null ? settings.WeftCoveragePercent / 100f : 0.406f;
+    float warpHalfPx = pixelsPerWarp * warpCoverage / 2f;
+    float weftHalfPx = pixelsPerWeft * weftCoverage / 2f;
+    float centerX = pixelsPerWarp / 2f;
+    float centerY = pixelsPerWeft / 2f;     
+
     int width = data.colCount * pixelsPerWarp;
     int height = data.rowCount * pixelsPerWeft;
 
@@ -155,20 +180,27 @@ public class WeaveTextureGenerator : MonoBehaviour
         {
           for (int px = 0; px < pixelsPerWarp; px++)
           {
-            // 정규화 : cos에 쓰기위해 0부터 1사이값으로 변환
-            // cellSize를 0 ~ 15 -> 0 ~ 1
-
-            // 중앙을 0.5 로 맞추려면
-            // px 범위를 0~cellSize 가 아니라
-            // 0~1 을 셀 중앙 기준으로 매핑
-            float u = ((float)px + .5f) / pixelsPerWarp;
-            float v = ((float)py + .5f) / pixelsPerWeft;
-
-            float sinU = Mathf.Sin(u * Mathf.PI) * (1f - crimp);
-            float sinV = Mathf.Sin(v * Mathf.PI) * (1f - crimp);
-            // cell == 1 (경사가 위일때)
-            // cell == 0 (위사가 위일때)
-            float h = cell == 1 ? sinU : sinV;
+            float dx = Mathf.Abs(px - centerX);
+            float dy = Mathf.Abs(py - centerY);
+            float h;
+            if (cell == 1) // 경사가 위에 있는 경우
+            {
+              if (dx <= warpHalfPx) // 셀 중앙에서 warpHalfPx 이내는 경사 높이, 그 외는 0
+              {
+                float t = 1 - (dx / warpHalfPx); // 중앙에서 가장 높고, 가장자리로 갈수록 낮아짐
+                h = Mathf.Sin(t*Mathf.PI * 0.5f) * settings.crimpStrength; // 사인 곡선을 이용하여 중앙에서 부드럽게 높아졌다가 가장자리로 갈수록 빠르게 낮아짐. crimp 가 클수록 더 평평해짐.
+              }
+              else h = 0f;              
+            } 
+            else
+            {
+              if (dy <= weftHalfPx) // 셀 중앙에서 weftHalfPx 이내는 위사 높이, 그 외는 0
+              {
+                float t = 1 - (dy / weftHalfPx); // 중앙에서 가장 높고, 가장자리로 갈수록 낮아짐
+                h = Mathf.Sin(t*Mathf.PI * 0.5f) * settings.crimpStrength; // 사인 곡선을 이용하여 중앙에서 부드럽게 높아졌다가 가장자리로 갈수록 빠르게 낮아짐. crimp 가 클수록 더 평평해짐.
+              }
+              else h = 0f;
+            }
 
             int texX = cx * pixelsPerWarp + px;
             int texY = height - 1 - (cy * pixelsPerWeft + py);

@@ -27,7 +27,8 @@ public class WeaveRenderView : MonoBehaviour
     DiffuseTex = WeaveTextureGenerator.GenerateDiffuse(data, settings);
 
     var height = WeaveTextureGenerator.GenerateHeightUpscale(data, settings);
-    NormalTex = WeaveTextureGenerator.GenerateNormal(height);
+    float normalStrength = settings.crimpStrength * 6.7f;
+    NormalTex = WeaveTextureGenerator.GenerateNormal(height, normalStrength);
     RoughnessTex = WeaveTextureGenerator.GenerateRoughness(height);
 
     if (weaveMaterial != null)

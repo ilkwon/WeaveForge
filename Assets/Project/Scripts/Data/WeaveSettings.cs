@@ -22,11 +22,14 @@ public class WeaveSettings
 
   [TitleGroup("렌더링 설정")]
   [LabelText("셀 가로 크기 (픽셀)"), Range(4, 128)]
-  public int pixelsPerWarp = 64;  // 경사 1올당 픽셀 수
+  public int pixelsPerWarp = 16;  // 경사 1올당 픽셀 수
 
   [TitleGroup("렌더링 설정")]
-  [LabelText("셀 세로 크기 (픽셀)"), Range(4, 128)]
-  public int pixelsPerWeft = 88;  // 위사 1올당 픽셀 수
+  [ShowInInspector, ReadOnly, LabelText("셀 세로 크기 (픽셀)")]
+  public int PixelsPerWeft
+  {
+    get => (int)(pixelsPerWarp * (WeftPitchMm / WarpPitchMm));
+  }
 
   [TitleGroup("원사 설정")]
   [LabelText("번수 (Ne)"), Range(10, 120)]
@@ -46,13 +49,11 @@ public class WeaveSettings
 
   [TitleGroup("렌더링 설정")]
   [LabelText("크림프 강도"), Range(0f, 0.3f)]
-  public float crimpStrength = 0.1f;
+  public float crimpStrength = 0.3f;
 
   //-------------------------------------------------------------------------
   [TitleGroup("파생 계산값 (읽기 전용)")]
   [ShowInInspector, ReadOnly, LabelText("실 직경 (mm)")]
-  //public float YarnDiameterMm => 25.4f / (yarnCount * Mathf.Sqrt(yarnCount) * 0.9f);      
-  //public float YarnDiameterMm => 25.4f / (28f * Mathf.Sqrt(yarnCount));
   public float YarnDiameterMm => 25.4f / (GetPeirceConstant() * Mathf.Sqrt(yarnCount));
 
   [ShowInInspector, ReadOnly, LabelText("경사 피치 (mm)")]
@@ -69,8 +70,6 @@ public class WeaveSettings
 
   [ShowInInspector, ReadOnly, LabelText("Tiling Y (1m 기준)")]
   public float TilingY => 1000f / (WeftPitchMm * rowCount);
-
-
   private float GetPeirceConstant()
   {
     return material switch
@@ -84,6 +83,9 @@ public class WeaveSettings
     };
   }
 
+
+  [ShowInInspector, ReadOnly, LabelText("위사 커버리지 (%)")]
+  public float WeftCoveragePercent => Mathf.Clamp01(YarnDiameterMm / WeftPitchMm) * 100f;
 
 }
 
