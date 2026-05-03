@@ -46,18 +46,12 @@ public class WeaveTextureGenerator : MonoBehaviour
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
-    if (data.cells == null || data.cells.Length == 0)
-      data.cells = new int[data.colCount * data.rowCount];
-    if (data.warpColorNames == null || data.warpColorNames.Length == 0)
-      data.warpColorNames = new string[data.colCount];
-    if (data.weftColorNames == null || data.weftColorNames.Length == 0)
-      data.weftColorNames = new string[data.rowCount];
     
-    int pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
-    int pixelsPerWeft = settings != null ? settings.PixelsPerWeft : 22;
+    int pixelsPerWarp = settings.pixelsPerWarp;
+    int pixelsPerWeft = settings.PixelsPerWeft;
     // 커버리지 계산
-    float warpCoverage = settings != null ? settings.CoveragePercent / 100f : 0.565f;
-    float weftCoverage = settings != null ? settings.WeftCoveragePercent / 100f : 0.406f;
+    float warpCoverage = settings.CoveragePercent / 100f;
+    float weftCoverage = settings.WeftCoveragePercent / 100f;
 
     // 셀 반폭 픽셀
     float warpHalfPx = pixelsPerWarp * warpCoverage / 2f;
@@ -78,8 +72,6 @@ public class WeaveTextureGenerator : MonoBehaviour
 
     Color32[] pixels = new Color32[texWidth * texHeight];
 
-
-
     for (int cy = 0; cy < data.rowCount; cy++)
     {
       for (int cx = 0; cx < data.colCount; cx++)
@@ -88,17 +80,19 @@ public class WeaveTextureGenerator : MonoBehaviour
 
         Color warpColor = ColorPalette.GetColor(data.warpColorNames[cx]);
         Color weftColor = ColorPalette.GetColor(data.weftColorNames[cy]);
-        
+        Color gapWarp = settings.showGaps ? Color.clear : weftColor;
+        Color gapWeft = settings.showGaps ? Color.clear : warpColor;
         for (int py = 0; py < pixelsPerWeft; py++){
           for (int px = 0; px < pixelsPerWarp; px++){
             float dx = Mathf.Abs(px - centerX);
             float dy = Mathf.Abs(py - centerY);
 
+
             Color color;
             if (cell == 1) // 경사가 위에 있는 경우
-              color = dx <= warpHalfPx ? warpColor : Color.clear; // 셀 중앙에서 warpHalfPx 이내는 경사색, 그 외는 투명
+              color = dx <= warpHalfPx ? warpColor : gapWarp; // 셀 중앙에서 warpHalfPx 이내는 경사색, 그 외는 투명
             else // 위사가 위에 있는 경우
-              color = dy <= weftHalfPx ? weftColor : Color.clear; // 셀 중앙에서 weftHalfPx 이내는 위사색, 그 외는 투명
+              color = dy <= weftHalfPx ? weftColor : gapWeft; // 셀 중앙에서 weftHalfPx 이내는 위사색, 그 외는 투명
 
             int texX = cx * pixelsPerWarp + px;
             int texY = (texHeight - 1) - (cy * pixelsPerWeft + py);
@@ -144,16 +138,12 @@ public class WeaveTextureGenerator : MonoBehaviour
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
-    if (data.cells == null || data.cells.Length == 0)
-      return new Texture2D(1, 1);
-
-    
-    var pixelsPerWarp = settings != null ? settings.pixelsPerWarp : 16;
-    var pixelsPerWeft = settings != null ? settings.PixelsPerWeft : 22;
-    
-    
-    float warpCoverage = settings != null ? settings.CoveragePercent / 100f : 0.565f;
-    float weftCoverage = settings != null ? settings.WeftCoveragePercent / 100f : 0.406f;
+      
+    var pixelsPerWarp = settings.pixelsPerWarp;
+    var pixelsPerWeft = settings.PixelsPerWeft;
+      
+    float warpCoverage = settings.CoveragePercent / 100f;
+    float weftCoverage = settings.WeftCoveragePercent / 100f;
     float warpHalfPx = pixelsPerWarp * warpCoverage / 2f;
     float weftHalfPx = pixelsPerWeft * weftCoverage / 2f;
     float centerX = pixelsPerWarp / 2f;
@@ -216,7 +206,7 @@ public class WeaveTextureGenerator : MonoBehaviour
     return dest;
   }
 
-  //---------------------------------------------------------------------------
+  //----------------------------------------------------------------------------
   // 가로 방향 (gx)  |  세로 방향 (gy)
   // -1  0  +1       |  -1  -2  -1
   // -2  0  +2       |   0   0   0
@@ -247,28 +237,12 @@ public class WeaveTextureGenerator : MonoBehaviour
     {
       for (var x = 0; x < width; x++)
       {
-        // p 값을 기준으로 -1, +1 해도 바운더리를 벗어나지 않게
-
-        /* 제거..
-          Seam 현상
-          → 대각선 방향으로 희미한 격자선 보임
-          → 텍스처 반복 경계에서 발생
-          → Clamp 로 인한 Sobel 오류
-         uv 타일링으 높여서 repeat 반복수를 높이면 격자 경계가 도드라지게 보인다.         
-        int x0 = Mathf.Clamp(x - 1, 0, width - 1);
-        int x1 = Mathf.Clamp(x + 1, 0, width - 1);
-        int y0 = Mathf.Clamp(y - 1, 0, height - 1);
-        int y1 = Mathf.Clamp(y + 1, 0, height - 1);
-        */
-
-        // 수정 코드
+        // 주변 픽셀 인덱스 계산 (테두리 픽셀은 가장자리 픽셀로 대체)        
         int x0 = (x - 1 + width) % width;
         int x1 = (x + 1) % width;
         int y0 = (y - 1 + height) % height;
         int y1 = (y + 1) % height;
-
-        // rgb 모두 값이 같아서 r 하나만.
-
+        // 주변 픽셀 높이값 읽기 (0~1로 정규화)
         float tl = srcPixels[y1 * width + x0].r / 255f;
         float tm = srcPixels[y1 * width + x].r / 255f;
         float tr = srcPixels[y1 * width + x1].r / 255f;
@@ -325,11 +299,9 @@ public class WeaveTextureGenerator : MonoBehaviour
     for (int y = 0; y < height; y++)
     {
       for (int x = 0; x < width; x++)
-      {
-        //var h = src.GetPixel(x, y).r;
+      {        
         var h = srcPixels[y * width + x].r / 255f;  // 0~1 정규화
-        float r = (1 - h) * (max - min) + min;
-        //Color roughness = new(r, r, r);
+        float r = (1 - h) * (max - min) + min;             
         pixels[y * width + x] = new Color32(
           (byte)(r * 255),       // R
           (byte)(r * 255),       // G
@@ -344,7 +316,8 @@ public class WeaveTextureGenerator : MonoBehaviour
   }
 
   //---------------------------------------------------------------------------
-  public static Texture2D GenerateMetallicGloss(Texture2D heightMap, float minRoughness = 0.4f, float maxRoughness = 0.8f)
+  public static Texture2D GenerateMetallicGloss(Texture2D heightMap,
+    float minRoughness = 0.4f, float maxRoughness = 0.8f)
   {
     var src = heightMap;
     Texture2D dest = new(src.width, src.height)
@@ -383,4 +356,5 @@ public class WeaveTextureGenerator : MonoBehaviour
     dest.Apply();
     return dest;
   }
+  //---------------------------------------------------------------------------
 }

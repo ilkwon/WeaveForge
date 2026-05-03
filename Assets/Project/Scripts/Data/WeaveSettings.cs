@@ -2,9 +2,15 @@ using System;
 using UnityEngine;
 using Sirenix.OdinInspector;
 
+public enum TextureMode { CellBased, Drawdown }
+
 [Serializable]
 public class WeaveSettings
 {
+  [TitleGroup("렌더링 설정")]
+  [LabelText("텍스처 모드")]
+  public TextureMode textureMode = TextureMode.CellBased;
+
   [TitleGroup("반복 설정")]
   [LabelText("경사 반복수"), Range(1, 32)]
   public int warpRepeat = 4;
@@ -50,6 +56,10 @@ public class WeaveSettings
   [TitleGroup("렌더링 설정")]
   [LabelText("크림프 강도"), Range(0f, 0.3f)]
   public float crimpStrength = 0.3f;
+
+  [TitleGroup("렌더링 설정")]
+  [LabelText("틈 투명 처리")]
+  public bool showGaps = false;
 
   //-------------------------------------------------------------------------
   [TitleGroup("파생 계산값 (읽기 전용)")]
