@@ -89,7 +89,8 @@ git clone https://github.com/ilkwon/WeaveForge.git
 |------|------|
 | CellBased 텍스처 생성 | ✅ |
 | Drawdown 텍스처 생성 | ✅ |
-| PBR 구체 렌더링 | ✅ |
+| Diffuse / Normal / Roughness 구체 렌더링 | ✅ |
+| MetallicGloss 연결 | 🔜 |
 | 모드 전환 UI | 🔜 |
 
 **데이터**
