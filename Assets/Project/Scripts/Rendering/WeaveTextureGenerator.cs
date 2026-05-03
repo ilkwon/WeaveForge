@@ -46,7 +46,9 @@ public class WeaveTextureGenerator : MonoBehaviour
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
-    
+    if (settings.textureMode == TextureMode.Drawdown)
+      return GenerateDiffuseDrawdown(data, settings);
+
     int pixelsPerWarp = settings.pixelsPerWarp;
     int pixelsPerWeft = settings.PixelsPerWeft;
     // 커버리지 계산
@@ -138,7 +140,10 @@ public class WeaveTextureGenerator : MonoBehaviour
   {
     if (data == null || data.colCount <= 0 || data.rowCount <= 0)
       return new Texture2D(1, 1);
-      
+    
+    if (settings.textureMode == TextureMode.Drawdown)
+      return GenerateHeightUpscaleDrawdown(data, settings);
+
     var pixelsPerWarp = settings.pixelsPerWarp;
     var pixelsPerWeft = settings.PixelsPerWeft;
       
@@ -354,6 +359,149 @@ public class WeaveTextureGenerator : MonoBehaviour
     }
     dest.SetPixels32(pixels);
     dest.Apply();
+    return dest;
+  }
+  
+  //---------------------------------------------------------------------------
+  private static Texture2D GenerateDiffuseDrawdown(WeaveData data, WeaveSettings settings)
+  {
+    int pixelsPerWarp = settings.pixelsPerWarp;
+    int pixelsPerWeft = settings.PixelsPerWeft;
+    float warpHalfPx  = pixelsPerWarp * (settings.CoveragePercent / 100f) / 2f;
+    float weftHalfPx  = pixelsPerWeft * (settings.WeftCoveragePercent / 100f) / 2f;
+    float centerX     = pixelsPerWarp / 2f;
+    float centerY     = pixelsPerWeft / 2f;
+
+    Texture2D dest = new(data.colCount * pixelsPerWarp, data.rowCount * pixelsPerWeft, TextureFormat.RGBA32, true)
+    {
+      filterMode = FilterMode.Bilinear,
+      anisoLevel = 9,
+    };
+    int texWidth  = dest.width;
+    int texHeight = dest.height;
+    Color32[] pixels  = new Color32[texWidth * texHeight];
+    Color gapColor = settings.showGaps ? Color.clear : new Color(0.12f, 0.10f, 0.09f, 1f);
+
+    for (int cy = 0; cy < data.rowCount; cy++)
+    for (int cx = 0; cx < data.colCount; cx++)
+    {
+      int   cell      = data.cells[cy * data.colCount + cx];
+      Color warpColor = ColorPalette.GetColor(data.warpColorNames[cx]);
+      Color weftColor = ColorPalette.GetColor(data.weftColorNames[cy]);
+
+      for (int py = 0; py < pixelsPerWeft; py++)
+      for (int px = 0; px < pixelsPerWarp; px++)
+      {
+        float dx     = Mathf.Abs(px - centerX);
+        float dy     = Mathf.Abs(py - centerY);
+        bool  inWarp = dx <= warpHalfPx;
+        bool  inWeft = dy <= weftHalfPx;
+
+        Color color;
+        if      (inWarp && inWeft) color = cell == 1 ? warpColor : weftColor;
+        else if (inWarp)           color = warpColor;
+        else if (inWeft)           color = weftColor;
+        else                       color = gapColor;
+
+        int texX = cx * pixelsPerWarp + px;
+        int texY = (texHeight - 1) - (cy * pixelsPerWeft + py);
+        pixels[texY * texWidth + texX] = color;
+      }
+    }
+    dest.SetPixels32(pixels);
+    dest.Apply(true);
+    return dest;
+  }
+
+  //---------------------------------------------------------------------------
+  private static Texture2D GenerateHeightUpscaleDrawdown(WeaveData data, WeaveSettings settings)
+  {
+    int   pixelsPerWarp = settings.pixelsPerWarp;
+    int   pixelsPerWeft = settings.PixelsPerWeft;
+    float warpHalfPx    = pixelsPerWarp * (settings.CoveragePercent / 100f) / 2f;
+    float weftHalfPx    = pixelsPerWeft * (settings.WeftCoveragePercent / 100f) / 2f;
+    float centerX       = pixelsPerWarp / 2f;
+    float centerY       = pixelsPerWeft / 2f;
+    float crimp         = settings.crimpStrength;
+    float baseline      = crimp * 0.5f;   // 높이맵이 0~1 범위 안에 들어오도록 중립면
+
+    int width  = data.colCount * pixelsPerWarp;
+    int height = data.rowCount * pixelsPerWeft;
+
+    Texture2D dest = new(width, height, TextureFormat.RGBA32, true)
+    {
+      filterMode = FilterMode.Bilinear,
+      anisoLevel = 9,
+    };
+    Color32[] pixels = new Color32[width * height];
+
+    for (int cy = 0; cy < data.rowCount; cy++)
+    for (int cx = 0; cx < data.colCount; cx++)
+    {
+      int cell = data.cells[cy * data.colCount + cx];
+
+      // 인접 셀 (경계는 wrap)
+      int prevCy = (cy - 1 + data.rowCount) % data.rowCount;
+      int nextCy = (cy + 1) % data.rowCount;
+      int prevCx = (cx - 1 + data.colCount) % data.colCount;
+      int nextCx = (cx + 1) % data.colCount;
+
+      // 경사 undulation 부호: 위=+1, 아래=-0.5
+      float warpCurr  = cell == 1 ? 1f : -0.5f;
+      float warpPrev  = data.cells[prevCy * data.colCount + cx] == 1 ? 1f : -0.5f;
+      float warpNext  = data.cells[nextCy * data.colCount + cx] == 1 ? 1f : -0.5f;
+
+      // 위사 undulation 부호: 위=+1, 아래=-0.5 (경사 반대)
+      float weftCurr  = cell == 0 ? 1f : -0.5f;
+      float weftPrev  = data.cells[cy * data.colCount + prevCx] == 0 ? 1f : -0.5f;
+      float weftNext  = data.cells[cy * data.colCount + nextCx] == 0 ? 1f : -0.5f;
+
+      // 셀 경계값 = 인접 두 셀의 평균
+      float warpBoundPrev = (warpPrev + warpCurr) * 0.5f;
+      float warpBoundNext = (warpCurr + warpNext) * 0.5f;
+      float weftBoundPrev = (weftPrev + weftCurr) * 0.5f;
+      float weftBoundNext = (weftCurr + weftNext) * 0.5f;
+
+      for (int py = 0; py < pixelsPerWeft; py++)
+      for (int px = 0; px < pixelsPerWarp; px++)
+      {
+        float dx = Mathf.Abs(px - centerX);
+        float dy = Mathf.Abs(py - centerY);
+
+        // 원형 단면 (반구)
+        float warpSection = dx <= warpHalfPx
+          ? Mathf.Sqrt(Mathf.Max(0f, 1f - (dx / warpHalfPx) * (dx / warpHalfPx)))
+          : 0f;
+        float weftSection = dy <= weftHalfPx
+          ? Mathf.Sqrt(Mathf.Max(0f, 1f - (dy / weftHalfPx) * (dy / weftHalfPx)))
+          : 0f;
+
+        // 경사 Y방향 굴곡 — 코사인 보간
+        float v = (float)py / pixelsPerWeft;
+        float warpUndulation = v < 0.5f
+          ? Mathf.Lerp(warpBoundPrev, warpCurr, (1f - Mathf.Cos(v * 2f * Mathf.PI)) * 0.5f * 2f)
+          : Mathf.Lerp(warpCurr, warpBoundNext, (1f - Mathf.Cos((v - 0.5f) * 2f * Mathf.PI)) * 0.5f * 2f);
+
+        // 위사 X방향 굴곡 — 코사인 보간
+        float u = (float)px / pixelsPerWarp;
+        float weftUndulation = u < 0.5f
+          ? Mathf.Lerp(weftBoundPrev, weftCurr, (1f - Mathf.Cos(u * 2f * Mathf.PI)) * 0.5f * 2f)
+          : Mathf.Lerp(weftCurr, weftBoundNext, (1f - Mathf.Cos((u - 0.5f) * 2f * Mathf.PI)) * 0.5f * 2f);
+
+        // 각 실의 높이 = 기준선 + 단면 * 굴곡 * crimp
+        float warpH = baseline + warpSection * warpUndulation * crimp;
+        float weftH = baseline + weftSection * weftUndulation * crimp;
+
+        // 위에 있는 실이 최종 높이
+        float h = Mathf.Clamp01(Mathf.Max(warpH, weftH));
+
+        int texX = cx * pixelsPerWarp + px;
+        int texY = height - 1 - (cy * pixelsPerWeft + py);
+        pixels[texY * width + texX] = new Color(h, h, h);
+      }
+    }
+    dest.SetPixels32(pixels);
+    dest.Apply(true);
     return dest;
   }
   //---------------------------------------------------------------------------
