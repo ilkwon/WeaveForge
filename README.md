@@ -9,7 +9,13 @@
 
 ## 스크린샷
 
-*(스크린샷 추가 예정)*
+**조직도 편집 → 실시간 렌더링**
+
+![편집 UI](screenshots/editor_ui.png)
+*타이업/통경/트레들링 편집 및 드로다운 자동 계산*
+
+![렌더링 결과](screenshots/rendering_twill.png)
+*2/2 능직 Drawdown 모드 렌더링 — 실의 굴곡과 교차 구조 표현*
 
 ---
 
