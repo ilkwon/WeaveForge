@@ -37,7 +37,7 @@ using UnityEngine;
 
   비율 = 위사 / 경사 = 0.353 / 0.254 ≈ 1.39
   위사가 경사보다 1.39배 넓은 공간을 차지합니다. 그래서 셀이 정사각형이 아니라 위사 방향으로
-   약간 더 길어야 실제 원단 비율에 가깝움.  
+   약간 더 길어야 실제 원단 비율에 가깝움.     
 */
 public class WeaveTextureGenerator : MonoBehaviour
 {

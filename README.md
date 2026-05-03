@@ -17,6 +17,16 @@
 ![렌더링 결과](screenshots/rendering_twill.png)
 *2/2 능직 Drawdown 모드 렌더링 — 실의 굴곡과 교차 구조 표현*
 
+**자동 생성 텍스처 (Diffuse / Normal / Roughness)**
+
+![텍스처 프리뷰](screenshots/textures_preview.png)
+*조직 데이터로부터 Diffuse, Normal, Roughness 텍스처를 자동 생성*
+
+**Shader Graph**
+
+![Shader Graph](screenshots/shader_graph.png)
+*URP Lit Shader Graph — Tiling 파라미터로 EPI/PPI 기반 밀도 반영*
+
 ---
 
 ## 주요 기능
@@ -121,7 +131,7 @@ git clone https://github.com/ilkwon/WeaveForge.git
   → WIF 파일 임포트/익스포트
 
 장기
-  → 미정.
+  → 미정
 ```
 
 ---
