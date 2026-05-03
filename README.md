@@ -121,9 +121,7 @@ git clone https://github.com/ilkwon/WeaveForge.git
   → WIF 파일 임포트/익스포트
 
 장기
-  → CLO에 버금가는 직물 렌더링 품질
-  → 보플 / 기모 / 워싱 등 원단 변형 시뮬레이션
-  → AI 기반 텍스처 품질 향상 및 물성 예측
+  → 미정.
 ```
 
 ---
