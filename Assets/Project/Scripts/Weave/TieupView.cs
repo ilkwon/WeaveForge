@@ -156,6 +156,12 @@ public class TieupView : CellGridView
       data.weftColorNames = newColors;
     }
   }
+
+  //---------------------------------------------------------------------------
+  public void FirePatternLoaded()
+  {
+    OnPatternLoaded?.Invoke();
+  }
   //---------------------------------------------------------------------------
 
 }

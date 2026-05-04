@@ -90,6 +90,7 @@
     <Compile Include="Assets/Common/Scripts/Util/DBConn.cs" />
     <Compile Include="Assets/Project/Scripts/Core/WeaveDocumentManager.cs" />
     <Compile Include="Assets/Project/Scripts/Legacy/WarpStripView.cs" />
+    <Compile Include="Assets/Project/Scripts/Core/WeaveScrollSync.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets/TextMesh Pro/Shaders/TMPro.cginc" />

@@ -61,7 +61,7 @@ MonoBehaviour:
       isViewNoticeToday: 1
       lastConnectDayOfYear: 0
     isRegisterNaverAchieve: 0
-    lastDay: 124
+    lastDay: 125
     isAgree: 0
     usePassword: 0
 --- !u!114 &-8082492852590589169
@@ -78,13 +78,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::SaveWeaveConfigViewer
   data:
     version: 1
-    lastSelectedCode: DB-260412-001
+    lastSelectedCode: DB-260505-005
     weaveSettings:
       textureMode: 1
       warpRepeat: 4
       weftRepeat: 4
-      colCount: 8
-      rowCount: 8
+      colCount: 16
+      rowCount: 16
       pixelsPerWarp: 16
       yarnCount: 40
       material: 0

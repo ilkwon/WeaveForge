@@ -11,6 +11,7 @@ public class TreadlingView : CellGridView
 {
   [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
+  [SerializeField] private RectTransform containerRT;
   public System.Action OnTreadlingChanged;
   public System.Action OnColorChanged;
   private int[] _treadlingData; // 각 위사가 몇 번 트레들인지
@@ -84,10 +85,17 @@ public class TreadlingView : CellGridView
     rt.anchorMax = new Vector2(1f, 1f);
     rt.pivot = new Vector2(1f, 1f);
     rt.sizeDelta = new Vector2(ColCount * CellSize, RowCount * CellSize);
-    rt.anchoredPosition = new Vector2(
-        tieupRT.anchoredPosition.x + CellSize,
-        tieupRT.anchoredPosition.y - tieupRT.sizeDelta.y
-    );
+    rt.anchoredPosition = Vector2.zero;
+    if (containerRT != null)
+    {
+      containerRT.anchorMin = containerRT.anchorMax = new Vector2(1f, 1f);
+      containerRT.pivot = new Vector2(1f, 1f);
+      containerRT.sizeDelta = rt.sizeDelta;
+      containerRT.anchoredPosition = new Vector2(
+          tieupRT.anchoredPosition.x + CellSize,
+          tieupRT.anchoredPosition.y - tieupRT.sizeDelta.y
+      );
+    }
   }
 
   //---------------------------------------------------------------------------

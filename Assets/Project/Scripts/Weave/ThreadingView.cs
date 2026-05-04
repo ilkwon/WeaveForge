@@ -10,6 +10,7 @@ public class ThreadingView : CellGridView
 {  
   [SerializeField] private PalettePopupUI palettePopup;
   [SerializeField] private TieupView tieupView;
+  [SerializeField] private RectTransform containerRT;
   public System.Action OnThreadingChanged;
   public System.Action OnColorChanged;
   private int[] _threadingData; // 각 경사가 몇 번 종광인지
@@ -70,16 +71,23 @@ public class ThreadingView : CellGridView
     rt.anchorMax = new Vector2(1f, 1f);
     rt.pivot = new Vector2(1f, 1f);
     rt.sizeDelta = new Vector2(ColCount * CellSize, RowCount * CellSize);
-    rt.anchoredPosition = new Vector2(
-        tieupRT.anchoredPosition.x - tieupRT.sizeDelta.x,
-        tieupRT.anchoredPosition.y + CellSize
-    );
+    rt.anchoredPosition = Vector2.zero;
+    if (containerRT != null)
+    {
+      containerRT.anchorMin = containerRT.anchorMax = new Vector2(1f, 1f);
+      containerRT.pivot = new Vector2(1f, 1f);
+      containerRT.sizeDelta = rt.sizeDelta;
+      containerRT.anchoredPosition = new Vector2(
+          tieupRT.anchoredPosition.x - tieupRT.sizeDelta.x,
+          tieupRT.anchoredPosition.y + CellSize
+      );
+    }
   }
 
   //---------------------------------------------------------------------------
   private void Resize()
   {
-    ColCount = tieupView.ColCount * 4;
+    ColCount = tieupView.ColCount * WeaveDocumentManager.Instance.CurrentWeaveSettings.warpRepeat;
     RowCount = tieupView.RowCount + 1;
 
     _threadingData = new int[ColCount];

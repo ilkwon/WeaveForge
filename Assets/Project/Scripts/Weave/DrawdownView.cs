@@ -17,6 +17,8 @@ public class DrawdownView : CellGridView
   [SerializeField] TieupView tieupView;
   [SerializeField] ThreadingView threadingView;
   [SerializeField] TreadlingView treadlingView;
+  [SerializeField] private RectTransform scrollRectRT;
+  [SerializeField] private WeaveScrollSync scrollSync;
   //---------------------------------------------------------------------------
   IEnumerator Start()
   {
@@ -49,9 +51,19 @@ public class DrawdownView : CellGridView
     UpdatePosition();
 
     StartCoroutine(RecalculateNextFrame());
+    StartCoroutine(ResetContentPosition());
   }
 
   //---------------------------------------------------------------------------
+  private IEnumerator ResetContentPosition()
+  {
+    yield return null;
+    // Content 위치를 (0,0)으로 강제 초기화
+    var content = GetComponent<RectTransform>().parent.GetComponent<RectTransform>();
+    content.anchoredPosition = Vector2.zero;
+    scrollSync?.ResetSync();
+  }
+
   private IEnumerator RecalculateNextFrame()
   {
     yield return null; // 다음 프레임까지 대기
@@ -69,10 +81,26 @@ public class DrawdownView : CellGridView
     rt.pivot = new Vector2(1f, 1f);
     rt.sizeDelta = new Vector2(ColCount * CellSize, RowCount * CellSize);
     // 
-    rt.anchoredPosition = new Vector2(
-        tieupRT.anchoredPosition.x - tieupRT.sizeDelta.x,
-        tieupRT.anchoredPosition.y - tieupRT.sizeDelta.y
-    );
+    rt.anchoredPosition = Vector2.zero;
+
+    if (scrollRectRT != null)
+    {
+      scrollRectRT.anchorMin = new Vector2(1f, 1f);
+      scrollRectRT.anchorMax = new Vector2(1f, 1f);
+      scrollRectRT.pivot     = new Vector2(1f, 1f);
+      scrollRectRT.anchoredPosition = new Vector2(
+          tieupRT.anchoredPosition.x - tieupRT.sizeDelta.x,
+          tieupRT.anchoredPosition.y - tieupRT.sizeDelta.y
+      );
+      var canvasRT = scrollRectRT.parent.GetComponent<RectTransform>();
+      var weftRT   = treadlingView.GetComponent<RectTransform>();
+      float scrollW = Mathf.Min(rt.sizeDelta.x, canvasRT.rect.width + scrollRectRT.anchoredPosition.x);
+      float scrollH = Mathf.Min(rt.sizeDelta.y, canvasRT.rect.height + scrollRectRT.anchoredPosition.y);
+      scrollRectRT.sizeDelta = new Vector2(scrollW, scrollH);
+    }
+
+    // Content 크기 = 드로다운 크기
+    GetComponent<RectTransform>().parent.GetComponent<RectTransform>().sizeDelta = rt.sizeDelta;
   }
 
   //---------------------------------------------------------------------------

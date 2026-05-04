@@ -53,7 +53,7 @@ public class WeaveDocumentManager : Singleton<WeaveDocumentManager>
       rowCount = settings.rowCount,
       cells = new int[settings.colCount * settings.rowCount],
       warpColorNames = new string[settings.colCount * settings.warpRepeat],
-      weftColorNames = new string[settings.colCount * settings.weftRepeat],
+      weftColorNames = new string[settings.rowCount * settings.weftRepeat],
       warpThickness = new float[settings.colCount],
       weftThickness = new float[settings.rowCount],
       savedAt = DateTime.Now.ToString("yyyy-MM-dd HH:mm")
