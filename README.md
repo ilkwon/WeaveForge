@@ -154,4 +154,4 @@ git clone https://github.com/ilkwon/WeaveForge.git
 
 - 출처 표시 조건으로 자유롭게 사용, 수정, 배포 가능합니다
 - **상업적 용도로의 사용은 금지됩니다**
-- 상업적 이용 문의: email:code666@gmail.com
+- 상업적 이용 문의 : code666@naver.com
