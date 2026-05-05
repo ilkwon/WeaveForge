@@ -136,13 +136,14 @@ git clone https://github.com/ilkwon/WeaveForge.git
 단기
   → 설정값 저장
   → 탭/패널 레이아웃
+  → 모드 전환 UI (조직도 / 2D 컬러 / 높이맵 / PBR)
 
 중기
-  → 모드 전환 UI (조직도 / 2D 컬러 / 높이맵 / PBR)
   → WIF 파일 임포트/익스포트
 
 장기
-  → 미정
+  → CLO 수준 PBR 렌더링 목표
+  → AI 기반 텍스처 품질 향상
 ```
 
 ---
@@ -153,4 +154,4 @@ git clone https://github.com/ilkwon/WeaveForge.git
 
 - 출처 표시 조건으로 자유롭게 사용, 수정, 배포 가능합니다
 - **상업적 용도로의 사용은 금지됩니다**
-- 상업적 이용 문의: *(연락처 추가 예정)*
+- 상업적 이용 문의: email:code666@gmail.com
